@@ -11,6 +11,10 @@
 		37313E4F2A6B6B5900D3C058 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37313E4E2A6B6B5900D3C058 /* ContentView.swift */; };
 		37313E512A6B6B5B00D3C058 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37313E502A6B6B5B00D3C058 /* Assets.xcassets */; };
 		37313E552A6B6B5B00D3C058 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37313E542A6B6B5B00D3C058 /* Preview Assets.xcassets */; };
+		37ADE38C2A72FE0B00FA4139 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38B2A72FE0B00FA4139 /* AppSettings.swift */; };
+		37ADE38E2A73040400FA4139 /* ColorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38D2A73040400FA4139 /* ColorInfo.swift */; };
+		37ADE3902A7308F100FA4139 /* AssetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38F2A7308F100FA4139 /* AssetColor.swift */; };
+		37ADE3922A73110B00FA4139 /* HourFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE3912A73110B00FA4139 /* HourFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		37313E502A6B6B5B00D3C058 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37313E522A6B6B5B00D3C058 /* FlipClock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlipClock.entitlements; sourceTree = "<group>"; };
 		37313E542A6B6B5B00D3C058 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		37ADE38B2A72FE0B00FA4139 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		37ADE38D2A73040400FA4139 /* ColorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfo.swift; sourceTree = "<group>"; };
+		37ADE38F2A7308F100FA4139 /* AssetColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetColor.swift; sourceTree = "<group>"; };
+		37ADE3912A73110B00FA4139 /* HourFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourFormat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +60,10 @@
 		37313E4B2A6B6B5900D3C058 /* FlipClock */ = {
 			isa = PBXGroup;
 			children = (
+				37ADE38A2A72FDEE00FA4139 /* Models */,
+				37ADE3892A72FD4500FA4139 /* Logic */,
+				37ADE3882A72FB4100FA4139 /* Views */,
 				37313E4C2A6B6B5900D3C058 /* FlipClockApp.swift */,
-				37313E4E2A6B6B5900D3C058 /* ContentView.swift */,
 				37313E502A6B6B5B00D3C058 /* Assets.xcassets */,
 				37313E522A6B6B5B00D3C058 /* FlipClock.entitlements */,
 				37313E532A6B6B5B00D3C058 /* Preview Content */,
@@ -67,6 +77,32 @@
 				37313E542A6B6B5B00D3C058 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		37ADE3882A72FB4100FA4139 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37313E4E2A6B6B5900D3C058 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37ADE3892A72FD4500FA4139 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		37ADE38A2A72FDEE00FA4139 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37ADE38B2A72FE0B00FA4139 /* AppSettings.swift */,
+				37ADE38D2A73040400FA4139 /* ColorInfo.swift */,
+				37ADE38F2A7308F100FA4139 /* AssetColor.swift */,
+				37ADE3912A73110B00FA4139 /* HourFormat.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37ADE3902A7308F100FA4139 /* AssetColor.swift in Sources */,
+				37ADE38C2A72FE0B00FA4139 /* AppSettings.swift in Sources */,
+				37ADE3922A73110B00FA4139 /* HourFormat.swift in Sources */,
+				37ADE38E2A73040400FA4139 /* ColorInfo.swift in Sources */,
 				37313E4F2A6B6B5900D3C058 /* ContentView.swift in Sources */,
 				37313E4D2A6B6B5900D3C058 /* FlipClockApp.swift in Sources */,
 			);
@@ -269,6 +309,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "FlipNeo Clock";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -310,6 +351,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "FlipNeo Clock";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
