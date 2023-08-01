@@ -7,27 +7,22 @@
 
 import SwiftUI
 
-class SettingsManager {
-    var settings = Settings() {
+class SettingsManager: ObservableObject {
+    @Published var settings = load() {
         didSet {
             save()
         }
     }
-    private let settingsKey = "SettingsKey"
-    
-    init() {
-        load()
-    }
+    private static let settingsKey = "SettingsKey"
     
     private func save() {
         guard let data = try? JSONEncoder().encode(settings) else { return }
-        UserDefaults.standard.set(data, forKey: settingsKey)
+        UserDefaults.standard.set(data, forKey: Self.settingsKey)
     }
     
-    private func load() {
-        guard let data = UserDefaults.standard.data(forKey: settingsKey) else { return }
-        if let settings = try? JSONDecoder().decode(Settings.self, from: data) {
-            self.settings = settings
-        }
+    private static func load() -> Settings {
+        guard let data = UserDefaults.standard.data(forKey: Self.settingsKey) else { return Settings() }
+        guard let settings = try? JSONDecoder().decode(Settings.self, from: data) else { return Settings() }
+        return settings
     }
 }
