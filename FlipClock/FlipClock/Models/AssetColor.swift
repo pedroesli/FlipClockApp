@@ -15,6 +15,7 @@ enum AssetColor: String, Codable {
     case purple = "PurpleColor"
     case bluegray = "BlueGrayColor"
     case gray = "GrayColor"
+    case background = "BackgroundColor"
     
     var color: Color {
         Color(self.rawValue)

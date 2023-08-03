@@ -25,6 +25,7 @@ struct ContentView: View {
                         }
                     }
                 }
+                .toolbar(.hidden, for: .navigationBar)
                 .navigationDestination(isPresented: $showSettingsView) {
                     ConfigurationView()
                 }
