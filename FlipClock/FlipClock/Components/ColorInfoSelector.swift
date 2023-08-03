@@ -11,7 +11,7 @@ struct ColorInfoSelector: View {
     
     let title: String
     @Binding var selectedColorInfo: ColorInfo
-    @State private var selectedAssetColor: AssetColor?
+    @State private var selectedAssetColor: PaletteColor?
     @State private var isColorPickerSelected = false
     
     var body: some View {

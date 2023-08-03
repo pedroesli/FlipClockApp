@@ -11,25 +11,34 @@ struct ContentView: View {
     
     @StateObject private var settingsManager = SettingsManager()
     @State private var showSettingsView = false
+    @State private var selectedTabOption: TabOption = .clock
     
     var body: some View {
         NavigationStack {
-            Color.green
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            showSettingsView = true
-                        } label: {
-                            Image(systemName: "gearshape.fill")
+            ZStack {
+                Color.asset.background.ignoresSafeArea()
+                VStack {
+                    Color.green
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button {
+                                    showSettingsView = true
+                                } label: {
+                                    Image(systemName: "gearshape.fill")
+                                        .foregroundColor(settingsManager.appColor)
+                                }
+                            }
                         }
-                    }
+        //                .toolbar(.hidden, for: .navigationBar)
+                        .navigationDestination(isPresented: $showSettingsView) {
+                            ConfigurationView()
+                        }
+                    RoundTabBar(selectedTabOption: $selectedTabOption)
                 }
-                .toolbar(.hidden, for: .navigationBar)
-                .navigationDestination(isPresented: $showSettingsView) {
-                    ConfigurationView()
-                }
+            }
         }
+        .tint(settingsManager.appColor)
         .environmentObject(settingsManager)
     }
 }

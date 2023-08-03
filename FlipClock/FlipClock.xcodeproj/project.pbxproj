@@ -16,9 +16,11 @@
 		3795BB4A2A7B26F80067BBFD /* CircleColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */; };
 		3795BB4C2A7B2C5B0067BBFD /* ColorInfoSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4B2A7B2C5B0067BBFD /* ColorInfoSelector.swift */; };
 		3795BB4E2A7B3C140067BBFD /* RoundTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4D2A7B3C140067BBFD /* RoundTabBar.swift */; };
+		3795BB502A7BE48F0067BBFD /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4F2A7BE48F0067BBFD /* Color+Extensions.swift */; };
+		379D968B2A7BF27000376455 /* TabOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D968A2A7BF27000376455 /* TabOption.swift */; };
 		37ADE38C2A72FE0B00FA4139 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38B2A72FE0B00FA4139 /* Settings.swift */; };
 		37ADE38E2A73040400FA4139 /* ColorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38D2A73040400FA4139 /* ColorInfo.swift */; };
-		37ADE3902A7308F100FA4139 /* AssetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38F2A7308F100FA4139 /* AssetColor.swift */; };
+		37ADE3902A7308F100FA4139 /* PaletteColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38F2A7308F100FA4139 /* PaletteColor.swift */; };
 		37ADE3922A73110B00FA4139 /* HourFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE3912A73110B00FA4139 /* HourFormat.swift */; };
 		37ADE3942A73303B00FA4139 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE3932A73303B00FA4139 /* SettingsManager.swift */; };
 /* End PBXBuildFile section */
@@ -35,9 +37,11 @@
 		3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPicker.swift; sourceTree = "<group>"; };
 		3795BB4B2A7B2C5B0067BBFD /* ColorInfoSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfoSelector.swift; sourceTree = "<group>"; };
 		3795BB4D2A7B3C140067BBFD /* RoundTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTabBar.swift; sourceTree = "<group>"; };
+		3795BB4F2A7BE48F0067BBFD /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		379D968A2A7BF27000376455 /* TabOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOption.swift; sourceTree = "<group>"; };
 		37ADE38B2A72FE0B00FA4139 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		37ADE38D2A73040400FA4139 /* ColorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfo.swift; sourceTree = "<group>"; };
-		37ADE38F2A7308F100FA4139 /* AssetColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetColor.swift; sourceTree = "<group>"; };
+		37ADE38F2A7308F100FA4139 /* PaletteColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteColor.swift; sourceTree = "<group>"; };
 		37ADE3912A73110B00FA4139 /* HourFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourFormat.swift; sourceTree = "<group>"; };
 		37ADE3932A73303B00FA4139 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +76,7 @@
 		37313E4B2A6B6B5900D3C058 /* FlipClock */ = {
 			isa = PBXGroup;
 			children = (
+				379D96892A7BF22C00376455 /* Enums */,
 				3795BB462A7AEE400067BBFD /* Components */,
 				37ADE3952A7338B400FA4139 /* Extensions */,
 				37ADE38A2A72FDEE00FA4139 /* Models */,
@@ -104,6 +109,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		379D96892A7BF22C00376455 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				37ADE38F2A7308F100FA4139 /* PaletteColor.swift */,
+				37ADE3912A73110B00FA4139 /* HourFormat.swift */,
+				379D968A2A7BF27000376455 /* TabOption.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		37ADE3882A72FB4100FA4139 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,8 +141,6 @@
 			children = (
 				37ADE38B2A72FE0B00FA4139 /* Settings.swift */,
 				37ADE38D2A73040400FA4139 /* ColorInfo.swift */,
-				37ADE38F2A7308F100FA4139 /* AssetColor.swift */,
-				37ADE3912A73110B00FA4139 /* HourFormat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,6 +148,7 @@
 		37ADE3952A7338B400FA4139 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3795BB4F2A7BE48F0067BBFD /* Color+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -209,13 +223,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37ADE3902A7308F100FA4139 /* AssetColor.swift in Sources */,
+				379D968B2A7BF27000376455 /* TabOption.swift in Sources */,
+				37ADE3902A7308F100FA4139 /* PaletteColor.swift in Sources */,
 				3795BB452A7ACFFF0067BBFD /* ConfigurationView.swift in Sources */,
 				37ADE38C2A72FE0B00FA4139 /* Settings.swift in Sources */,
 				37ADE3922A73110B00FA4139 /* HourFormat.swift in Sources */,
 				37ADE3942A73303B00FA4139 /* SettingsManager.swift in Sources */,
 				37ADE38E2A73040400FA4139 /* ColorInfo.swift in Sources */,
 				37313E4F2A6B6B5900D3C058 /* ContentView.swift in Sources */,
+				3795BB502A7BE48F0067BBFD /* Color+Extensions.swift in Sources */,
 				37313E4D2A6B6B5900D3C058 /* FlipClockApp.swift in Sources */,
 				3795BB4E2A7B3C140067BBFD /* RoundTabBar.swift in Sources */,
 				3795BB482A7AEE4B0067BBFD /* ColorCircle.swift in Sources */,

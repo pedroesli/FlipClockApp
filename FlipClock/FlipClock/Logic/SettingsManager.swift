@@ -13,6 +13,9 @@ class SettingsManager: ObservableObject {
             save()
         }
     }
+    var appColor: Color {
+        settings.appColorInfo.color
+    }
     private static let settingsKey = "SettingsKey"
     
     private func save() {

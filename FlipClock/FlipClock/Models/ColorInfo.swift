@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ColorInfo: Codable {
     
-    let assetColor: AssetColor?
+    let assetColor: PaletteColor?
     let red: Double?
     let green: Double?
     let blue: Double?
     
-    init(assetColor: AssetColor) {
+    init(assetColor: PaletteColor) {
         self.assetColor = assetColor
         self.red = nil
         self.green = nil

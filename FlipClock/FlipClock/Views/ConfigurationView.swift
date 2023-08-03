@@ -13,6 +13,14 @@ struct ConfigurationView: View {
     @EnvironmentObject var settingsManager: SettingsManager
     @Environment(\.requestReview) private var requestReview
     
+    var toggleTint: Color {
+        guard let paletteColor = settingsManager.settings.appColorInfo.assetColor,
+              paletteColor != .base else {
+            return Color.green
+        }
+        return paletteColor.color
+    }
+    
     var body: some View {
         Form {
             Section("Time Display") {
@@ -22,6 +30,7 @@ struct ConfigurationView: View {
                     Text("12 hours").tag(HourFormat.twoPeriods)
                 }
                 Toggle("Display Seconds", isOn: $settingsManager.settings.displaySeconds)
+                    .tint(toggleTint)
                 ColorInfoSelector(title: "Display color", selectedColorInfo: $settingsManager.settings.displayColorInfo)
             }
             Section("App") {
@@ -33,6 +42,7 @@ struct ConfigurationView: View {
                 } label: {
                     Label {
                         Text("Review FlipNeo Clock")
+                            .foregroundColor(.primary)
                     } icon: {
                         Image(systemName: "rectangle.and.pencil.and.ellipsis")
                             .foregroundColor(.indigo)

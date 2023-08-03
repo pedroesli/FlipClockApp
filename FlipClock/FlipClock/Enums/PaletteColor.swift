@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum AssetColor: String, Codable {
+enum PaletteColor: String, Codable {
     case base = "BaseColor"
     case lime = "LimeColor"
     case pink = "PinkColor"
@@ -15,7 +15,6 @@ enum AssetColor: String, Codable {
     case purple = "PurpleColor"
     case bluegray = "BlueGrayColor"
     case gray = "GrayColor"
-    case background = "BackgroundColor"
     
     var color: Color {
         Color(self.rawValue)

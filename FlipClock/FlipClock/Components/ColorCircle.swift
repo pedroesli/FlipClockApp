@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ColorCircle: View {
     
-    @Binding var selectedAssetColor: AssetColor?
-    var assetColor: AssetColor
+    @Binding var selectedAssetColor: PaletteColor?
+    var assetColor: PaletteColor
     var action: () -> Void
     
     var body: some View {
