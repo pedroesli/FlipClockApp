@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var settingsManager = SettingsManager()
+    @State private var showSettingsView = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            Color.green
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showSettingsView = true
+                        } label: {
+                            Image(systemName: "gearshape.fill")
+                        }
+                    }
+                }
+                .navigationDestination(isPresented: $showSettingsView) {
+                    ConfigurationView()
+                }
         }
-        .padding()
+        .environmentObject(settingsManager)
     }
 }
 

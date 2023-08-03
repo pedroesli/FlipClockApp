@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Settings: Codable {
     var hourFormat: HourFormat = .system
-    var displayColor: ColorInfo = .baseColorInfo
+    var displayColorInfo: ColorInfo = .baseColorInfo
     var displaySeconds: Bool = true
-    var tintColor: ColorInfo = .baseColorInfo
+    var appColorInfo: ColorInfo = .baseColorInfo
 }

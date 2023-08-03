@@ -7,11 +7,13 @@
 
 import Foundation
 
-enum HourFormat: Codable {
+enum HourFormat: Codable, Identifiable {
     /// Use system based format
     case system
     /// Use 24 hour format
     case military
     /// Use two periods based format (am, pm)
     case twoPeriods
+    
+    var id: Self { self }
 }
