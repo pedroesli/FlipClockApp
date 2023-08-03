@@ -13,16 +13,12 @@ struct RoundTabBar: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 26, style: .continuous)
-                .fill(
-                    Color.asset.tabBar
-                        .shadow(.inner(color: Color.asset.tabBarBShadowColor.opacity(0.5), radius: 1, x: -1, y: -1))
-                        .shadow(.inner(color: Color.asset.tabBarAShadowColor.opacity(0.3), radius: 1, x: 1, y: 1))
-                )
-                .shadow(color: Color.asset.tabBarBShadowColor.opacity(0.9), radius: 6.5, x: 5, y: 5)
-                .shadow(color: Color.asset.tabBarAShadowColor.opacity(0.9), radius: 5, x: -5, y: -5)
-                .shadow(color: Color.asset.tabBarBShadowColor.opacity(0.2), radius: 5, x: 5, y: -5)
-                .shadow(color: Color.asset.tabBarBShadowColor.opacity(0.2), radius: 5, x: -5, y: 5)
+            NeoRoundedRectangle(
+                cornerRadius: 26,
+                fillColor: Color.asset.tabBar,
+                colorA: Color.asset.tabBarAShadowColor,
+                colorB: Color.asset.tabBarBShadowColor
+            )
             HStack(spacing: 8) {
                 BarItem(selectedTabOption: $selectedTabOption, tabOption: .clock)
                 BarItem(selectedTabOption: $selectedTabOption, tabOption: .stopwatch)
