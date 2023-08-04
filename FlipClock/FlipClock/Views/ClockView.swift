@@ -63,9 +63,9 @@ struct ClockView: View {
                 }
             }
         }
-        .padding(.vertical, 16)
+        .padding(.bottom, 16)
         .onTapGesture {
-            withAnimation {
+            withAnimation(.easeIn(duration: 0.2)) {
                 showTabBar.toggle()
             }
         }
