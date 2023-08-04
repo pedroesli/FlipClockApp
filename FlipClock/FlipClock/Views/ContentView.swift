@@ -20,20 +20,7 @@ struct ContentView: View {
                 Color.asset.background.ignoresSafeArea()
                 GeometryReader { geometry in
                     VStack {
-                        Color.clear
-                            .frame(height: showTabBar ? geometry.safeAreaInsets.top : 0)
-                            .overlay(alignment: .bottomTrailing) {
-                                Button {
-                                    showSettingsView = true
-                                } label: {
-                                    Image(systemName: "gearshape.fill")
-                                        .foregroundColor(settingsManager.appColor)
-                                        .font(.title2)
-                                        .padding(.vertical, 9)
-                                        .padding(.horizontal, 16)
-                                }
-                            }
-                            .offset(y: showTabBar ? 0 : -geometry.safeAreaInsets.top)
+                        navBar(safeAreaInsets: geometry.safeAreaInsets)
                         ClockView(showTabBar: $showTabBar)
                         RoundTabBar(selectedTabOption: $selectedTabOption)
                             .offset(y: showTabBar ? 0 : geometry.safeAreaInsets.bottom * 2)
@@ -47,6 +34,23 @@ struct ContentView: View {
         }
         .tint(settingsManager.appColor)
         .environmentObject(settingsManager)
+    }
+    
+    func navBar(safeAreaInsets: EdgeInsets) -> some View {
+        Color.clear
+            .frame(height: showTabBar ? safeAreaInsets.top : 0)
+            .overlay(alignment: .bottomTrailing) {
+                Button {
+                    showSettingsView = true
+                } label: {
+                    Image(systemName: "gearshape.fill")
+                        .foregroundColor(settingsManager.appColor)
+                        .font(.title2)
+                        .padding(.vertical, 9)
+                        .padding(.horizontal, 16)
+                }
+            }
+            .offset(y: showTabBar ? 0 : -safeAreaInsets.top)
     }
 }
 
