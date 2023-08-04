@@ -12,6 +12,8 @@ struct AssetColors {
     let tabBar = Color("TabBarColor")
     let tabBarAShadowColor = Color("TabBarAShadowColor")
     let tabBarBShadowColor = Color("TabBarBShadowColor")
+    let dialAShadowColor = Color("DialAShadowColor")
+    let dialBShadowColor = Color("DialBShadowColor")
 }
 
 extension Color {

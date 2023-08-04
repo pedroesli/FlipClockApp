@@ -11,6 +11,7 @@
 		37313E4F2A6B6B5900D3C058 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37313E4E2A6B6B5900D3C058 /* ContentView.swift */; };
 		37313E512A6B6B5B00D3C058 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37313E502A6B6B5B00D3C058 /* Assets.xcassets */; };
 		37313E552A6B6B5B00D3C058 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37313E542A6B6B5B00D3C058 /* Preview Assets.xcassets */; };
+		378CD2FD2A7D55D4000B324F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD2FC2A7D55D3000B324F /* ClockView.swift */; };
 		3795BB452A7ACFFF0067BBFD /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB442A7ACFFF0067BBFD /* ConfigurationView.swift */; };
 		3795BB482A7AEE4B0067BBFD /* ColorCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB472A7AEE4B0067BBFD /* ColorCircle.swift */; };
 		3795BB4A2A7B26F80067BBFD /* CircleColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */; };
@@ -34,6 +35,7 @@
 		37313E502A6B6B5B00D3C058 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37313E522A6B6B5B00D3C058 /* FlipClock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlipClock.entitlements; sourceTree = "<group>"; };
 		37313E542A6B6B5B00D3C058 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		378CD2FC2A7D55D3000B324F /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		3795BB442A7ACFFF0067BBFD /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		3795BB472A7AEE4B0067BBFD /* ColorCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircle.swift; sourceTree = "<group>"; };
 		3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPicker.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				37313E4E2A6B6B5900D3C058 /* ContentView.swift */,
 				3795BB442A7ACFFF0067BBFD /* ConfigurationView.swift */,
+				378CD2FC2A7D55D3000B324F /* ClockView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				379D968B2A7BF27000376455 /* TabOption.swift in Sources */,
+				378CD2FD2A7D55D4000B324F /* ClockView.swift in Sources */,
 				37ADE3902A7308F100FA4139 /* PaletteColor.swift in Sources */,
 				3795BB452A7ACFFF0067BBFD /* ConfigurationView.swift in Sources */,
 				37ADE38C2A72FE0B00FA4139 /* Settings.swift in Sources */,
