@@ -38,36 +38,44 @@ struct ClockView: View {
                     }
                     .aspectRatio(1, contentMode: .fit)
                 }
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 // Landscape
-                HStack {
-                    NeoRoundedRectangle(
-                        cornerRadius: 20,
-                        fillColor: Color.asset.background,
-                        colorA: Color.asset.dialAShadowColor,
-                        colorB: Color.asset.dialBShadowColor
-                    )
-                    NeoRoundedRectangle(
-                        cornerRadius: 20,
-                        fillColor: Color.asset.background,
-                        colorA: Color.asset.dialAShadowColor,
-                        colorB: Color.asset.dialBShadowColor
-                    )
-                    NeoRoundedRectangle(
-                        cornerRadius: 20,
-                        fillColor: Color.asset.background,
-                        colorA: Color.asset.dialAShadowColor,
-                        colorB: Color.asset.dialBShadowColor
-                    )
+                HStack(spacing: 28) {
+                    Group {
+                        NeoRoundedRectangle(
+                            cornerRadius: 20,
+                            fillColor: Color.asset.background,
+                            colorA: Color.asset.dialAShadowColor,
+                            colorB: Color.asset.dialBShadowColor
+                        )
+                        NeoRoundedRectangle(
+                            cornerRadius: 20,
+                            fillColor: Color.asset.background,
+                            colorA: Color.asset.dialAShadowColor,
+                            colorB: Color.asset.dialBShadowColor
+                        )
+                        NeoRoundedRectangle(
+                            cornerRadius: 20,
+                            fillColor: Color.asset.background,
+                            colorA: Color.asset.dialAShadowColor,
+                            colorB: Color.asset.dialBShadowColor
+                        )
+                    }
+                    .aspectRatio(1, contentMode: .fit)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .padding(.bottom, 16)
-        .onTapGesture {
-            withAnimation(.easeIn(duration: 0.2)) {
-                showTabBar.toggle()
-            }
+        .overlay {
+            Color.clear
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    withAnimation(.easeIn(duration: 0.15)) {
+                        showTabBar.toggle()
+                    }
+                }
         }
     }
 }
