@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct CircleColorPicker: View {
-    
     @Binding var isSelected: Bool
     let action: (_ red: Double, _ green: Double, _ blue: Double) -> Void
     let fillGradient = AngularGradient(
-        gradient: Gradient(colors: [.red,.yellow,.green,.blue,.purple,.pink]),
+        gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .pink]),
         center: .center
     )
-    
     @State private var pickedColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
     
     var body: some View {

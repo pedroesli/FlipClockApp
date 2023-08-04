@@ -22,8 +22,8 @@ struct ColorInfoSelector: View {
                 Image(systemName: "circle.fill")
                     .foregroundColor(selectedColorInfo.color)
             }
-            Grid{
-                GridRow{
+            Grid {
+                GridRow {
                     ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .base, action: colorCirclePressed)
                     Spacer()
                     ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .lime, action: colorCirclePressed)
@@ -32,7 +32,7 @@ struct ColorInfoSelector: View {
                     Spacer()
                     ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .violet, action: colorCirclePressed)
                 }
-                GridRow{
+                GridRow {
                     ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .purple, action: colorCirclePressed)
                     Spacer()
                     ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .bluegray, action: colorCirclePressed)
