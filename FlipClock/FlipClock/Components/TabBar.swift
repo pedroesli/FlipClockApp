@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoundTabBar: View {
+struct TabBar: View {
     
     @Binding var selectedTabOption: TabOption
     
@@ -59,7 +59,7 @@ struct RoundTabBar_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.asset.background.ignoresSafeArea()
-            RoundTabBar(selectedTabOption: .constant(.clock))
+            TabBar(selectedTabOption: .constant(.clock))
                 .environmentObject(settingsManager)
                 .onAppear {
                     settingsManager.settings.appColorInfo = .init(assetColor: .pink)

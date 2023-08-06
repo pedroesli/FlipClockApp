@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ClockView: View {
     
-    @Binding var showTabBar: Bool
+    @Binding var showAllViews: Bool
     
     var body: some View {
         GeometryReader { geometry in
@@ -73,7 +73,7 @@ struct ClockView: View {
                 .contentShape(Rectangle())
                 .onTapGesture {
                     withAnimation(.easeIn(duration: 0.15)) {
-                        showTabBar.toggle()
+                        showAllViews.toggle()
                     }
                 }
         }
@@ -84,7 +84,7 @@ struct ClockView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.asset.background.ignoresSafeArea()
-            ClockView(showTabBar: .constant(false))
+            ClockView(showAllViews: .constant(false))
         }
     }
 }
