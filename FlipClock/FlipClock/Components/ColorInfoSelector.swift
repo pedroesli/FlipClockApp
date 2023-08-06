@@ -26,18 +26,19 @@ struct ColorInfoSelector: View {
                 GridRow {
                     ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .base, action: colorCirclePressed)
                     Spacer()
+                    ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .celadon, action: colorCirclePressed)
+                    Spacer()
                     ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .lime, action: colorCirclePressed)
                     Spacer()
                     ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .pink, action: colorCirclePressed)
-                    Spacer()
-                    ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .violet, action: colorCirclePressed)
+                    
                 }
                 GridRow {
+                    ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .violet, action: colorCirclePressed)
+                    Spacer()
                     ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .purple, action: colorCirclePressed)
                     Spacer()
                     ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .bluegray, action: colorCirclePressed)
-                    Spacer()
-                    ColorCircle(selectedAssetColor: $selectedAssetColor, assetColor: .gray, action: colorCirclePressed)
                     Spacer()
                     CircleColorPicker(isSelected: $isColorPickerSelected, action: selectedRGBColor(red:green:blue:))
                 }

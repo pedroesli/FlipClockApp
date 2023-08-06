@@ -14,7 +14,7 @@ enum PaletteColor: String, Codable {
     case violet = "VioletColor"
     case purple = "PurpleColor"
     case bluegray = "BlueGrayColor"
-    case gray = "GrayColor"
+    case celadon = "CeladonColor"
     
     var color: Color {
         Color(self.rawValue)
