@@ -18,12 +18,7 @@ struct ClockView: View {
                 VStack(spacing: 28) {
                     Group {
                         ZStack {
-                            NeoRoundedRectangle(
-                                cornerRadius: 20,
-                                fillColor: Color.asset.background,
-                                colorA: Color.asset.dialAShadowColor,
-                                colorB: Color.asset.dialBShadowColor
-                            )
+                            NeoRoundedRectangle(configuration: .dial)
                             GeometryReader { geometry in
                                 Text("10")
                                     .frame(width: geometry.size.width, height: geometry.size.height)
@@ -31,18 +26,8 @@ struct ClockView: View {
                                     .monospacedDigit()
                             }
                         }
-                        NeoRoundedRectangle(
-                            cornerRadius: 20,
-                            fillColor: Color.asset.background,
-                            colorA: Color.asset.dialAShadowColor,
-                            colorB: Color.asset.dialBShadowColor
-                        )
-                        NeoRoundedRectangle(
-                            cornerRadius: 20,
-                            fillColor: Color.asset.background,
-                            colorA: Color.asset.dialAShadowColor,
-                            colorB: Color.asset.dialBShadowColor
-                        )
+                        NeoRoundedRectangle(configuration: .dial)
+                        NeoRoundedRectangle(configuration: .dial)
                     }
                     .aspectRatio(1, contentMode: .fit)
                 }
@@ -51,24 +36,9 @@ struct ClockView: View {
                 // Landscape
                 HStack(spacing: 28) {
                     Group {
-                        NeoRoundedRectangle(
-                            cornerRadius: 20,
-                            fillColor: Color.asset.background,
-                            colorA: Color.asset.dialAShadowColor,
-                            colorB: Color.asset.dialBShadowColor
-                        )
-                        NeoRoundedRectangle(
-                            cornerRadius: 20,
-                            fillColor: Color.asset.background,
-                            colorA: Color.asset.dialAShadowColor,
-                            colorB: Color.asset.dialBShadowColor
-                        )
-                        NeoRoundedRectangle(
-                            cornerRadius: 20,
-                            fillColor: Color.asset.background,
-                            colorA: Color.asset.dialAShadowColor,
-                            colorB: Color.asset.dialBShadowColor
-                        )
+                        NeoRoundedRectangle(configuration: .dial)
+                        NeoRoundedRectangle(configuration: .dial)
+                        NeoRoundedRectangle(configuration: .dial)
                     }
                     .aspectRatio(1, contentMode: .fit)
                 }

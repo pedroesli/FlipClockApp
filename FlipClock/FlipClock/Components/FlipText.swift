@@ -56,12 +56,7 @@ struct FlipText: View {
 struct FlipText_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            NeoRoundedRectangle(
-                cornerRadius: 20,
-                fillColor: Color.asset.background,
-                colorA: Color.asset.dialAShadowColor,
-                colorB: Color.asset.dialBShadowColor
-            )
+            NeoRoundedRectangle(configuration: .dial)
             FlipText()
         }
         .frame(width: 300, height: 300)

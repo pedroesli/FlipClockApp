@@ -13,12 +13,7 @@ struct TabBar: View {
     
     var body: some View {
         ZStack {
-            NeoRoundedRectangle(
-                cornerRadius: 26,
-                fillColor: Color.asset.tabBar,
-                colorA: Color.asset.tabBarAShadowColor,
-                colorB: Color.asset.tabBarBShadowColor
-            )
+            NeoRoundedRectangle(configuration: .tabBar)
             HStack(spacing: 8) {
                 BarItem(selectedTabOption: $selectedTabOption, tabOption: .clock)
                 BarItem(selectedTabOption: $selectedTabOption, tabOption: .stopwatch)
