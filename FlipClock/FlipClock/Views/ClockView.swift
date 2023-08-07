@@ -17,12 +17,20 @@ struct ClockView: View {
                 // Portrait
                 VStack(spacing: 28) {
                     Group {
-                        NeoRoundedRectangle(
-                            cornerRadius: 20,
-                            fillColor: Color.asset.background,
-                            colorA: Color.asset.dialAShadowColor,
-                            colorB: Color.asset.dialBShadowColor
-                        )
+                        ZStack {
+                            NeoRoundedRectangle(
+                                cornerRadius: 20,
+                                fillColor: Color.asset.background,
+                                colorA: Color.asset.dialAShadowColor,
+                                colorB: Color.asset.dialBShadowColor
+                            )
+                            GeometryReader { geometry in
+                                Text("10")
+                                    .frame(width: geometry.size.width, height: geometry.size.height)
+                                    .font(.system(size: geometry.size.height * 0.8, weight: .bold).width(.compressed))
+                                    .monospacedDigit()
+                            }
+                        }
                         NeoRoundedRectangle(
                             cornerRadius: 20,
                             fillColor: Color.asset.background,
