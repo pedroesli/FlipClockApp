@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "cornerroundedrectangle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pedroesli/CornerRoundedRectangle",
+      "state" : {
+        "branch" : "main",
+        "revision" : "cd2c2d05e73e07fa4ced2c4e554ff699b088eb6e"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import CornerRoundedRectangle
 
-enum FlipPlacement {
+enum FlipTextHalfPlacement {
     case top
     case bottom
     
@@ -15,6 +16,13 @@ enum FlipPlacement {
         switch self {
         case .top: return Alignment.top
         case .bottom: return Alignment.bottom
+        }
+    }
+    
+    var corners: CornerRoundedRectangle.CornerSet {
+        switch self {
+        case .top: return .top
+        case .bottom: return .bottom
         }
     }
 }
