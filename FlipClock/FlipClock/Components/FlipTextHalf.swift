@@ -18,11 +18,11 @@ struct FlipTextHalf: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                let fontSize = (geometry.size.height + geometry.size.height / 2)
+                let fontSize = (geometry.size.height + geometry.size.height / 2) * 1.1
                 CornerRoundedRectangle(cornerRadius: 20, edges: placement.corners)
                     .fill(Color.asset.background)
                 Text(String(value))
-                    .font(.system(size: fontSize, weight: .bold, design: .default).width(.standard).monospacedDigit())
+                    .font(.system(size: fontSize, weight: .bold, design: .default).width(.compressed).monospacedDigit())
                 .overlay {
                     GeometryReader { geometry in
                         Color.clear

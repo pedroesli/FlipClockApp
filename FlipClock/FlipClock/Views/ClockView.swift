@@ -15,19 +15,26 @@ struct ClockView: View {
         GeometryReader { geometry in
             if geometry.size.height > geometry.size.width {
                 VStack(spacing: 28) {
-                    FlipDial()
-                    FlipDial()
-                    FlipDial()
+                    Group {
+                        FlipDial()
+                        FlipDial()
+                        FlipDial()
+                    }
+                    .aspectRatio(1, contentMode: .fit)
                 }
+                .frame(maxWidth: .infinity)
                 .padding(.horizontal, 32)
             } else {
                 // Landscape
                 HStack(spacing: 28) {
-                    FlipDial()
-                    FlipDial()
-                    FlipDial()
+                    Group {
+                        FlipDial()
+                        FlipDial()
+                        FlipDial()
+                    }
+                    .aspectRatio(1, contentMode: .fit)
                 }
-                .padding(.top, 32)
+                .frame(maxHeight: .infinity)
             }
         }
         .padding(.bottom, 16)

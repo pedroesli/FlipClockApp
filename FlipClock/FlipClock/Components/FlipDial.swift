@@ -51,6 +51,7 @@ struct FlipDial: View {
 struct FlipDial_Previews: PreviewProvider {
     static var previews: some View {
         FlipDial()
+            .aspectRatio(1, contentMode: .fit)
             .padding(32)
     }
 }
