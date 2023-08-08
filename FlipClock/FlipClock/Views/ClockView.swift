@@ -14,35 +14,20 @@ struct ClockView: View {
     var body: some View {
         GeometryReader { geometry in
             if geometry.size.height > geometry.size.width {
-                // Portrait
                 VStack(spacing: 28) {
-                    Group {
-                        ZStack {
-                            NeoRoundedRectangle(configuration: .dial)
-                            GeometryReader { geometry in
-                                Text("10")
-                                    .frame(width: geometry.size.width, height: geometry.size.height)
-                                    .font(.system(size: geometry.size.height * 0.8, weight: .bold).width(.compressed))
-                                    .monospacedDigit()
-                            }
-                        }
-                        NeoRoundedRectangle(configuration: .dial)
-                        NeoRoundedRectangle(configuration: .dial)
-                    }
-                    .aspectRatio(1, contentMode: .fit)
+                    FlipDial()
+                    FlipDial()
+                    FlipDial()
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(.horizontal, 32)
             } else {
                 // Landscape
                 HStack(spacing: 28) {
-                    Group {
-                        NeoRoundedRectangle(configuration: .dial)
-                        NeoRoundedRectangle(configuration: .dial)
-                        NeoRoundedRectangle(configuration: .dial)
-                    }
-                    .aspectRatio(1, contentMode: .fit)
+                    FlipDial()
+                    FlipDial()
+                    FlipDial()
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(.top, 32)
             }
         }
         .padding(.bottom, 16)

@@ -16,26 +16,36 @@ struct FlipTextHalf: View {
     @State private var size: CGSize = .zero
     
     var body: some View {
-        Text(String(value))
-        .overlay {
-            GeometryReader { geometry in
+        GeometryReader { geometry in
+            ZStack {
+                let fontSize = (geometry.size.height + geometry.size.height / 2)
+                CornerRoundedRectangle(cornerRadius: 20, edges: placement.corners)
+                    .fill(Color.asset.background)
                 Text(String(value))
-                    .foregroundColor(.clear)
-                    .onAppear {
-                        size = geometry.size
+                    .font(.system(size: fontSize, weight: .bold, design: .default).width(.standard).monospacedDigit())
+                .overlay {
+                    GeometryReader { geometry in
+                        Color.clear
+                            .foregroundColor(.clear)
+                            .onAppear {
+                                size = geometry.size
+                            }
+                            .onChange(of: geometry.size) { newValue in
+                                size = newValue
+                            }
                     }
+                }
+                .frame(height: size.height / 2, alignment: placement.alignment)
+                .clipped()
+                .frame(width: geometry.size.width, height: geometry.size.height, alignment: alignment)
             }
         }
-        .frame(height: size.height / 2, alignment: placement.alignment)
-        .clipped()
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
-        .background(Color.asset.background, in: CornerRoundedRectangle(cornerRadius: 20, edges: placement.corners))
     }
 }
 
 struct FlipTextHalf_Previews: PreviewProvider {
     static var previews: some View {
-        HStack {
+        HStack(spacing: 0) {
             VStack(spacing: 0) {
                 FlipTextHalf(value: .constant("9"), placement: .top, alignment: .bottomTrailing)
                 FlipTextHalf(value: .constant("9"), placement: .bottom, alignment: .topTrailing)
@@ -45,11 +55,9 @@ struct FlipTextHalf_Previews: PreviewProvider {
                 FlipTextHalf(value: .constant("5"), placement: .bottom, alignment: .topLeading)
             }
         }
-        .font(.system(size: 100, weight: .bold, design: .rounded).width(.compressed).monospacedDigit())
-        .clipShape(RoundedRectangle(cornerRadius: 20))
         .overlay {
             Color.asset.background.frame(height: 4)
-//                .offset(y: -5)
         }
+        .padding()
     }
 }

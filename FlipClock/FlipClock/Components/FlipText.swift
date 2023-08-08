@@ -19,29 +19,27 @@ struct FlipText: View {
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
-                // Current Value
                 FlipTextHalf(value: $currentValue, placement: .top, alignment: placement.alignmentTop)
-                // Old value
                 FlipTextHalf(value: $previousValue, placement: .top, alignment: placement.alignmentTop)
                     .rotation3DEffect(
-                        Angle(degrees: animateTop ? -90 : .zero),
-                        axis: (1, 0, 0),
+                        Angle(degrees: animateTop ? -90.0 : .leastNonzeroMagnitude),
+                        axis: (1.0, 0.0, 0.0),
                         anchor: .bottom,
                         perspective: 0.5
                     )
             }
+//            .clipped()
             ZStack {
-                // Old value
                 FlipTextHalf(value: $previousValue, placement: .bottom, alignment: placement.alignmentBottom)
-                // Current Value
                 FlipTextHalf(value: $currentValue, placement: .bottom, alignment: placement.alignmentBottom)
                     .rotation3DEffect(
-                        Angle(degrees: animateBottom ? .zero : 90),
-                        axis: (1, 0, 0),
+                        Angle(degrees: animateBottom ? .leastNonzeroMagnitude : 90.0),
+                        axis: (1.0, 0.0, 0.0),
                         anchor: .top,
                         perspective: 0.5
                     )
             }
+//            .clipped()
         }
         .overlay {
             Color.asset.background.frame(height: 3)
@@ -52,26 +50,19 @@ struct FlipText: View {
         }
         .onChange(of: value) { newValue in
             guard currentValue != newValue else { return }
-            print("IN")
             previousValue = currentValue
             animateTop = false
             animateBottom = false
             
-            // MARK: Remove speed for production
-            withAnimation(Animation.easeIn(duration: 0.2).speed(0.5)) {
+            withAnimation(Animation.easeIn(duration: 0.3)) {
                 currentValue = newValue
                 animateTop = true
             }
 
-            withAnimation(Animation.easeOut(duration: 0.2).delay(0.2).speed(0.5)) {
+            withAnimation(Animation.easeOut(duration: 0.3).delay(0.3)) {
                 animateBottom = true
             }
         }
-// MARK: For testing
-//        .onTapGesture {
-//            let nextValue = value.wholeNumberValue! + 1
-//            value = Character(String(nextValue))
-//        }
     }
 }
 
@@ -79,13 +70,12 @@ struct FlipText_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             NeoRoundedRectangle(configuration: .dial)
-            HStack(spacing: 8) {
+            HStack(spacing: 0) {
                 FlipText(value: .constant("1"), placement: .right)
-                FlipText(value: .constant("3"), placement: .left)
+                FlipText(value: .constant("2"), placement: .left)
             }
             .font(.system(size: 200, weight: .bold, design: .rounded).width(.compressed).monospacedDigit())
             .padding(8)
         }
-        .frame(width: 300, height: 300)
     }
 }
