@@ -9,7 +9,8 @@ import SwiftUI
 
 struct FlipDial: View {
     
-    @State var value: String = "00"
+    @Binding var value: String
+    @Binding var hourFormat: HourFormat
     @State private var leftValue: Character = " "
     @State private var rightValue: Character = " "
     
@@ -17,25 +18,19 @@ struct FlipDial: View {
         ZStack {
             NeoRoundedRectangle(configuration: .dial)
             HStack(spacing: 0) {
-                FlipText(value: $leftValue, placement: .right)
-                FlipText(value: $rightValue, placement: .left)
+                if value.count == 1 {
+                    FlipText(value: $leftValue, placement: .center)
+                } else {
+                    FlipText(value: $leftValue, placement: .right)
+                    FlipText(value: $rightValue, placement: .left)
+                }
             }
-            .padding(10)
         }
         .onAppear {
             updateValues(from: value)
         }
         .onChange(of: value) { newValue in
             updateValues(from: newValue)
-        }
-        .onTapGesture {
-            // For testing
-            let nextValue = (Int(value) ?? 0) + 1
-            var stringValue = String(nextValue)
-            if stringValue.count == 1 {
-                stringValue.insert("0", at: stringValue.startIndex)
-            }
-            value = stringValue
         }
     }
     
@@ -50,7 +45,7 @@ struct FlipDial: View {
 
 struct FlipDial_Previews: PreviewProvider {
     static var previews: some View {
-        FlipDial()
+        FlipDial(value: .constant("00"), hourFormat: .constant(.military))
             .aspectRatio(1, contentMode: .fit)
             .padding(32)
     }

@@ -25,7 +25,7 @@ struct FlipText: View {
                         Angle(degrees: animateTop ? -90.0 : .leastNonzeroMagnitude),
                         axis: (1.0, 0.0, 0.0),
                         anchor: .bottom,
-                        perspective: 0.5
+                        perspective: 0
                     )
             }
 //            .clipped()
@@ -36,7 +36,7 @@ struct FlipText: View {
                         Angle(degrees: animateBottom ? .leastNonzeroMagnitude : 90.0),
                         axis: (1.0, 0.0, 0.0),
                         anchor: .top,
-                        perspective: 0.5
+                        perspective: 0
                     )
             }
 //            .clipped()
@@ -54,12 +54,12 @@ struct FlipText: View {
             animateTop = false
             animateBottom = false
             
-            withAnimation(Animation.easeIn(duration: 0.3)) {
+            withAnimation(Animation.easeIn(duration: 0.2)) {
                 currentValue = newValue
                 animateTop = true
             }
 
-            withAnimation(Animation.easeOut(duration: 0.3).delay(0.3)) {
+            withAnimation(Animation.easeOut(duration: 0.2).delay(0.2)) {
                 animateBottom = true
             }
         }
@@ -77,5 +77,6 @@ struct FlipText_Previews: PreviewProvider {
             .font(.system(size: 200, weight: .bold, design: .rounded).width(.compressed).monospacedDigit())
             .padding(8)
         }
+        .aspectRatio(1, contentMode: .fit)
     }
 }

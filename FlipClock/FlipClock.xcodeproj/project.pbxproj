@@ -14,6 +14,8 @@
 		377F536C2A81435F00A9FF3C /* CornerRoundedRectangle in Frameworks */ = {isa = PBXBuildFile; productRef = 377F536B2A81435F00A9FF3C /* CornerRoundedRectangle */; };
 		377F536E2A817DAA00A9FF3C /* FlipTextPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F536D2A817DAA00A9FF3C /* FlipTextPlacement.swift */; };
 		377F53702A8184F700A9FF3C /* FlipDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F536F2A8184F700A9FF3C /* FlipDial.swift */; };
+		377F53722A82C14600A9FF3C /* ClockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F53712A82C14600A9FF3C /* ClockManager.swift */; };
+		377F53782A82EAAF00A9FF3C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F53772A82EAAF00A9FF3C /* Date+Extensions.swift */; };
 		378CD2FD2A7D55D4000B324F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD2FC2A7D55D3000B324F /* ClockView.swift */; };
 		378CD2FF2A803722000B324F /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD2FE2A803722000B324F /* NavBar.swift */; };
 		378CD3012A8053F1000B324F /* FlipTextHalf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD3002A8053F1000B324F /* FlipTextHalf.swift */; };
@@ -45,6 +47,8 @@
 		37313E542A6B6B5B00D3C058 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		377F536D2A817DAA00A9FF3C /* FlipTextPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextPlacement.swift; sourceTree = "<group>"; };
 		377F536F2A8184F700A9FF3C /* FlipDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipDial.swift; sourceTree = "<group>"; };
+		377F53712A82C14600A9FF3C /* ClockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockManager.swift; sourceTree = "<group>"; };
+		377F53772A82EAAF00A9FF3C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		378CD2FC2A7D55D3000B324F /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		378CD2FE2A803722000B324F /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		378CD3002A8053F1000B324F /* FlipTextHalf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextHalf.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				37ADE3932A73303B00FA4139 /* SettingsManager.swift */,
+				377F53712A82C14600A9FF3C /* ClockManager.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				3795BB4F2A7BE48F0067BBFD /* Color+Extensions.swift */,
+				377F53772A82EAAF00A9FF3C /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 				378CD3092A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift in Sources */,
 				378CD2FD2A7D55D4000B324F /* ClockView.swift in Sources */,
 				377F53702A8184F700A9FF3C /* FlipDial.swift in Sources */,
+				377F53722A82C14600A9FF3C /* ClockManager.swift in Sources */,
 				37ADE3902A7308F100FA4139 /* PaletteColor.swift in Sources */,
 				3795BB452A7ACFFF0067BBFD /* ConfigurationView.swift in Sources */,
 				37ADE38C2A72FE0B00FA4139 /* Settings.swift in Sources */,
@@ -301,6 +308,7 @@
 				377F536E2A817DAA00A9FF3C /* FlipTextPlacement.swift in Sources */,
 				37313E4D2A6B6B5900D3C058 /* FlipClockApp.swift in Sources */,
 				3795BB4E2A7B3C140067BBFD /* TabBar.swift in Sources */,
+				377F53782A82EAAF00A9FF3C /* Date+Extensions.swift in Sources */,
 				378CD3052A80557B000B324F /* FlipTextHalfPlacement.swift in Sources */,
 				379D96932A7C3C9A00376455 /* NeoRoundedRectangle.swift in Sources */,
 				3795BB482A7AEE4B0067BBFD /* ColorCircle.swift in Sources */,

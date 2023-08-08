@@ -16,7 +16,14 @@ class SettingsManager: ObservableObject {
     var appColor: Color {
         settings.appColorInfo.color
     }
+    var displayColor: Color {
+        settings.displayColorInfo.color
+    }
     private static let settingsKey = "SettingsKey"
+    
+    func formatHour(from date: Date) -> String {
+        return settings.hourFormat.formatHour(from: date)
+    }
     
     private func save() {
         guard let data = try? JSONEncoder().encode(settings) else { return }

@@ -16,4 +16,32 @@ enum HourFormat: Codable, Identifiable {
     case twoPeriods
     
     var id: Self { self }
+    
+    var is24HourFormat: Bool {
+        if self == .military {
+            return true
+        }
+        if self == .system {
+            let formater = DateFormatter()
+            formater.timeStyle = .short
+            if formater.dateFormat.contains("a") {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func formatHour(from date: Date) -> String {
+        switch self {
+        case .system:
+            if self.is24HourFormat {
+                return date.formatted("h")
+            }
+            return date.formatted("H")
+        case .military:
+            return date.formatted("H")
+        case .twoPeriods:
+            return date.formatted("h")
+        }
+    }
 }

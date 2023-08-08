@@ -11,18 +11,23 @@ struct ClockView: View {
     
     @Binding var showAllViews: Bool
     @EnvironmentObject private var settingsManager: SettingsManager
+    @StateObject private var clockManager = ClockManager()
+    @State private var hour = "00"
+    @State private var minute = "00"
+    @State private var seconds = "00"
     
     var body: some View {
         GeometryReader { geometry in
             if geometry.size.height > geometry.size.width {
                 VStack(spacing: 28) {
                     Group {
-                        FlipDial()
-                        FlipDial()
+                        FlipDial(value: $hour, hourFormat: $settingsManager.settings.hourFormat)
+                        FlipDial(value: $minute, hourFormat: $settingsManager.settings.hourFormat)
                         if settingsManager.settings.displaySeconds {
-                            FlipDial()
+                            FlipDial(value: $seconds, hourFormat: $settingsManager.settings.hourFormat)
                         }
                     }
+                    .foregroundColor(settingsManager.displayColor)
                     .aspectRatio(1, contentMode: .fit)
                 }
                 .frame(maxWidth: .infinity)
@@ -31,10 +36,10 @@ struct ClockView: View {
                 // Landscape
                 HStack(spacing: 28) {
                     Group {
-                        FlipDial()
-                        FlipDial()
+                        FlipDial(value: .constant("00"), hourFormat: $settingsManager.settings.hourFormat)
+                        FlipDial(value: .constant("00"), hourFormat: $settingsManager.settings.hourFormat)
                         if settingsManager.settings.displaySeconds {
-                            FlipDial()
+                            FlipDial(value: .constant("00"), hourFormat: $settingsManager.settings.hourFormat)
                         }
                     }
                     .aspectRatio(1, contentMode: .fit)
@@ -52,6 +57,16 @@ struct ClockView: View {
                     }
                 }
         }
+        .onAppear {
+            hour = settingsManager.formatHour(from: clockManager.time)
+            minute = clockManager.time.formatted("mm")
+            seconds = clockManager.time.formatted("ss")
+        }
+        .onChange(of: clockManager.time) { newValue in
+            hour = settingsManager.formatHour(from: newValue)
+            minute = newValue.formatted("mm")
+            seconds = newValue.formatted("ss")
+        }
     }
 }
 
@@ -61,6 +76,7 @@ struct ClockView_Previews: PreviewProvider {
             Color.asset.background.ignoresSafeArea()
             ClockView(showAllViews: .constant(false))
                 .environmentObject(SettingsManager())
+                .environmentObject(ClockManager())
         }
     }
 }
