@@ -10,6 +10,7 @@ import SwiftUI
 struct ClockView: View {
     
     @Binding var showAllViews: Bool
+    @EnvironmentObject private var settingsManager: SettingsManager
     
     var body: some View {
         GeometryReader { geometry in
@@ -18,7 +19,9 @@ struct ClockView: View {
                     Group {
                         FlipDial()
                         FlipDial()
-                        FlipDial()
+                        if settingsManager.settings.displaySeconds {
+                            FlipDial()
+                        }
                     }
                     .aspectRatio(1, contentMode: .fit)
                 }
@@ -30,7 +33,9 @@ struct ClockView: View {
                     Group {
                         FlipDial()
                         FlipDial()
-                        FlipDial()
+                        if settingsManager.settings.displaySeconds {
+                            FlipDial()
+                        }
                     }
                     .aspectRatio(1, contentMode: .fit)
                 }
@@ -55,6 +60,7 @@ struct ClockView_Previews: PreviewProvider {
         ZStack {
             Color.asset.background.ignoresSafeArea()
             ClockView(showAllViews: .constant(false))
+                .environmentObject(SettingsManager())
         }
     }
 }
