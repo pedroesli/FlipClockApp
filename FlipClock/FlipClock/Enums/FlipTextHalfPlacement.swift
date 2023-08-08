@@ -25,4 +25,11 @@ enum FlipTextHalfPlacement {
         case .bottom: return .bottom
         }
     }
+    
+    var edges: Edge.Set {
+        switch self {
+        case .top: return .top
+        case .bottom: return .bottom
+        }
+    }
 }
