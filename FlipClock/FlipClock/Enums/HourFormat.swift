@@ -25,7 +25,7 @@ enum HourFormat: Codable, Identifiable {
             let formater = DateFormatter()
             formater.timeStyle = .short
             if formater.dateFormat.contains("a") {
-                return true
+                return false
             }
         }
         return false
@@ -35,9 +35,9 @@ enum HourFormat: Codable, Identifiable {
         switch self {
         case .system:
             if self.is24HourFormat {
-                return date.formatted("h")
+                return date.formatted("H")
             }
-            return date.formatted("H")
+            return date.formatted("h")
         case .military:
             return date.formatted("H")
         case .twoPeriods:

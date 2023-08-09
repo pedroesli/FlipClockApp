@@ -9,12 +9,14 @@ import SwiftUI
 
 struct FlipText: View {
     
-    @Binding var value: Character
+    @Binding var info: FlipTextInfo
     let placement: FlipTextPlacement
     @State private var animateTop: Bool = false
     @State private var animateBottom: Bool = false
-    @State private var currentValue: Character = " "
-    @State private var previousValue: Character = " "
+    @State private var currentValue: String = " "
+    @State private var previousValue: String = " "
+    @State private var currentPeriodText: String = ""
+    @State private var previousPeriodText: String = ""
     
     var body: some View {
         VStack(spacing: 0) {
@@ -28,10 +30,23 @@ struct FlipText: View {
                         perspective: 0
                     )
             }
-//            .clipped()
             ZStack {
                 FlipTextHalf(value: $previousValue, placement: .bottom, alignment: placement.alignmentBottom)
+                    .overlay {
+                        Text(previousPeriodText)
+                            .font(.system(size: 32).bold().width(.compressed))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                            .padding(.leading, 20)
+                            .padding(.bottom, 16)
+                    }
                 FlipTextHalf(value: $currentValue, placement: .bottom, alignment: placement.alignmentBottom)
+                    .overlay {
+                        Text(currentPeriodText)
+                            .font(.system(size: 20).bold().width(.compressed))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                            .padding(.leading, 20)
+                            .padding(.bottom, 16)
+                    }
                     .rotation3DEffect(
                         Angle(degrees: animateBottom ? .leastNonzeroMagnitude : 90.0),
                         axis: (1.0, 0.0, 0.0),
@@ -39,16 +54,19 @@ struct FlipText: View {
                         perspective: 0
                     )
             }
-//            .clipped()
         }
         .overlay {
             Color.asset.background.frame(height: 3)
         }
         .onAppear {
-            currentValue = value
-            previousValue = value
+            currentValue = info.value
+            previousValue = info.value
+            
+            guard let periodText = info.periodText else { return }
+            currentPeriodText = periodText
+            previousPeriodText = periodText
         }
-        .onChange(of: value) { newValue in
+        .onChange(of: info.value) { newValue in
             guard currentValue != newValue else { return }
             previousValue = currentValue
             animateTop = false
@@ -63,6 +81,16 @@ struct FlipText: View {
                 animateBottom = true
             }
         }
+        .onChange(of: info.periodText) { newValue in
+            guard let newValue else {
+                previousPeriodText = ""
+                currentPeriodText = ""
+                return
+            }
+            guard currentPeriodText != newValue else { return }
+            previousPeriodText = currentPeriodText
+            currentPeriodText = newValue
+        }
     }
 }
 
@@ -71,12 +99,12 @@ struct FlipText_Previews: PreviewProvider {
         ZStack {
             NeoRoundedRectangle(configuration: .dial)
             HStack(spacing: 0) {
-                FlipText(value: .constant("1"), placement: .right)
-                FlipText(value: .constant("2"), placement: .left)
+                FlipText(info: .constant(FlipTextInfo(value: "1", periodText: "PM")), placement: .right)
+                FlipText(info: .constant(FlipTextInfo(value: "2")), placement: .left)
             }
             .font(.system(size: 200, weight: .bold, design: .rounded).width(.compressed).monospacedDigit())
-            .padding(8)
         }
         .aspectRatio(1, contentMode: .fit)
+        .padding(8)
     }
 }

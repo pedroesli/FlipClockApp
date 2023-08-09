@@ -12,19 +12,19 @@ struct ClockView: View {
     @Binding var showAllViews: Bool
     @EnvironmentObject private var settingsManager: SettingsManager
     @StateObject private var clockManager = ClockManager()
-    @State private var hour = "00"
-    @State private var minute = "00"
-    @State private var seconds = "00"
+    @State private var hour = FlipTextInfo(value: "00")
+    @State private var minute = FlipTextInfo(value: "00")
+    @State private var seconds = FlipTextInfo(value: "00")
     
     var body: some View {
         GeometryReader { geometry in
             if geometry.size.height > geometry.size.width {
                 VStack(spacing: 28) {
                     Group {
-                        FlipDial(value: $hour, hourFormat: $settingsManager.settings.hourFormat)
-                        FlipDial(value: $minute, hourFormat: $settingsManager.settings.hourFormat)
+                        FlipDial(info: $hour)
+                        FlipDial(info: $minute)
                         if settingsManager.settings.displaySeconds {
-                            FlipDial(value: $seconds, hourFormat: $settingsManager.settings.hourFormat)
+                            FlipDial(info: $seconds)
                         }
                     }
                     .foregroundColor(settingsManager.displayColor)
@@ -36,10 +36,10 @@ struct ClockView: View {
                 // Landscape
                 HStack(spacing: 28) {
                     Group {
-                        FlipDial(value: .constant("00"), hourFormat: $settingsManager.settings.hourFormat)
-                        FlipDial(value: .constant("00"), hourFormat: $settingsManager.settings.hourFormat)
+                        FlipDial(info: $hour)
+                        FlipDial(info: $minute)
                         if settingsManager.settings.displaySeconds {
-                            FlipDial(value: .constant("00"), hourFormat: $settingsManager.settings.hourFormat)
+                            FlipDial(info: $seconds)
                         }
                     }
                     .aspectRatio(1, contentMode: .fit)
@@ -58,14 +58,21 @@ struct ClockView: View {
                 }
         }
         .onAppear {
-            hour = settingsManager.formatHour(from: clockManager.time)
-            minute = clockManager.time.formatted("mm")
-            seconds = clockManager.time.formatted("ss")
+            let periodText = clockManager.time.periodText(is24HourFormat: settingsManager.settings.hourFormat.is24HourFormat)
+            hour = FlipTextInfo(value: settingsManager.formatHour(from: clockManager.time), periodText: periodText)
+            minute = FlipTextInfo(value: clockManager.time.formatted("mm"))
+            seconds = FlipTextInfo(value: clockManager.time.formatted("ss"))
         }
         .onChange(of: clockManager.time) { newValue in
-            hour = settingsManager.formatHour(from: newValue)
-            minute = newValue.formatted("mm")
-            seconds = newValue.formatted("ss")
+            let periodText = newValue.periodText(is24HourFormat: settingsManager.settings.hourFormat.is24HourFormat)
+            hour = FlipTextInfo(value: settingsManager.formatHour(from: newValue), periodText: periodText)
+            minute = FlipTextInfo(value: clockManager.time.formatted("mm"))
+            seconds = FlipTextInfo(value: clockManager.time.formatted("ss"))
+        }
+        .onChange(of: settingsManager.settings.hourFormat) { newValue in
+            let periodText = clockManager.time.periodText(is24HourFormat: newValue.is24HourFormat)
+            hour.value = settingsManager.formatHour(from: clockManager.time)
+            hour.periodText = periodText
         }
     }
 }

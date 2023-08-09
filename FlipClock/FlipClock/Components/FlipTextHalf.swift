@@ -10,7 +10,7 @@ import CornerRoundedRectangle
 
 struct FlipTextHalf: View {
     
-    @Binding var value: Character
+    @Binding var value: String
     let placement: FlipTextHalfPlacement
     let alignment: Alignment
     @State private var size: CGSize = .zero
@@ -22,7 +22,7 @@ struct FlipTextHalf: View {
                 CornerRoundedRectangle(cornerRadius: 20, edges: placement.corners)
                     .fill(Color.asset.background)
                     .padding(padding(alignment: alignment), 10)
-                Text(String(value))
+                Text(value)
                     .font(.system(size: fontSize, weight: .bold, design: .default).width(.compressed).monospacedDigit())
                 .overlay {
                     GeometryReader { geometry in

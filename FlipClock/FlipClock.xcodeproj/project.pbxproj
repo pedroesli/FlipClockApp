@@ -16,6 +16,7 @@
 		377F53702A8184F700A9FF3C /* FlipDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F536F2A8184F700A9FF3C /* FlipDial.swift */; };
 		377F53722A82C14600A9FF3C /* ClockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F53712A82C14600A9FF3C /* ClockManager.swift */; };
 		377F53782A82EAAF00A9FF3C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F53772A82EAAF00A9FF3C /* Date+Extensions.swift */; };
+		377F537A2A831BD000A9FF3C /* FlipTextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F53792A831BD000A9FF3C /* FlipTextInfo.swift */; };
 		378CD2FD2A7D55D4000B324F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD2FC2A7D55D3000B324F /* ClockView.swift */; };
 		378CD2FF2A803722000B324F /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD2FE2A803722000B324F /* NavBar.swift */; };
 		378CD3012A8053F1000B324F /* FlipTextHalf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD3002A8053F1000B324F /* FlipTextHalf.swift */; };
@@ -49,6 +50,7 @@
 		377F536F2A8184F700A9FF3C /* FlipDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipDial.swift; sourceTree = "<group>"; };
 		377F53712A82C14600A9FF3C /* ClockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockManager.swift; sourceTree = "<group>"; };
 		377F53772A82EAAF00A9FF3C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		377F53792A831BD000A9FF3C /* FlipTextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextInfo.swift; sourceTree = "<group>"; };
 		378CD2FC2A7D55D3000B324F /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		378CD2FE2A803722000B324F /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		378CD3002A8053F1000B324F /* FlipTextHalf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextHalf.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				37ADE38B2A72FE0B00FA4139 /* Settings.swift */,
 				37ADE38D2A73040400FA4139 /* ColorInfo.swift */,
 				378CD3082A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift */,
+				377F53792A831BD000A9FF3C /* FlipTextInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				379D96932A7C3C9A00376455 /* NeoRoundedRectangle.swift in Sources */,
 				3795BB482A7AEE4B0067BBFD /* ColorCircle.swift in Sources */,
 				378CD3032A805562000B324F /* FlipText.swift in Sources */,
+				377F537A2A831BD000A9FF3C /* FlipTextInfo.swift in Sources */,
 				3795BB4A2A7B26F80067BBFD /* CircleColorPicker.swift in Sources */,
 				3795BB4C2A7B2C5B0067BBFD /* ColorInfoSelector.swift in Sources */,
 			);

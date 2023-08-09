@@ -13,4 +13,8 @@ extension Date {
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
+    
+    func periodText(is24HourFormat: Bool) -> String? {
+        return is24HourFormat ? nil : self.formatted("a")
+    }
 }
