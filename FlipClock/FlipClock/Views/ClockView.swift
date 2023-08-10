@@ -11,7 +11,7 @@ struct ClockView: View {
     
     @Binding var showAllViews: Bool
     @EnvironmentObject private var settingsManager: SettingsManager
-    @StateObject private var clockManager = ClockManager()
+    @EnvironmentObject private var clockManager: ClockManager
     @State private var hour = FlipTextInfo(value: "00")
     @State private var minute = FlipTextInfo(value: "00")
     @State private var seconds = FlipTextInfo(value: "00")

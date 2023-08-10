@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject private var settingsManager = SettingsManager()
+    @StateObject private var clockManager = ClockManager()
     @State private var showSettingsView = false
     @State private var selectedTabOption: TabOption = .clock
     @State private var showAllViews = false
@@ -23,7 +24,14 @@ struct ContentView: View {
                         NavBar(safeAreaInsets: geometry.safeAreaInsets, showNavBar: $showAllViews) {
                             onSettingsButtonPressed()
                         }
-                        ClockView(showAllViews: $showAllViews)
+                        if selectedTabOption == .clock {
+                            ClockView(showAllViews: $showAllViews)
+                                .environmentObject(clockManager)
+                        } else if selectedTabOption == .stopwatch {
+                            Color.green
+                        } else {
+                            Color.yellow
+                        }
                         TabBar(selectedTabOption: $selectedTabOption)
                             .offset(y: showAllViews ? 0 : geometry.safeAreaInsets.bottom * 2)
                             .frame(height: showAllViews ? nil : 0)
