@@ -37,7 +37,6 @@ struct ContentView: View {
         .tint(settingsManager.appColor)
         .environmentObject(settingsManager)
     }
-    
     func onSettingsButtonPressed() {
         showSettingsView = true
     }

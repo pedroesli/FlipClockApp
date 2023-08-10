@@ -33,19 +33,23 @@ struct FlipText: View {
             ZStack {
                 FlipTextHalf(value: $previousValue, placement: .bottom, alignment: placement.alignmentBottom)
                     .overlay {
-                        Text(previousPeriodText)
-                            .font(.system(size: 32).bold().width(.compressed))
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                            .padding(.leading, 20)
-                            .padding(.bottom, 16)
+                        GeometryReader { geometry in
+                            Text(previousPeriodText)
+                                .font(.system(size: geometry.size.height / 5).bold().width(.compressed))
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                                .padding(.leading, 20)
+                                .padding(.bottom, 16)
+                        }
                     }
                 FlipTextHalf(value: $currentValue, placement: .bottom, alignment: placement.alignmentBottom)
                     .overlay {
-                        Text(currentPeriodText)
-                            .font(.system(size: 20).bold().width(.compressed))
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                            .padding(.leading, 20)
-                            .padding(.bottom, 16)
+                        GeometryReader { geometry in
+                            Text(previousPeriodText)
+                                .font(.system(size: geometry.size.height / 5).bold().width(.compressed))
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                                .padding(.leading, 20)
+                                .padding(.bottom, 16)
+                        }
                     }
                     .rotation3DEffect(
                         Angle(degrees: animateBottom ? .leastNonzeroMagnitude : 90.0),
