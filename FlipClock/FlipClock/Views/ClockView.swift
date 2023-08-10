@@ -12,19 +12,16 @@ struct ClockView: View {
     @Binding var showAllViews: Bool
     @EnvironmentObject private var settingsManager: SettingsManager
     @EnvironmentObject private var clockManager: ClockManager
-    @State private var hour = FlipTextInfo(value: "00")
-    @State private var minute = FlipTextInfo(value: "00")
-    @State private var seconds = FlipTextInfo(value: "00")
     
     var body: some View {
         GeometryReader { geometry in
             if geometry.size.height > geometry.size.width {
                 VStack(spacing: 28) {
                     Group {
-                        FlipDial(info: $hour)
-                        FlipDial(info: $minute)
+                        FlipDial(info: $clockManager.hour)
+                        FlipDial(info: $clockManager.minute)
                         if settingsManager.settings.displaySeconds {
-                            FlipDial(info: $seconds)
+                            FlipDial(info: $clockManager.seconds)
                         }
                     }
                     .foregroundColor(settingsManager.displayColor)
@@ -36,10 +33,10 @@ struct ClockView: View {
                 // Landscape
                 HStack(spacing: 28) {
                     Group {
-                        FlipDial(info: $hour)
-                        FlipDial(info: $minute)
+                        FlipDial(info: $clockManager.hour)
+                        FlipDial(info: $clockManager.minute)
                         if settingsManager.settings.displaySeconds {
-                            FlipDial(info: $seconds)
+                            FlipDial(info: $clockManager.seconds)
                         }
                     }
                     .aspectRatio(1, contentMode: .fit)
@@ -58,23 +55,11 @@ struct ClockView: View {
                 }
         }
         .onAppear {
-            updateDials(with: clockManager.time)
-        }
-        .onChange(of: clockManager.time) { newValue in
-            updateDials(with: newValue)
+            clockManager.onAppear(settingsManager: settingsManager)
         }
         .onChange(of: settingsManager.settings.hourFormat) { newValue in
-            let periodText = clockManager.time.periodText(is24HourFormat: newValue.is24HourFormat)
-            hour.value = settingsManager.formatHour(from: clockManager.time)
-            hour.periodText = periodText
+            clockManager.onHourFormatChange(newValue)
         }
-    }
-    
-    func updateDials(with date: Date) {
-        let periodText = date.periodText(is24HourFormat: settingsManager.settings.hourFormat.is24HourFormat)
-        hour = FlipTextInfo(value: settingsManager.formatHour(from: date), periodText: periodText)
-        minute = FlipTextInfo(value: date.formatted("mm"))
-        seconds = FlipTextInfo(value: date.formatted("ss"))
     }
 }
 

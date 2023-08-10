@@ -15,6 +15,7 @@ struct StopWatchView: View {
     @State private var hour = FlipTextInfo(value: "00")
     @State private var minute = FlipTextInfo(value: "00")
     @State private var seconds = FlipTextInfo(value: "00")
+    @State private var miliseconds = FlipTextInfo(value: "00")
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
