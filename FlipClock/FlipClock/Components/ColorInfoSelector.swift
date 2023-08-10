@@ -48,6 +48,10 @@ struct ColorInfoSelector: View {
         .onAppear {
             selectedAssetColor = selectedColorInfo.assetColor
         }
+        .onChange(of: selectedColorInfo) { newValue in
+            guard newValue.assetColor != selectedAssetColor else { return }
+            selectedAssetColor = newValue.assetColor
+        }
         .buttonStyle(.plain)
     }
     

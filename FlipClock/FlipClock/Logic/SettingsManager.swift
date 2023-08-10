@@ -25,6 +25,10 @@ class SettingsManager: ObservableObject {
         return settings.hourFormat.formatHour(from: date)
     }
     
+    func resetSettings() {
+        settings = Settings()
+    }
+    
     private func save() {
         guard let data = try? JSONEncoder().encode(settings) else { return }
         UserDefaults.standard.set(data, forKey: Self.settingsKey)

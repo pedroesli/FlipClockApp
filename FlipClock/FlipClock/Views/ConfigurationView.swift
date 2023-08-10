@@ -12,6 +12,7 @@ struct ConfigurationView: View {
     
     @EnvironmentObject var settingsManager: SettingsManager
     @Environment(\.requestReview) private var requestReview
+    @State private var showSettingsResetAlert = false
     
     var toggleTint: Color {
         guard let paletteColor = settingsManager.settings.appColorInfo.assetColor,
@@ -49,6 +50,11 @@ struct ConfigurationView: View {
                     }
                 }
             }
+            Section("General") {
+                Button("Default settings") {
+                    showSettingsResetAlert = true
+                }
+            }
             Section {
                 Text("Made with ❤️☕️ by Pedro Ésli")
                     .font(.subheadline)
@@ -56,7 +62,16 @@ struct ConfigurationView: View {
                     .frame(maxWidth: .infinity)
                     .listRowBackground(EmptyView())
             }
+            .confirmationDialog("Are you sure you want to reset to the default settings?", isPresented: $showSettingsResetAlert) {
+                Button("Reset", role: .destructive) {
+                    settingsManager.resetSettings()
+                }
+            } message: {
+                Text("Reset to default settings")
+            }
+
         }
+        .foregroundColor(.primary)
         .navigationTitle("Configuration")
     }
 }

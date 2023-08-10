@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ColorInfo: Codable {
+struct ColorInfo: Codable, Equatable {
     
     let assetColor: PaletteColor?
     let red: Double?
