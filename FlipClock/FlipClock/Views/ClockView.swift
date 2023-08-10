@@ -58,22 +58,23 @@ struct ClockView: View {
                 }
         }
         .onAppear {
-            let periodText = clockManager.time.periodText(is24HourFormat: settingsManager.settings.hourFormat.is24HourFormat)
-            hour = FlipTextInfo(value: settingsManager.formatHour(from: clockManager.time), periodText: periodText)
-            minute = FlipTextInfo(value: clockManager.time.formatted("mm"))
-            seconds = FlipTextInfo(value: clockManager.time.formatted("ss"))
+            updateDials(with: clockManager.time)
         }
         .onChange(of: clockManager.time) { newValue in
-            let periodText = newValue.periodText(is24HourFormat: settingsManager.settings.hourFormat.is24HourFormat)
-            hour = FlipTextInfo(value: settingsManager.formatHour(from: newValue), periodText: periodText)
-            minute = FlipTextInfo(value: clockManager.time.formatted("mm"))
-            seconds = FlipTextInfo(value: clockManager.time.formatted("ss"))
+            updateDials(with: newValue)
         }
         .onChange(of: settingsManager.settings.hourFormat) { newValue in
             let periodText = clockManager.time.periodText(is24HourFormat: newValue.is24HourFormat)
             hour.value = settingsManager.formatHour(from: clockManager.time)
             hour.periodText = periodText
         }
+    }
+    
+    func updateDials(with date: Date) {
+        let periodText = date.periodText(is24HourFormat: settingsManager.settings.hourFormat.is24HourFormat)
+        hour = FlipTextInfo(value: settingsManager.formatHour(from: date), periodText: periodText)
+        minute = FlipTextInfo(value: date.formatted("mm"))
+        seconds = FlipTextInfo(value: date.formatted("ss"))
     }
 }
 
