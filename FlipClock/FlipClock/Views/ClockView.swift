@@ -14,37 +14,19 @@ struct ClockView: View {
     @EnvironmentObject private var clockManager: ClockManager
     
     var body: some View {
-        GeometryReader { geometry in
-            if geometry.size.height > geometry.size.width {
-                VStack(spacing: 28) {
-                    Group {
-                        FlipDial(info: $clockManager.hour)
-                        FlipDial(info: $clockManager.minute)
-                        if settingsManager.settings.displaySeconds {
-                            FlipDial(info: $clockManager.second)
-                        }
-                    }
-                    .foregroundColor(settingsManager.displayColor)
-                    .aspectRatio(1, contentMode: .fit)
+        VStack(spacing: 28) {
+            Group {
+                FlipDial(info: $clockManager.hour)
+                FlipDial(info: $clockManager.minute)
+                if settingsManager.settings.displaySeconds {
+                    FlipDial(info: $clockManager.second)
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 19)
-            } else {
-                // Landscape
-                HStack(spacing: 28) {
-                    Group {
-                        FlipDial(info: $clockManager.hour)
-                        FlipDial(info: $clockManager.minute)
-                        if settingsManager.settings.displaySeconds {
-                            FlipDial(info: $clockManager.second)
-                        }
-                    }
-                    .foregroundColor(settingsManager.displayColor)
-                    .aspectRatio(1, contentMode: .fit)
-                }
-                .frame(maxHeight: .infinity)
             }
+            .foregroundColor(settingsManager.displayColor)
+            .aspectRatio(1, contentMode: .fit)
         }
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 19)
         .padding(.bottom, 16)
         .onOverlayTap {
             showAllViews.toggle()
