@@ -25,6 +25,12 @@
 		378CD3092A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD3082A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift */; };
 		37934D982A857BD90043A851 /* StopWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37934D972A857BD90043A851 /* StopWatchView.swift */; };
 		3794DCD52A8587B60063D9BE /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCD42A8587B60063D9BE /* StopWatchManager.swift */; };
+		3794DCD72A85B4C90063D9BE /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCD62A85B4C90063D9BE /* CapsuleButton.swift */; };
+		3794DCD92A85B83B0063D9BE /* OverlayTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCD82A85B83B0063D9BE /* OverlayTap.swift */; };
+		3794DCDB2A85B8EB0063D9BE /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCDA2A85B8EB0063D9BE /* View+Extensions.swift */; };
+		3794DCDD2A85B9E40063D9BE /* StopWatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCDC2A85B9E40063D9BE /* StopWatchState.swift */; };
+		3794DCE12A85C7C30063D9BE /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCE02A85C7C30063D9BE /* TimeInterval+Extensions.swift */; };
+		3794DCE32A85C8C60063D9BE /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCE22A85C8C60063D9BE /* Int+Extensions.swift */; };
 		3795BB452A7ACFFF0067BBFD /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB442A7ACFFF0067BBFD /* ConfigurationView.swift */; };
 		3795BB482A7AEE4B0067BBFD /* ColorCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB472A7AEE4B0067BBFD /* ColorCircle.swift */; };
 		3795BB4A2A7B26F80067BBFD /* CircleColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */; };
@@ -61,6 +67,12 @@
 		378CD3082A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoRoundedRectangleConfiguration.swift; sourceTree = "<group>"; };
 		37934D972A857BD90043A851 /* StopWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchView.swift; sourceTree = "<group>"; };
 		3794DCD42A8587B60063D9BE /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
+		3794DCD62A85B4C90063D9BE /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
+		3794DCD82A85B83B0063D9BE /* OverlayTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayTap.swift; sourceTree = "<group>"; };
+		3794DCDA2A85B8EB0063D9BE /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		3794DCDC2A85B9E40063D9BE /* StopWatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchState.swift; sourceTree = "<group>"; };
+		3794DCE02A85C7C30063D9BE /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
+		3794DCE22A85C8C60063D9BE /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		3795BB442A7ACFFF0067BBFD /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		3795BB472A7AEE4B0067BBFD /* ColorCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircle.swift; sourceTree = "<group>"; };
 		3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPicker.swift; sourceTree = "<group>"; };
@@ -143,6 +155,8 @@
 				378CD3002A8053F1000B324F /* FlipTextHalf.swift */,
 				378CD3022A805562000B324F /* FlipText.swift */,
 				377F536F2A8184F700A9FF3C /* FlipDial.swift */,
+				3794DCD62A85B4C90063D9BE /* CapsuleButton.swift */,
+				3794DCD82A85B83B0063D9BE /* OverlayTap.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -155,6 +169,7 @@
 				379D968A2A7BF27000376455 /* TabOption.swift */,
 				378CD3042A80557B000B324F /* FlipTextHalfPlacement.swift */,
 				377F536D2A817DAA00A9FF3C /* FlipTextPlacement.swift */,
+				3794DCDC2A85B9E40063D9BE /* StopWatchState.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -196,6 +211,9 @@
 			children = (
 				3795BB4F2A7BE48F0067BBFD /* Color+Extensions.swift */,
 				377F53772A82EAAF00A9FF3C /* Date+Extensions.swift */,
+				3794DCDA2A85B8EB0063D9BE /* View+Extensions.swift */,
+				3794DCE02A85C7C30063D9BE /* TimeInterval+Extensions.swift */,
+				3794DCE22A85C8C60063D9BE /* Int+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -299,17 +317,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3794DCD92A85B83B0063D9BE /* OverlayTap.swift in Sources */,
+				3794DCDB2A85B8EB0063D9BE /* View+Extensions.swift in Sources */,
 				379D968B2A7BF27000376455 /* TabOption.swift in Sources */,
+				3794DCE32A85C8C60063D9BE /* Int+Extensions.swift in Sources */,
 				378CD3092A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift in Sources */,
 				378CD2FD2A7D55D4000B324F /* ClockView.swift in Sources */,
 				377F53702A8184F700A9FF3C /* FlipDial.swift in Sources */,
 				377F53722A82C14600A9FF3C /* ClockManager.swift in Sources */,
+				3794DCE12A85C7C30063D9BE /* TimeInterval+Extensions.swift in Sources */,
 				37ADE3902A7308F100FA4139 /* PaletteColor.swift in Sources */,
 				3795BB452A7ACFFF0067BBFD /* ConfigurationView.swift in Sources */,
 				37ADE38C2A72FE0B00FA4139 /* Settings.swift in Sources */,
 				378CD2FF2A803722000B324F /* NavBar.swift in Sources */,
 				378CD3012A8053F1000B324F /* FlipTextHalf.swift in Sources */,
 				37ADE3922A73110B00FA4139 /* HourFormat.swift in Sources */,
+				3794DCDD2A85B9E40063D9BE /* StopWatchState.swift in Sources */,
 				37ADE3942A73303B00FA4139 /* SettingsManager.swift in Sources */,
 				37934D982A857BD90043A851 /* StopWatchView.swift in Sources */,
 				37ADE38E2A73040400FA4139 /* ColorInfo.swift in Sources */,
@@ -318,6 +341,7 @@
 				377F536E2A817DAA00A9FF3C /* FlipTextPlacement.swift in Sources */,
 				3794DCD52A8587B60063D9BE /* StopWatchManager.swift in Sources */,
 				37313E4D2A6B6B5900D3C058 /* FlipClockApp.swift in Sources */,
+				3794DCD72A85B4C90063D9BE /* CapsuleButton.swift in Sources */,
 				3795BB4E2A7B3C140067BBFD /* TabBar.swift in Sources */,
 				377F53782A82EAAF00A9FF3C /* Date+Extensions.swift in Sources */,
 				378CD3052A80557B000B324F /* FlipTextHalfPlacement.swift in Sources */,

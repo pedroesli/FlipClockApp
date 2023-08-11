@@ -21,14 +21,14 @@ struct ClockView: View {
                         FlipDial(info: $clockManager.hour)
                         FlipDial(info: $clockManager.minute)
                         if settingsManager.settings.displaySeconds {
-                            FlipDial(info: $clockManager.seconds)
+                            FlipDial(info: $clockManager.second)
                         }
                     }
                     .foregroundColor(settingsManager.displayColor)
                     .aspectRatio(1, contentMode: .fit)
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.horizontal, 32)
+                .padding(.horizontal, 19)
             } else {
                 // Landscape
                 HStack(spacing: 28) {
@@ -36,26 +36,18 @@ struct ClockView: View {
                         FlipDial(info: $clockManager.hour)
                         FlipDial(info: $clockManager.minute)
                         if settingsManager.settings.displaySeconds {
-                            FlipDial(info: $clockManager.seconds)
+                            FlipDial(info: $clockManager.second)
                         }
                     }
+                    .foregroundColor(settingsManager.displayColor)
                     .aspectRatio(1, contentMode: .fit)
                 }
                 .frame(maxHeight: .infinity)
             }
         }
         .padding(.bottom, 16)
-        .overlay {
-            Color.clear
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    withAnimation(.easeIn(duration: 0.15)) {
-                        showAllViews.toggle()
-                    }
-                }
-        }
-        .onAppear {
-            clockManager.onAppear(settingsManager: settingsManager)
+        .onOverlayTap {
+            showAllViews.toggle()
         }
         .onChange(of: settingsManager.settings.hourFormat) { newValue in
             clockManager.onHourFormatChange(newValue)

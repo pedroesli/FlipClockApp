@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @StateObject private var settingsManager = SettingsManager()
     @StateObject private var clockManager = ClockManager()
+    @StateObject private var stopWatchManager = StopWatchManager()
     @State private var showSettingsView = false
     @State private var selectedTabOption: TabOption = .clock
     @State private var showAllViews = false
@@ -28,7 +29,8 @@ struct ContentView: View {
                             ClockView(showAllViews: $showAllViews)
                                 .environmentObject(clockManager)
                         } else if selectedTabOption == .stopwatch {
-                            Color.green
+                            StopWatchView(showAllViews: $showAllViews)
+                                .environmentObject(stopWatchManager)
                         } else {
                             Color.yellow
                         }
@@ -40,6 +42,9 @@ struct ContentView: View {
             }
             .navigationDestination(isPresented: $showSettingsView) {
                 ConfigurationView()
+            }
+            .onAppear {
+                clockManager.onAppear(settingsManager: settingsManager)
             }
         }
         .tint(settingsManager.appColor)

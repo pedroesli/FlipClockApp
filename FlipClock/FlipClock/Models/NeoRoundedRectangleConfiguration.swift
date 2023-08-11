@@ -28,4 +28,11 @@ extension NeoRoundedRectangleConfiguration {
         colorA: Color.asset.tabBarAShadowColor,
         colorB: Color.asset.tabBarBShadowColor
     )
+    
+    static let milisecondDial = NeoRoundedRectangleConfiguration(
+        cornerRadius: 8,
+        fillColor: Color.asset.background,
+        colorA: Color.asset.dialAShadowColor,
+        colorB: Color.asset.dialBShadowColor
+    )
 }

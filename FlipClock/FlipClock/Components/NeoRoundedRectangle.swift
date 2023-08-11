@@ -12,7 +12,7 @@ struct NeoRoundedRectangle: View {
     let configuration: NeoRoundedRectangleConfiguration
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 26)
+        RoundedRectangle(cornerRadius: configuration.cornerRadius)
             .fill(
                 configuration.fillColor
                     .shadow(.inner(color: configuration.colorB.opacity(0.5), radius: 1, x: -1, y: -1))
