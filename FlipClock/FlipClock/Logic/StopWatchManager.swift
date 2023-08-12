@@ -61,6 +61,7 @@ class StopWatchManager: ObservableObject {
     }
     
     func reset() {
+        state = .start
         hour.value = "00"
         minute.value = "00"
         second.value = "00"
@@ -68,7 +69,6 @@ class StopWatchManager: ObservableObject {
     }
     
     func onResetPressed() {
-        state = .start
         reset()
     }
     

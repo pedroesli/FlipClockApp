@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject private var settingsManager = SettingsManager()
     @StateObject private var clockManager = ClockManager()
     @StateObject private var stopWatchManager = StopWatchManager()
+    @StateObject private var timerManager = TimerManager()
     @State private var showSettingsView = false
     @State private var selectedTabOption: TabOption = .clock
     @State private var showAllViews = false
@@ -32,10 +33,11 @@ struct ContentView: View {
                             StopWatchView(showAllViews: $showAllViews)
                                 .environmentObject(stopWatchManager)
                         } else {
-                            Color.yellow
+                            TimerView(showAllViews: $showAllViews)
+                                .environmentObject(timerManager)
                         }
                         TabBar(selectedTabOption: $selectedTabOption)
-                            .offset(y: showAllViews ? 0 : geometry.safeAreaInsets.bottom * 2)
+                            .offset(y: showAllViews ? 0 : geometry.safeAreaInsets.bottom * 3)
                             .frame(height: showAllViews ? nil : 0)
                     }
                 }
