@@ -29,6 +29,19 @@ struct TimerView: View {
                 .onOverlayTap {
                     showAllViews.toggle()
                 }
+                .opacity(timerManager.state == .start ? 0 : 1)
+                Group {
+                    Color.asset.background
+                    TimePicker(
+                        hour: $timerManager.hourPicker,
+                        minute: $timerManager.minutePicker,
+                        second: $timerManager.secondPicker
+                    )
+                    .onChange(of: timerManager.hourPicker, perform: timerManager.updateHourInfo(_:))
+                    .onChange(of: timerManager.minutePicker, perform: timerManager.updateMinuteInfo(_:))
+                    .onChange(of: timerManager.secondPicker, perform: timerManager.updateSecondInfo(_:))
+                }
+                .opacity(timerManager.state != .start ? 0 : 1)
             }
             HStack {
                 CapsuleButton(title: "Reset", action: timerManager.onResetPressed)
@@ -37,16 +50,12 @@ struct TimerView: View {
                 Spacer()
                 CapsuleButton(title: timerManager.state.rawValue, action: timerManager.onControlPressed)
                     .tint(timerManager.state == .pause ? .yellow : .green)
+                    .disabled(timerManager.timerInfo.isComplete)
             }
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 19)
         .padding(.bottom, 16)
-        .onAppear {
-            timerManager.timerInfo = TimerInfo(hour: 0, minute: 2, second: 1)
-            timerManager.minute.value = "02"
-            timerManager.second.value = "01"
-        }
     }
 }
 

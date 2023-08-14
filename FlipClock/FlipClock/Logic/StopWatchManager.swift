@@ -10,7 +10,7 @@ import Combine
 
 class StopWatchManager: ObservableObject {
     
-    @Published var hour = FlipTextInfo(value: "00")
+    @Published var hour = FlipTextInfo(value: "0")
     @Published var minute = FlipTextInfo(value: "00")
     @Published var second = FlipTextInfo(value: "00")
     @Published var milisecond = "00"
@@ -23,7 +23,7 @@ class StopWatchManager: ObservableObject {
     
     func updateMainDials(with date: Date) {
         let timeElapsed = date.timeIntervalSince(startTime)
-        hour.value = timeElapsed.hour.formattedTime()
+        hour.value = String(timeElapsed.hour)
         minute.value = timeElapsed.minute.formattedTime()
         second.value = timeElapsed.second.formattedTime()
     }
@@ -62,7 +62,7 @@ class StopWatchManager: ObservableObject {
     
     func reset() {
         state = .start
-        hour.value = "00"
+        hour.value = "0"
         minute.value = "00"
         second.value = "00"
         milisecond = "00"

@@ -156,6 +156,7 @@
 		3795BB462A7AEE400067BBFD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				37A0B5072A8A5F5A001878EE /* TimePicker.swift */,
 				3795BB472A7AEE4B0067BBFD /* ColorCircle.swift */,
 				3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */,
 				3795BB4B2A7B2C5B0067BBFD /* ColorInfoSelector.swift */,
@@ -193,7 +194,6 @@
 				378CD2FC2A7D55D3000B324F /* ClockView.swift */,
 				37934D972A857BD90043A851 /* StopWatchView.swift */,
 				3794DCE42A86FFFF0063D9BE /* TimerView.swift */,
-				37A0B5072A8A5F5A001878EE /* TimePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

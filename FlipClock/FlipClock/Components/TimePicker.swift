@@ -49,11 +49,13 @@ struct UITimePickerRepresentable: UIViewRepresentable {
         let picker = UIPickerView()
         picker.dataSource = context.coordinator
         picker.delegate = context.coordinator
+        picker.selectRow(hour, inComponent: 0, animated: false)
+        picker.selectRow(minute, inComponent: 1, animated: false)
+        picker.selectRow(second, inComponent: 2, animated: false)
         return picker
     }
     
-    func updateUIView(_ uiView: UIPickerView, context: Context) {
-        
+    func updateUIView(_ picker: UIPickerView, context: Context) {
     }
     
     func makeCoordinator() -> Coordinator {

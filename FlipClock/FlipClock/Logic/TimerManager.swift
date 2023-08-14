@@ -9,9 +9,12 @@ import SwiftUI
 import Combine
 
 class TimerManager: ObservableObject {
-    @Published var hour = FlipTextInfo(value: "00")
+    @Published var hour = FlipTextInfo(value: "0")
     @Published var minute = FlipTextInfo(value: "00")
     @Published var second = FlipTextInfo(value: "00")
+    @Published var hourPicker = 0
+    @Published var minutePicker = 0
+    @Published var secondPicker = 0
     @Published var state: TimerState = .start
     @Published var timerInfo = TimerInfo()
     
@@ -24,7 +27,7 @@ class TimerManager: ObservableObject {
             return
         }
         timerInfo.countDown()
-        hour.value = timerInfo.hour.formattedTime()
+        hour.value = String(timerInfo.hour)
         minute.value = timerInfo.minute.formattedTime()
         second.value = timerInfo.second.formattedTime()
     }
@@ -51,6 +54,7 @@ class TimerManager: ObservableObject {
     func complete() {
         state = .start
         timer.upstream.connect().cancel()
+        timerInfo = TimerInfo(hour: hourPicker, minute: minutePicker, second: secondPicker)
     }
     
     func reset() {
@@ -74,5 +78,20 @@ class TimerManager: ObservableObject {
         case .resume:
             resume()
         }
+    }
+    
+    func updateHourInfo(_ hour: Int) {
+        self.hour.value = String(hour)
+        timerInfo = TimerInfo(hour: hour, minute: timerInfo.minute, second: timerInfo.second)
+    }
+    
+    func updateMinuteInfo(_ minute: Int) {
+        self.minute.value = minute.formattedTime()
+        timerInfo = TimerInfo(hour: timerInfo.hour, minute: minute, second: timerInfo.second)
+    }
+    
+    func updateSecondInfo(_ second: Int) {
+        self.second.value = second.formattedTime()
+        timerInfo = TimerInfo(hour: timerInfo.hour, minute: timerInfo.minute, second: second)
     }
 }
