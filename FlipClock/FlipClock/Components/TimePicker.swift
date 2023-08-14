@@ -90,12 +90,9 @@ struct UITimePickerRepresentable: UIViewRepresentable {
         
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             switch component {
-            case 0:
-                parent.hour = time[0][row]
-            case 1:
-                parent.minute = time[1][row]
-            default:
-                parent.second = time[2][row]
+            case 0: parent.hour = time[0][row]
+            case 1: parent.minute = time[1][row]
+            default: parent.second = time[2][row]
             }
         }
     }
