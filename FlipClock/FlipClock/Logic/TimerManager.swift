@@ -20,8 +20,40 @@ class TimerManager: ObservableObject {
     
     private let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     private var cancellable: AnyCancellable?
+    private let exitDateKey = "EXITDATEKEY"
     
-    func onAppear() {
+    init() {
+        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
+            self.didBecomeActive()
+        }
+        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { _ in
+            self.didEnterBackground()
+        }
+    }
+    
+    func didBecomeActive() {
+        guard state != .start else { return }
+        guard let exitDate = UserDefaults.standard.object(forKey: exitDateKey) as? Date else { return }
+        let timeLapse = timerInfo.timeInterval - Int(Date().timeIntervalSince(exitDate).rounded(.up))
+        if timeLapse <= 0 {
+            timerInfo.timeInterval = 0
+        } else {
+            timerInfo.timeInterval = timeLapse
+        }
+        cancellable = timer.sink { [weak self] _ in
+            self?.updateDials()
+        }
+    }
+    
+    func didEnterBackground() {
+        guard state != .start else { return }
+        // Stop timer to avoid race condition
+        timer.upstream.connect().cancel()
+        UserDefaults.standard.set(Date(), forKey: exitDateKey)
+        print(Date())
+    }
+    
+    func requestAuthorization() {
         LocalNotification.current.requestAuthorization()
     }
     
@@ -66,9 +98,10 @@ class TimerManager: ObservableObject {
     func reset() {
         state = .start
         timer.upstream.connect().cancel()
-        hour.value = "00"
-        minute.value = "00"
-        second.value = "00"
+        hour.value = String(hourPicker)
+        minute.value = minutePicker.formattedTime()
+        second.value = secondPicker.formattedTime()
+        timerInfo = TimerInfo(hour: hourPicker, minute: minutePicker, second: secondPicker)
     }
     
     func onResetPressed() {

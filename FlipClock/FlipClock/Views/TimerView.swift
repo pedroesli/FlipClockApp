@@ -59,7 +59,7 @@ struct TimerView: View {
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 19)
         .padding(.bottom, 16)
-        .onAppear(perform: timerManager.onAppear)
+        .onAppear(perform: timerManager.requestAuthorization)
     }
 }
 

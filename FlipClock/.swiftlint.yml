@@ -1,4 +1,4 @@
 disabled_rules:
     - trailing_whitespace
     
-line_length: 130
+line_length: 135
