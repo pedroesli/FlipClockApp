@@ -18,11 +18,11 @@ struct TimePicker: View {
         .overlay {
             HStack(spacing: 0) {
                 Group {
-                    Text("hour")
+                    Text(Localization.TimePicker.hour)
                         .offset(x: 22)
-                    Text("min")
+                    Text(Localization.TimePicker.minute)
                         .offset(x: 14)
-                    Text("s")
+                    Text(Localization.TimePicker.second)
                 }
                 .frame(maxWidth: .infinity)
                 .offset(x: 18)

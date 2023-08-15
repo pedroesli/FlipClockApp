@@ -37,3 +37,9 @@
 "Timer.Start" = "Iniciar";
 "Timer.Pause" = "Pausar";
 "Timer.Resume" = "Retomar";
+
+// Time Picker
+"TimePicker.Hour" = "horas";
+"TimePicker.Minute" = "min";
+"TimePicker.Second" = "s";
+

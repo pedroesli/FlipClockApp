@@ -103,6 +103,14 @@ internal enum Localization {
     /// Stop
     internal static let stop = Localization.tr("Localizable", "StopWatch.Stop", fallback: "Stop")
   }
+  internal enum TimePicker {
+    /// hour
+    internal static let hour = Localization.tr("Localizable", "TimePicker.Hour", fallback: "hour")
+    /// min
+    internal static let minute = Localization.tr("Localizable", "TimePicker.Minute", fallback: "min")
+    /// s
+    internal static let second = Localization.tr("Localizable", "TimePicker.Second", fallback: "s")
+  }
   internal enum Timer {
     /// Cancel
     internal static let cancel = Localization.tr("Localizable", "Timer.Cancel", fallback: "Cancel")
