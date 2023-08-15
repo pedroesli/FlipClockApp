@@ -25,6 +25,7 @@
 		378CD3092A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD3082A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift */; };
 		378CE9A22A8AF78800DE0931 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CE9A12A8AF78800DE0931 /* LocalNotification.swift */; };
 		378CE9A52A8BB2D200DE0931 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 378CE9A72A8BB2D200DE0931 /* Localizable.strings */; };
+		378CE9AB2A8C312800DE0931 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 378CE9AA2A8C312800DE0931 /* .swiftlint.yml */; };
 		37934D982A857BD90043A851 /* StopWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37934D972A857BD90043A851 /* StopWatchView.swift */; };
 		3794DCD52A8587B60063D9BE /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCD42A8587B60063D9BE /* StopWatchManager.swift */; };
 		3794DCD72A85B4C90063D9BE /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCD62A85B4C90063D9BE /* CapsuleButton.swift */; };
@@ -45,7 +46,6 @@
 		3795BB502A7BE48F0067BBFD /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4F2A7BE48F0067BBFD /* Color+Extensions.swift */; };
 		379D968B2A7BF27000376455 /* TabOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D968A2A7BF27000376455 /* TabOption.swift */; };
 		379D96932A7C3C9A00376455 /* NeoRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D96922A7C3C9A00376455 /* NeoRoundedRectangle.swift */; };
-		379D96962A7C778500376455 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 379D96952A7C778500376455 /* .swiftlint.yml */; };
 		37A0B5082A8A5F5A001878EE /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A0B5072A8A5F5A001878EE /* TimePicker.swift */; };
 		37ADE38C2A72FE0B00FA4139 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38B2A72FE0B00FA4139 /* Settings.swift */; };
 		37ADE38E2A73040400FA4139 /* ColorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38D2A73040400FA4139 /* ColorInfo.swift */; };
@@ -75,6 +75,7 @@
 		378CE9A12A8AF78800DE0931 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		378CE9A62A8BB2D200DE0931 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		378CE9A82A8BB2D600DE0931 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		378CE9AA2A8C312800DE0931 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		37934D972A857BD90043A851 /* StopWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchView.swift; sourceTree = "<group>"; };
 		3794DCD42A8587B60063D9BE /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
 		3794DCD62A85B4C90063D9BE /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		3795BB4F2A7BE48F0067BBFD /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		379D968A2A7BF27000376455 /* TabOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOption.swift; sourceTree = "<group>"; };
 		379D96922A7C3C9A00376455 /* NeoRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoRoundedRectangle.swift; sourceTree = "<group>"; };
-		379D96952A7C778500376455 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		37A0B5072A8A5F5A001878EE /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		37ADE38B2A72FE0B00FA4139 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		37ADE38D2A73040400FA4139 /* ColorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfo.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		37313E402A6B6B5900D3C058 = {
 			isa = PBXGroup;
 			children = (
-				379D96952A7C778500376455 /* .swiftlint.yml */,
+				378CE9AA2A8C312800DE0931 /* .swiftlint.yml */,
 				37313E4B2A6B6B5900D3C058 /* FlipClock */,
 				37313E4A2A6B6B5900D3C058 /* Products */,
 			);
@@ -136,6 +136,7 @@
 		37313E4B2A6B6B5900D3C058 /* FlipClock */ = {
 			isa = PBXGroup;
 			children = (
+				378CE9A92A8C2E9800DE0931 /* Constants */,
 				379D96892A7BF22C00376455 /* Enums */,
 				3795BB462A7AEE400067BBFD /* Components */,
 				37ADE3952A7338B400FA4139 /* Extensions */,
@@ -157,6 +158,13 @@
 				37313E542A6B6B5B00D3C058 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		378CE9A92A8C2E9800DE0931 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		3795BB462A7AEE400067BBFD /* Components */ = {
@@ -306,7 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				379D96962A7C778500376455 /* .swiftlint.yml in Resources */,
+				378CE9AB2A8C312800DE0931 /* .swiftlint.yml in Resources */,
 				378CE9A52A8BB2D200DE0931 /* Localizable.strings in Resources */,
 				37313E552A6B6B5B00D3C058 /* Preview Assets.xcassets in Resources */,
 				37313E512A6B6B5B00D3C058 /* Assets.xcassets in Resources */,
