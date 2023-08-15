@@ -47,11 +47,11 @@ struct TimerView: View {
                 .opacity(timerManager.state != .start ? 0 : 1)
             }
             HStack {
-                CapsuleButton(title: "Reset", action: timerManager.onResetPressed)
+                CapsuleButton(title: Localization.Timer.cancel, action: timerManager.onResetPressed)
                     .tint(.primary)
                     .disabled(timerManager.state == .start)
                 Spacer()
-                CapsuleButton(title: timerManager.state.rawValue, action: timerManager.onControlPressed)
+                CapsuleButton(title: timerManager.state.title, action: timerManager.onControlPressed)
                     .tint(timerManager.state == .pause ? .yellow : .green)
                     .disabled(timerManager.timerInfo.isComplete)
             }

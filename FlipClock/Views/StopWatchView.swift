@@ -46,11 +46,11 @@ struct StopWatchView: View {
                 }
             }
             HStack {
-                CapsuleButton(title: "Reset", action: stopWatchManager.onResetPressed)
+                CapsuleButton(title: Localization.StopWatch.reset, action: stopWatchManager.onResetPressed)
                     .tint(.primary)
                     .disabled(stopWatchManager.state == .start)
                 Spacer()
-                CapsuleButton(title: stopWatchManager.state.rawValue, action: stopWatchManager.onControlPressed)
+                CapsuleButton(title: stopWatchManager.state.title, action: stopWatchManager.onControlPressed)
                     .tint(stopWatchManager.state == .stop ? .red : .green)
             }
         }

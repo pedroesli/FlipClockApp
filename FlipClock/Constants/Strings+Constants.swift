@@ -94,44 +94,24 @@ internal enum Localization {
     }
   }
   internal enum StopWatch {
-    internal enum CapsuleButton {
-      internal enum Reset {
-        /// Reset
-        internal static let title = Localization.tr("Localizable", "StopWatch.CapsuleButton.Reset.Title", fallback: "Reset")
-      }
-      internal enum Resume {
-        /// Resume
-        internal static let title = Localization.tr("Localizable", "StopWatch.CapsuleButton.Resume.Title", fallback: "Resume")
-      }
-      internal enum Start {
-        /// Start
-        internal static let title = Localization.tr("Localizable", "StopWatch.CapsuleButton.Start.Title", fallback: "Start")
-      }
-      internal enum Stop {
-        /// Stop
-        internal static let title = Localization.tr("Localizable", "StopWatch.CapsuleButton.Stop.Title", fallback: "Stop")
-      }
-    }
+    /// Reset
+    internal static let reset = Localization.tr("Localizable", "StopWatch.Reset", fallback: "Reset")
+    /// Resume
+    internal static let resume = Localization.tr("Localizable", "StopWatch.Resume", fallback: "Resume")
+    /// Start
+    internal static let start = Localization.tr("Localizable", "StopWatch.Start", fallback: "Start")
+    /// Stop
+    internal static let stop = Localization.tr("Localizable", "StopWatch.Stop", fallback: "Stop")
   }
   internal enum Timer {
-    internal enum CapsuleButton {
-      internal enum Cancel {
-        /// Cancel
-        internal static let title = Localization.tr("Localizable", "Timer.CapsuleButton.Cancel.Title", fallback: "Cancel")
-      }
-      internal enum Pause {
-        /// Pause
-        internal static let title = Localization.tr("Localizable", "Timer.CapsuleButton.Pause.Title", fallback: "Pause")
-      }
-      internal enum Resume {
-        /// Resume
-        internal static let title = Localization.tr("Localizable", "Timer.CapsuleButton.Resume.Title", fallback: "Resume")
-      }
-      internal enum Start {
-        /// Start
-        internal static let title = Localization.tr("Localizable", "Timer.CapsuleButton.Start.Title", fallback: "Start")
-      }
-    }
+    /// Cancel
+    internal static let cancel = Localization.tr("Localizable", "Timer.Cancel", fallback: "Cancel")
+    /// Pause
+    internal static let pause = Localization.tr("Localizable", "Timer.Pause", fallback: "Pause")
+    /// Resume
+    internal static let resume = Localization.tr("Localizable", "Timer.Resume", fallback: "Resume")
+    /// Start
+    internal static let start = Localization.tr("Localizable", "Timer.Start", fallback: "Start")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

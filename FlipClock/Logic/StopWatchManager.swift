@@ -62,6 +62,8 @@ class StopWatchManager: ObservableObject {
     
     func reset() {
         state = .start
+        timer.upstream.connect().cancel()
+        milisecondsTimer.upstream.connect().cancel()
         hour.value = "0"
         minute.value = "00"
         second.value = "00"

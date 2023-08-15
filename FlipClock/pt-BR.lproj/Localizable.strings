@@ -27,13 +27,13 @@
 "Configuration.ConfirmationDialog.Text" = "Tem certeza de que deseja redefinir para as configurações padrão?";
 
 // Stop Watch View
-"StopWatch.CapsuleButton.Reset.Title" = "Zerar";
-"StopWatch.CapsuleButton.Stop.Title" = "Parar";
-"StopWatch.CapsuleButton.Start.Title" = "Iniciar";
-"StopWatch.CapsuleButton.Resume.Title" = "Retomar";
+"StopWatch.Reset" = "Zerar";
+"StopWatch.Stop" = "Parar";
+"StopWatch.Start" = "Iniciar";
+"StopWatch.Resume" = "Retomar";
 
 // Timer View
-"Timer.CapsuleButton.Cancel.Title" = "Cancelar";
-"Timer.CapsuleButton.Start.Title" = "Iniciar";
-"Timer.CapsuleButton.Pause.Title" = "Pausar";
-"Timer.CapsuleButton.Resume.Title" = "Retomar";
+"Timer.Cancel" = "Cancelar";
+"Timer.Start" = "Iniciar";
+"Timer.Pause" = "Pausar";
+"Timer.Resume" = "Retomar";
