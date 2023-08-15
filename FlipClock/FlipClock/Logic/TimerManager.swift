@@ -21,6 +21,10 @@ class TimerManager: ObservableObject {
     private let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     private var cancellable: AnyCancellable?
     
+    func onAppear() {
+        LocalNotification.current.requestAuthorization()
+    }
+    
     func updateDials() {
         if timerInfo.isComplete {
             complete()
@@ -37,11 +41,13 @@ class TimerManager: ObservableObject {
         cancellable = timer.sink { [weak self] _ in
             self?.updateDials()
         }
+        LocalNotification.current.timerNotification(timeInterval: timerInfo.timeInterval)
     }
     
     func pause() {
         state = .resume
         timer.upstream.connect().cancel()
+        LocalNotification.current.cancelTimerNotification()
     }
     
     func resume() {

@@ -32,6 +32,9 @@ struct TimerView: View {
                 .opacity(timerManager.state == .start ? 0 : 1)
                 Group {
                     Color.asset.background
+                        .onOverlayTap {
+                            showAllViews.toggle()
+                        }
                     TimePicker(
                         hour: $timerManager.hourPicker,
                         minute: $timerManager.minutePicker,
@@ -56,6 +59,7 @@ struct TimerView: View {
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 19)
         .padding(.bottom, 16)
+        .onAppear(perform: timerManager.onAppear)
     }
 }
 
