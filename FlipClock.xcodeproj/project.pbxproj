@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372773992A8C38460079EF35 /* Strings+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372773972A8C38460079EF35 /* Strings+Constants.swift */; };
+		3727739A2A8C38460079EF35 /* Assets+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372773982A8C38460079EF35 /* Assets+Constants.swift */; };
+		3727739C2A8C3CF60079EF35 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3727739B2A8C3CF60079EF35 /* Colors.xcassets */; };
 		37313E4D2A6B6B5900D3C058 /* FlipClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37313E4C2A6B6B5900D3C058 /* FlipClockApp.swift */; };
 		37313E4F2A6B6B5900D3C058 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37313E4E2A6B6B5900D3C058 /* ContentView.swift */; };
 		37313E512A6B6B5B00D3C058 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37313E502A6B6B5B00D3C058 /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372773972A8C38460079EF35 /* Strings+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Constants.swift"; sourceTree = "<group>"; };
+		372773982A8C38460079EF35 /* Assets+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Constants.swift"; sourceTree = "<group>"; };
+		3727739B2A8C3CF60079EF35 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		37313E492A6B6B5900D3C058 /* FlipClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37313E4C2A6B6B5900D3C058 /* FlipClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipClockApp.swift; sourceTree = "<group>"; };
 		37313E4E2A6B6B5900D3C058 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 				37ADE3882A72FB4100FA4139 /* Views */,
 				37313E4C2A6B6B5900D3C058 /* FlipClockApp.swift */,
 				37313E502A6B6B5B00D3C058 /* Assets.xcassets */,
+				3727739B2A8C3CF60079EF35 /* Colors.xcassets */,
 				37313E522A6B6B5B00D3C058 /* FlipClock.entitlements */,
 				37313E532A6B6B5B00D3C058 /* Preview Content */,
 				378CE9A72A8BB2D200DE0931 /* Localizable.strings */,
@@ -163,6 +170,8 @@
 		378CE9A92A8C2E9800DE0931 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				372773982A8C38460079EF35 /* Assets+Constants.swift */,
+				372773972A8C38460079EF35 /* Strings+Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -314,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3727739C2A8C3CF60079EF35 /* Colors.xcassets in Resources */,
 				378CE9AB2A8C312800DE0931 /* .swiftlint.yml in Resources */,
 				378CE9A52A8BB2D200DE0931 /* Localizable.strings in Resources */,
 				37313E552A6B6B5B00D3C058 /* Preview Assets.xcassets in Resources */,
@@ -355,6 +365,7 @@
 				3794DCD92A85B83B0063D9BE /* OverlayTap.swift in Sources */,
 				3794DCDB2A85B8EB0063D9BE /* View+Extensions.swift in Sources */,
 				379D968B2A7BF27000376455 /* TabOption.swift in Sources */,
+				3727739A2A8C38460079EF35 /* Assets+Constants.swift in Sources */,
 				3794DCE32A85C8C60063D9BE /* Int+Extensions.swift in Sources */,
 				378CD3092A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift in Sources */,
 				378CD2FD2A7D55D4000B324F /* ClockView.swift in Sources */,
@@ -365,6 +376,7 @@
 				3795BB452A7ACFFF0067BBFD /* ConfigurationView.swift in Sources */,
 				3794DCE72A87002D0063D9BE /* TimerManager.swift in Sources */,
 				37ADE38C2A72FE0B00FA4139 /* Settings.swift in Sources */,
+				372773992A8C38460079EF35 /* Strings+Constants.swift in Sources */,
 				378CD2FF2A803722000B324F /* NavBar.swift in Sources */,
 				378CD3012A8053F1000B324F /* FlipTextHalf.swift in Sources */,
 				37ADE3922A73110B00FA4139 /* HourFormat.swift in Sources */,

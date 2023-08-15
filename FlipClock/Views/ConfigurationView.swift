@@ -24,25 +24,31 @@ struct ConfigurationView: View {
     
     var body: some View {
         Form {
-            Section("Time Display") {
-                Picker("Hour format", selection: $settingsManager.settings.hourFormat) {
-                    Text("System").tag(HourFormat.system)
-                    Text("24 hours").tag(HourFormat.military)
-                    Text("12 hours").tag(HourFormat.twoPeriods)
+            Section(Localization.Configuration.Section.TimeDisplay.title) {
+                Picker(Localization.Configuration.Picker.HourFormat.title, selection: $settingsManager.settings.hourFormat) {
+                    Text(Localization.Configuration.Picker.System.text).tag(HourFormat.system)
+                    Text(Localization.Configuration.Picker.Military.text).tag(HourFormat.military)
+                    Text(Localization.Configuration.Picker.TwoPeriods.text).tag(HourFormat.twoPeriods)
                 }
-                Toggle("Display Seconds", isOn: $settingsManager.settings.displaySeconds)
+                Toggle(Localization.Configuration.Toggle.DisplaySeconds.title, isOn: $settingsManager.settings.displaySeconds)
                     .tint(toggleTint)
-                ColorInfoSelector(title: "Display color", selectedColorInfo: $settingsManager.settings.displayColorInfo)
+                ColorInfoSelector(
+                    title: Localization.Configuration.ColorInfoSelector.DialTextColor.title,
+                    selectedColorInfo: $settingsManager.settings.displayColorInfo
+                )
             }
-            Section("App") {
-                ColorInfoSelector(title: "Tint color", selectedColorInfo: $settingsManager.settings.appColorInfo)
+            Section(Localization.Configuration.Section.App.title) {
+                ColorInfoSelector(
+                    title: Localization.Configuration.ColorInfoSelector.TintColor.title,
+                    selectedColorInfo: $settingsManager.settings.appColorInfo
+                )
             }
-            Section("Support") {
+            Section(Localization.Configuration.Section.Support.title) {
                 Button {
                     requestReview()
                 } label: {
                     Label {
-                        Text("Review FlipNeo Clock")
+                        Text(Localization.Configuration.Button.Review.text)
                             .foregroundColor(.primary)
                     } icon: {
                         Image(systemName: "rectangle.and.pencil.and.ellipsis")
@@ -50,13 +56,13 @@ struct ConfigurationView: View {
                     }
                 }
             }
-            Section("General") {
-                Button("Default settings") {
+            Section(Localization.Configuration.Section.General.title) {
+                Button(Localization.Configuration.Button.DefaultSettings.text) {
                     showSettingsResetAlert = true
                 }
             }
             Section {
-                Text("Made with ❤️☕️ by Pedro Ésli")
+                Text(Localization.Configuration.Text.madeBy)
                     .font(.subheadline)
                     .foregroundColor(.gray)
                     .frame(maxWidth: .infinity)
@@ -64,13 +70,13 @@ struct ConfigurationView: View {
             }
         }
         .foregroundColor(.primary)
-        .navigationTitle("Configuration")
-        .confirmationDialog("Are you sure you want to reset to the default settings?", isPresented: $showSettingsResetAlert) {
-            Button("Reset", role: .destructive) {
+        .navigationTitle(Localization.Configuration.title)
+        .confirmationDialog(Localization.Configuration.ConfirmationDialog.text, isPresented: $showSettingsResetAlert) {
+            Button(Localization.Configuration.Button.Reset.text, role: .destructive) {
                 settingsManager.resetSettings()
             }
         } message: {
-            Text("Reset to default settings")
+            Text(Localization.Configuration.Text.reset)
         }
     }
 }
