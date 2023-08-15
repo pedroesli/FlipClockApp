@@ -62,17 +62,16 @@ struct ConfigurationView: View {
                     .frame(maxWidth: .infinity)
                     .listRowBackground(EmptyView())
             }
-            .confirmationDialog("Are you sure you want to reset to the default settings?", isPresented: $showSettingsResetAlert) {
-                Button("Reset", role: .destructive) {
-                    settingsManager.resetSettings()
-                }
-            } message: {
-                Text("Reset to default settings")
-            }
-
         }
         .foregroundColor(.primary)
         .navigationTitle("Configuration")
+        .confirmationDialog("Are you sure you want to reset to the default settings?", isPresented: $showSettingsResetAlert) {
+            Button("Reset", role: .destructive) {
+                settingsManager.resetSettings()
+            }
+        } message: {
+            Text("Reset to default settings")
+        }
     }
 }
 

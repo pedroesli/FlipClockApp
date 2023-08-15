@@ -24,6 +24,7 @@
 		378CD3052A80557B000B324F /* FlipTextHalfPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD3042A80557B000B324F /* FlipTextHalfPlacement.swift */; };
 		378CD3092A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CD3082A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift */; };
 		378CE9A22A8AF78800DE0931 /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378CE9A12A8AF78800DE0931 /* LocalNotification.swift */; };
+		378CE9A52A8BB2D200DE0931 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 378CE9A72A8BB2D200DE0931 /* Localizable.strings */; };
 		37934D982A857BD90043A851 /* StopWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37934D972A857BD90043A851 /* StopWatchView.swift */; };
 		3794DCD52A8587B60063D9BE /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCD42A8587B60063D9BE /* StopWatchManager.swift */; };
 		3794DCD72A85B4C90063D9BE /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3794DCD62A85B4C90063D9BE /* CapsuleButton.swift */; };
@@ -72,6 +73,8 @@
 		378CD3042A80557B000B324F /* FlipTextHalfPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextHalfPlacement.swift; sourceTree = "<group>"; };
 		378CD3082A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoRoundedRectangleConfiguration.swift; sourceTree = "<group>"; };
 		378CE9A12A8AF78800DE0931 /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
+		378CE9A62A8BB2D200DE0931 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		378CE9A82A8BB2D600DE0931 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		37934D972A857BD90043A851 /* StopWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchView.swift; sourceTree = "<group>"; };
 		3794DCD42A8587B60063D9BE /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
 		3794DCD62A85B4C90063D9BE /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 				37313E502A6B6B5B00D3C058 /* Assets.xcassets */,
 				37313E522A6B6B5B00D3C058 /* FlipClock.entitlements */,
 				37313E532A6B6B5B00D3C058 /* Preview Content */,
+				378CE9A72A8BB2D200DE0931 /* Localizable.strings */,
 			);
 			path = FlipClock;
 			sourceTree = "<group>";
@@ -282,6 +286,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 37313E402A6B6B5900D3C058;
 			packageReferences = (
@@ -302,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				379D96962A7C778500376455 /* .swiftlint.yml in Resources */,
+				378CE9A52A8BB2D200DE0931 /* Localizable.strings in Resources */,
 				37313E552A6B6B5B00D3C058 /* Preview Assets.xcassets in Resources */,
 				37313E512A6B6B5B00D3C058 /* Assets.xcassets in Resources */,
 			);
@@ -379,6 +385,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		378CE9A72A8BB2D200DE0931 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				378CE9A62A8BB2D200DE0931 /* en */,
+				378CE9A82A8BB2D600DE0931 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		37313E562A6B6B5B00D3C058 /* Debug */ = {

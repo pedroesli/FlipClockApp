@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  FlipClock
+
+  Created by Pedro Ésli Vieira do Nascimento on 15/08/23.
+  
+*/
+
+// Configuration View
+"Configuration.Title" = "Configuration";
+"Configuration.Section.TimeDisplay.Title" = "Time display";
+"Configuration.Section.App.Title" = "App";
+"Configuration.Section.Support.Title" = "Support";
+"Configuration.Section.General.Title" = "General";
+"Configuration.Picker.HourFormat.Title" = "Hour format";
+"Configuration.Picker.System.Text" = "System";
+"Configuration.Picker.Military.Text" = "24 hours";
+"Configuration.Picker.TwoPeriods.Text" = "12 hours";
+"Configuration.Toggle.DisplaySeconds.Title" = "Display seconds";
+"Configuration.ColorInfoSelector.DialTextColor.Title" = "Dial text color";
+"Configuration.ColorInfoSelector.TintColor.Title" = "Tint color";
+"Configuration.Button.Review.Text" = "Review FlipNeo Clock";
+"Configuration.Button.DefaultSettings.Text" = "Default settings";
+"Configuration.Button.Reset.Text" = "Reset";
+"Configuration.Text.MadeBy" = "Made with ❤️☕️ by Pedro Ésli";
+"Configuration.Text.Reset" = "Reset to default settings";
+"Configuration.ConfirmationDialog.Text" = "Are you sure you want to reset to the default settings?";
+
+// Stop Watch View
+"StopWatch.CapsuleButton.Reset.Title" = "Reset";
+"StopWatch.CapsuleButton.Stop.Title" = "Stop";
+"StopWatch.CapsuleButton.Start.Title" = "Start";
+"StopWatch.CapsuleButton.Resume.Title" = "Resume";
+
+// Timer View
+"Timer.CapsuleButton.Cancel.Title" = "Cancel";
+"Timer.CapsuleButton.Start.Title" = "Start";
+"Timer.CapsuleButton.Pause.Title" = "Pause";
+"Timer.CapsuleButton.Resume.Title" = "Resume";
