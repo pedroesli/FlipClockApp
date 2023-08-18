@@ -1,4 +1,7 @@
 disabled_rules:
     - trailing_whitespace
     
+nesting:
+    type_level: 2
+    
 line_length: 135
