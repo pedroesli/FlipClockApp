@@ -18,46 +18,51 @@ class StopWatchManager: ObservableObject {
     
     private let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     private let milisecondsTimer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
-    private var startTime = Date.now
+    private var startTime: TimeInterval = 0
+    private var pauseTime: TimeInterval = 0
+    private var accumulatedTime: TimeInterval = 0
     private var store = Set<AnyCancellable>()
     
-    func updateMainDials(with date: Date) {
-        let timeElapsed = date.timeIntervalSince(startTime)
-        hour.value = String(timeElapsed.hour)
-        minute.value = timeElapsed.minute.formattedTime()
-        second.value = timeElapsed.second.formattedTime()
+    func updateMainDials() {
+        hour.value = String(accumulatedTime.hour)
+        minute.value = accumulatedTime.minute.formattedTime()
+        second.value = accumulatedTime.second.formattedTime()
     }
     
     func updateMiliseconds(with date: Date) {
-        let timeElapsed = date.timeIntervalSince(startTime)
-        milisecond = timeElapsed.millisecond.formattedTime()
+        let currentTime = Date.timeIntervalSinceReferenceDate
+        accumulatedTime = currentTime - startTime
+        milisecond = accumulatedTime.millisecond.formattedTime()
     }
     
-    func start() {
-        state = .stop
-        startTime = Date.now
-        timer.sink { [weak self] date in
-            self?.updateMainDials(with: date)
+    func iniatePublishers() {
+        timer.sink { [weak self] _ in
+            self?.updateMainDials()
         }.store(in: &store)
         milisecondsTimer.sink { [weak self] date in
             self?.updateMiliseconds(with: date)
         }.store(in: &store)
+    }
+    
+    func start() {
+        state = .stop
+        startTime = Date.timeIntervalSinceReferenceDate
+        accumulatedTime = 0
+        iniatePublishers()
     }
     
     func stop() {
         state = .resume
         timer.upstream.connect().cancel()
         milisecondsTimer.upstream.connect().cancel()
+        pauseTime = Date.timeIntervalSinceReferenceDate
+        startTime = pauseTime - startTime
     }
     
     func resume() {
         state = .stop
-        timer.sink { [weak self] date in
-            self?.updateMainDials(with: date)
-        }.store(in: &store)
-        milisecondsTimer.sink { [weak self] date in
-            self?.updateMiliseconds(with: date)
-        }.store(in: &store)
+        startTime = Date.timeIntervalSinceReferenceDate - startTime
+        iniatePublishers()
     }
     
     func reset() {
