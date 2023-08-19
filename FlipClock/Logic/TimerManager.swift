@@ -31,6 +31,12 @@ class TimerManager: ObservableObject {
         }
     }
     
+    func initiateTimePublisher() {
+        cancellable = timer.sink { [weak self] _ in
+            self?.updateDials()
+        }
+    }
+    
     func didBecomeActive() {
         guard state != .start else { return }
         guard let exitDate = UserDefaults.standard.object(forKey: exitDateKey) as? Date else { return }
@@ -40,9 +46,7 @@ class TimerManager: ObservableObject {
         } else {
             timerInfo.timeInterval = timeLapse
         }
-        cancellable = timer.sink { [weak self] _ in
-            self?.updateDials()
-        }
+        initiateTimePublisher()
     }
     
     func didEnterBackground() {
@@ -70,9 +74,7 @@ class TimerManager: ObservableObject {
     
     func start() {
         state = .pause
-        cancellable = timer.sink { [weak self] _ in
-            self?.updateDials()
-        }
+        initiateTimePublisher()
         LocalNotification.current.timerNotification(timeInterval: timerInfo.timeInterval)
     }
     
@@ -84,9 +86,7 @@ class TimerManager: ObservableObject {
     
     func resume() {
         state = .pause
-        cancellable = timer.sink { [weak self] _ in
-            self?.updateDials()
-        }
+        initiateTimePublisher()
     }
     
     func complete() {

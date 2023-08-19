@@ -35,7 +35,7 @@ class StopWatchManager: ObservableObject {
         milisecond = accumulatedTime.millisecond.formattedTime()
     }
     
-    func iniatePublishers() {
+    func initiateTimePublishers() {
         timer.sink { [weak self] _ in
             self?.updateMainDials()
         }.store(in: &store)
@@ -48,7 +48,7 @@ class StopWatchManager: ObservableObject {
         state = .stop
         startTime = Date.timeIntervalSinceReferenceDate
         accumulatedTime = 0
-        iniatePublishers()
+        initiateTimePublishers()
     }
     
     func stop() {
@@ -62,7 +62,7 @@ class StopWatchManager: ObservableObject {
     func resume() {
         state = .stop
         startTime = Date.timeIntervalSinceReferenceDate - startTime
-        iniatePublishers()
+        initiateTimePublishers()
     }
     
     func reset() {
