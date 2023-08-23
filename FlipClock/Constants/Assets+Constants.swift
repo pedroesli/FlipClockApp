@@ -26,26 +26,22 @@ internal enum Asset {
     internal static let accentColor = ColorAsset(name: "AccentColor")
   }
   internal enum Colors {
-    internal static let backgroundColor = ColorAsset(name: "BackgroundColor")
-    internal static let baseColor = ColorAsset(name: "BaseColor")
-    internal enum Dial {
-      internal static let dialAShadowColor = ColorAsset(name: "DialAShadowColor")
-      internal static let dialBShadowColor = ColorAsset(name: "DialBShadowColor")
-    }
+    internal static let background = ColorAsset(name: "Background")
+    internal static let base = ColorAsset(name: "Base")
+    internal static let dialShadowA = ColorAsset(name: "DialShadowA")
+    internal static let dialShadowB = ColorAsset(name: "DialShadowB")
     internal enum Palette {
-      internal static let blueGrayColor = ColorAsset(name: "BlueGrayColor")
-      internal static let celadonColor = ColorAsset(name: "CeladonColor")
-      internal static let grayColor = ColorAsset(name: "GrayColor")
-      internal static let limeColor = ColorAsset(name: "LimeColor")
-      internal static let pinkColor = ColorAsset(name: "PinkColor")
-      internal static let purpleColor = ColorAsset(name: "PurpleColor")
-      internal static let violetColor = ColorAsset(name: "VioletColor")
+      internal static let blueGray = ColorAsset(name: "BlueGray")
+      internal static let celadon = ColorAsset(name: "Celadon")
+      internal static let gray = ColorAsset(name: "Gray")
+      internal static let lime = ColorAsset(name: "Lime")
+      internal static let pink = ColorAsset(name: "Pink")
+      internal static let purple = ColorAsset(name: "Purple")
+      internal static let violet = ColorAsset(name: "Violet")
     }
-    internal enum TabBar {
-      internal static let tabBarAShadowColor = ColorAsset(name: "TabBarAShadowColor")
-      internal static let tabBarBShadowColor = ColorAsset(name: "TabBarBShadowColor")
-      internal static let tabBarColor = ColorAsset(name: "TabBarColor")
-    }
+    internal static let tabBar = ColorAsset(name: "TabBar")
+    internal static let tabBarShadowA = ColorAsset(name: "TabBarShadowA")
+    internal static let tabBarShadowB = ColorAsset(name: "TabBarShadowB")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

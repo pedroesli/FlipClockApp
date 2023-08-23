@@ -53,7 +53,7 @@ struct RoundTabBar_Previews: PreviewProvider {
     
     static var previews: some View {
         ZStack {
-            Color.asset.background.ignoresSafeArea()
+            Asset.Colors.background.swiftUIColor.ignoresSafeArea()
             TabBar(selectedTabOption: .constant(.clock))
                 .environmentObject(settingsManager)
                 .onAppear {

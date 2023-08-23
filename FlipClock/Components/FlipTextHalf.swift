@@ -20,7 +20,7 @@ struct FlipTextHalf: View {
             ZStack {
                 let fontSize = (geometry.size.height + geometry.size.height / 2) * 1.1
                 CornerRoundedRectangle(cornerRadius: 20, edges: placement.corners)
-                    .fill(Color.asset.background)
+                    .fill(Asset.Colors.background.swiftUIColor)
                     .padding(padding(alignment: alignment), 10)
                 Text(value)
                     .font(.system(size: fontSize, weight: .bold, design: .default).width(.compressed).monospacedDigit())
@@ -69,7 +69,7 @@ struct FlipTextHalf_Previews: PreviewProvider {
                 }
             }
             .overlay {
-                Color.asset.background.frame(height: 4)
+                Asset.Colors.background.swiftUIColor.frame(height: 4)
             }
         }
         .padding()

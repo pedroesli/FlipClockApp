@@ -17,22 +17,22 @@ struct NeoRoundedRectangleConfiguration {
 extension NeoRoundedRectangleConfiguration {
     static let dial = NeoRoundedRectangleConfiguration(
         cornerRadius: 20,
-        fillColor: Color.asset.background,
-        colorA: Color.asset.dialAShadowColor,
-        colorB: Color.asset.dialBShadowColor
+        fillColor: Asset.Colors.background.swiftUIColor,
+        colorA: Asset.Colors.dialShadowA.swiftUIColor,
+        colorB: Asset.Colors.dialShadowB.swiftUIColor
     )
     
     static let tabBar = NeoRoundedRectangleConfiguration(
         cornerRadius: 26,
-        fillColor: Color.asset.tabBar,
-        colorA: Color.asset.tabBarAShadowColor,
-        colorB: Color.asset.tabBarBShadowColor
+        fillColor: Asset.Colors.tabBar.swiftUIColor,
+        colorA: Asset.Colors.tabBarShadowA.swiftUIColor,
+        colorB: Asset.Colors.tabBarShadowB.swiftUIColor
     )
     
     static let milisecondDial = NeoRoundedRectangleConfiguration(
         cornerRadius: 8,
-        fillColor: Color.asset.background,
-        colorA: Color.asset.dialAShadowColor,
-        colorB: Color.asset.dialBShadowColor
+        fillColor: Asset.Colors.background.swiftUIColor,
+        colorA: Asset.Colors.dialShadowA.swiftUIColor,
+        colorB: Asset.Colors.dialShadowB.swiftUIColor
     )
 }

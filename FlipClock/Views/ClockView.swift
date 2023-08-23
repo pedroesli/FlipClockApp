@@ -40,7 +40,7 @@ struct ClockView: View {
 struct ClockView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.asset.background.ignoresSafeArea()
+            Asset.Colors.background.swiftUIColor.ignoresSafeArea()
             ClockView(showAllViews: .constant(false))
                 .environmentObject(SettingsManager())
                 .environmentObject(ClockManager())

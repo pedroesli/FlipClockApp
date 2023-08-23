@@ -12,6 +12,13 @@ struct CapsuleButton: View {
     let title: String
     let action: () -> Void
     
+    var shadowColorA: Color {
+        Asset.Colors.dialShadowA.swiftUIColor
+    }
+    var shadowColorB: Color {
+        Asset.Colors.dialShadowB.swiftUIColor
+    }
+    
     var body: some View {
         Button(action: action) {
             Text(title)
@@ -20,14 +27,14 @@ struct CapsuleButton: View {
         .background {
             Capsule()
                 .fill(
-                    Color.asset.background
-                        .shadow(.inner(color: Color.asset.dialBShadowColor.opacity(0.5), radius: 1, x: -1, y: -1))
-                        .shadow(.inner(color: Color.asset.dialAShadowColor.opacity(0.3), radius: 1, x: 1, y: 1))
+                    Asset.Colors.background.swiftUIColor
+                        .shadow(.inner(color: shadowColorB.opacity(0.5), radius: 1, x: -1, y: -1))
+                        .shadow(.inner(color: shadowColorA.opacity(0.3), radius: 1, x: 1, y: 1))
                 )
-                .shadow(color: Color.asset.dialBShadowColor.opacity(0.9), radius: 6.5, x: 5, y: 5)
-                .shadow(color: Color.asset.dialAShadowColor.opacity(0.9), radius: 5, x: -5, y: -5)
-                .shadow(color: Color.asset.dialBShadowColor.opacity(0.2), radius: 5, x: 5, y: -5)
-                .shadow(color: Color.asset.dialBShadowColor.opacity(0.2), radius: 5, x: -5, y: 5)
+                .shadow(color: shadowColorB.opacity(0.9), radius: 6.5, x: 5, y: 5)
+                .shadow(color: shadowColorA.opacity(0.9), radius: 5, x: -5, y: -5)
+                .shadow(color: shadowColorB.opacity(0.2), radius: 5, x: 5, y: -5)
+                .shadow(color: shadowColorB.opacity(0.2), radius: 5, x: -5, y: 5)
         }
         .contentShape(Capsule())
     }
@@ -36,7 +43,7 @@ struct CapsuleButton: View {
 struct CapsuleButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.asset.background.ignoresSafeArea()
+            Asset.Colors.background.swiftUIColor.ignoresSafeArea()
             CapsuleButton(title: "Reset") { }
         }
     }

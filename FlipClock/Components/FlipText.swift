@@ -60,7 +60,7 @@ struct FlipText: View {
             }
         }
         .overlay {
-            Color.asset.background.frame(height: 3)
+            Asset.Colors.background.swiftUIColor.frame(height: 3)
         }
         .onAppear {
             currentValue = info.value

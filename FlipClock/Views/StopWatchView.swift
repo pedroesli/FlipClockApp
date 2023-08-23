@@ -81,7 +81,7 @@ struct StopWatchView: View {
 struct StopWatchView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.asset.background.ignoresSafeArea()
+            Asset.Colors.background.swiftUIColor.ignoresSafeArea()
             StopWatchView(showAllViews: .constant(false))
                 .environmentObject(SettingsManager())
                 .environmentObject(StopWatchManager())

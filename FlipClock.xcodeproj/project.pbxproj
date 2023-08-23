@@ -46,7 +46,6 @@
 		3795BB4A2A7B26F80067BBFD /* CircleColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */; };
 		3795BB4C2A7B2C5B0067BBFD /* ColorInfoSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4B2A7B2C5B0067BBFD /* ColorInfoSelector.swift */; };
 		3795BB4E2A7B3C140067BBFD /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4D2A7B3C140067BBFD /* TabBar.swift */; };
-		3795BB502A7BE48F0067BBFD /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4F2A7BE48F0067BBFD /* Color+Extensions.swift */; };
 		379D968B2A7BF27000376455 /* TabOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D968A2A7BF27000376455 /* TabOption.swift */; };
 		379D96932A7C3C9A00376455 /* NeoRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D96922A7C3C9A00376455 /* NeoRoundedRectangle.swift */; };
 		37A0B5082A8A5F5A001878EE /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A0B5072A8A5F5A001878EE /* TimePicker.swift */; };
@@ -99,7 +98,6 @@
 		3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPicker.swift; sourceTree = "<group>"; };
 		3795BB4B2A7B2C5B0067BBFD /* ColorInfoSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfoSelector.swift; sourceTree = "<group>"; };
 		3795BB4D2A7B3C140067BBFD /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		3795BB4F2A7BE48F0067BBFD /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		379D968A2A7BF27000376455 /* TabOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOption.swift; sourceTree = "<group>"; };
 		379D96922A7C3C9A00376455 /* NeoRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoRoundedRectangle.swift; sourceTree = "<group>"; };
 		37A0B5072A8A5F5A001878EE /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 		37ADE3952A7338B400FA4139 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3795BB4F2A7BE48F0067BBFD /* Color+Extensions.swift */,
 				377F53772A82EAAF00A9FF3C /* Date+Extensions.swift */,
 				3794DCDA2A85B8EB0063D9BE /* View+Extensions.swift */,
 				3794DCE02A85C7C30063D9BE /* TimeInterval+Extensions.swift */,
@@ -386,7 +383,6 @@
 				37ADE38E2A73040400FA4139 /* ColorInfo.swift in Sources */,
 				37313E4F2A6B6B5900D3C058 /* ContentView.swift in Sources */,
 				37A0B5082A8A5F5A001878EE /* TimePicker.swift in Sources */,
-				3795BB502A7BE48F0067BBFD /* Color+Extensions.swift in Sources */,
 				377F536E2A817DAA00A9FF3C /* FlipTextPlacement.swift in Sources */,
 				3794DCD52A8587B60063D9BE /* StopWatchManager.swift in Sources */,
 				378CE9A22A8AF78800DE0931 /* LocalNotification.swift in Sources */,

@@ -28,7 +28,7 @@ struct NeoRoundedRectangle: View {
 struct NeoRoundedRectangle_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.asset.background.ignoresSafeArea()
+            Asset.Colors.background.swiftUIColor.ignoresSafeArea()
             NeoRoundedRectangle(configuration: .tabBar)
             .frame(width: 100, height: 50)
         }

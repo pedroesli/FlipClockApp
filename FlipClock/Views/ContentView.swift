@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.asset.background.ignoresSafeArea()
+                Asset.Colors.background.swiftUIColor.ignoresSafeArea()
                 GeometryReader { geometry in
                     VStack {
                         NavBar(safeAreaInsets: geometry.safeAreaInsets, showNavBar: $showAllViews) {

@@ -31,7 +31,7 @@ struct TimerView: View {
                 }
                 .opacity(timerManager.state == .start ? 0 : 1)
                 Group {
-                    Color.asset.background
+                    Asset.Colors.background.swiftUIColor
                         .onOverlayTap {
                             showAllViews.toggle()
                         }
@@ -66,7 +66,7 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.asset.background.ignoresSafeArea()
+            Asset.Colors.background.swiftUIColor.ignoresSafeArea()
             TimerView(showAllViews: .constant(false))
                 .environmentObject(SettingsManager())
                 .environmentObject(TimerManager())
