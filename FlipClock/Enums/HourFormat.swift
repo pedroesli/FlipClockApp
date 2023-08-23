@@ -38,10 +38,12 @@ enum HourFormat: Codable, Identifiable {
                 return date.formatted("H")
             }
             return date.formatted("h")
-        case .military:
-            return date.formatted("H")
-        case .twoPeriods:
-            return date.formatted("h")
+        case .military: return date.formatted("H")
+        case .twoPeriods: return date.formatted("h")
         }
+    }
+    
+    func periodText(from date: Date) -> String? {
+        return is24HourFormat ? nil : date.formatted("a")
     }
 }

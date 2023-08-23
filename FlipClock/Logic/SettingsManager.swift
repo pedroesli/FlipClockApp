@@ -21,10 +21,6 @@ class SettingsManager: ObservableObject {
     }
     private static let settingsKey = "SettingsKey"
     
-    func formatHour(from date: Date) -> String {
-        return settings.hourFormat.formatHour(from: date)
-    }
-    
     func resetSettings() {
         settings = Settings()
     }

@@ -31,17 +31,17 @@ class ClockManager: ObservableObject {
         updateDials(with: Date.now)
     }
     
-    func onHourFormatChange(_ newValue: HourFormat) {
-        guard let settingsManager else { return }
-        let periodText = firedTime.periodText(is24HourFormat: newValue.is24HourFormat)
-        hour.value = settingsManager.formatHour(from: firedTime)
+    func onHourFormatChange(_ hourFormat: HourFormat) {
+        let periodText = hourFormat.periodText(from: firedTime)
+        hour.value = hourFormat.formatHour(from: firedTime)
+        print(hour.value, hourFormat)
         hour.periodText = periodText
     }
     
     func updateDials(with date: Date) {
-        guard let settingsManager else { return }
-        let periodText = date.periodText(is24HourFormat: settingsManager.settings.hourFormat.is24HourFormat)
-        hour = FlipTextInfo(value: settingsManager.formatHour(from: date), periodText: periodText)
+        guard let hourFormat = settingsManager?.settings.hourFormat else { return }
+        let periodText = hourFormat.periodText(from: date)
+        hour = FlipTextInfo(value: hourFormat.formatHour(from: date), periodText: periodText)
         minute.value = date.formatted("mm")
         second.value = date.formatted("ss")
     }

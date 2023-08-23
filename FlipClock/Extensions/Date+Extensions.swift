@@ -10,11 +10,8 @@ import Foundation
 extension Date {
     func formatted(_ format: String) -> String {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en")
         formatter.dateFormat = format
         return formatter.string(from: self)
-    }
-    
-    func periodText(is24HourFormat: Bool) -> String? {
-        return is24HourFormat ? nil : self.formatted("a")
     }
 }
