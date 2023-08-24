@@ -37,7 +37,7 @@ struct ContentView: View {
                                 .environmentObject(timerManager)
                         }
                         TabBar(selectedTabOption: $selectedTabOption)
-                            .offset(y: showAllViews ? 0 : geometry.safeAreaInsets.bottom * 3)
+                            .offset(y: showAllViews ? 0 : geometry.safeAreaInsets.bottom + 200)
                             .frame(height: showAllViews ? nil : 0)
                     }
                 }
