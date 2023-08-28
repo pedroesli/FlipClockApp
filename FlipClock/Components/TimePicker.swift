@@ -14,8 +14,32 @@ struct TimePicker: View {
     @Binding var second: Int
     
     var body: some View {
-        UITimePickerRepresentable(hour: $hour, minute: $minute, second: $second)
-        .overlay {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            ZStack {
+                NeoRoundedRectangle(configuration: .dial)
+                    .aspectRatio(1, contentMode: .fit)
+                    .padding(-70)
+                UITimePickerRepresentable(hour: $hour, minute: $minute, second: $second)
+                    .overlay {
+                        TimePickerOverlay()
+                    }
+            }
+            .fixedSize()
+        } else {
+            NeoRoundedRectangle(configuration: .dial)
+                .aspectRatio(1, contentMode: .fit)
+                .overlay {
+                    UITimePickerRepresentable(hour: $hour, minute: $minute, second: $second)
+                        .overlay {
+                            TimePickerOverlay()
+                        }
+                }
+        }
+    }
+    
+    #if os(iOS)
+    struct TimePickerOverlay: View {
+        var body: some View {
             HStack(spacing: 0) {
                 Group {
                     Text(Localization.TimePicker.hour)
@@ -31,6 +55,7 @@ struct TimePicker: View {
             .foregroundColor(.primary)
         }
     }
+    #endif
 }
 
 struct TimePicker_Previews: PreviewProvider {
@@ -39,6 +64,7 @@ struct TimePicker_Previews: PreviewProvider {
     }
 }
 
+#if os(iOS)
 struct UITimePickerRepresentable: UIViewRepresentable {
     
     @Binding var hour: Int
@@ -97,3 +123,4 @@ struct UITimePickerRepresentable: UIViewRepresentable {
         }
     }
 }
+#endif
