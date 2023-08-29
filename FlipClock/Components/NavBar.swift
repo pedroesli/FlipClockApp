@@ -15,16 +15,22 @@ struct NavBar: View {
     @EnvironmentObject private var settingsManager: SettingsManager
     
     var verticalPadding: CGFloat {
+        #if os(iOS)
         if UIDevice.current.userInterfaceIdiom == .pad {
             return 0
         }
         return 9
+        #else
+        return 0
+        #endif
     }
     
     var topPadding: CGFloat {
+        #if os(iOS)
         if UIDevice.current.userInterfaceIdiom == .pad {
             return 16
         }
+        #endif
         return 0
     }
     
@@ -41,6 +47,7 @@ struct NavBar: View {
                         .padding(.vertical, verticalPadding)
                         .padding(.horizontal, 16)
                 }
+                .buttonStyle(.borderless)
             }
             .padding(.top, topPadding)
             .offset(y: showNavBar ? 0 : -safeAreaInsets.top - 100)
@@ -50,7 +57,7 @@ struct NavBar: View {
 struct NavBar_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geometry in
-            NavBar(safeAreaInsets: geometry.safeAreaInsets, showNavBar: .constant(false)) {
+            NavBar(safeAreaInsets: geometry.safeAreaInsets, showNavBar: .constant(true)) {
                 
             }
         }

@@ -13,48 +13,55 @@ struct ContentView: View {
     @StateObject private var clockManager = ClockManager()
     @StateObject private var stopWatchManager = StopWatchManager()
     @StateObject private var timerManager = TimerManager()
-    @State private var showSettingsView = false
-    @State private var selectedTabOption: TabOption = .clock
+    @State private var selectedViewOption: ViewOption = .clock
     @State private var showAllViews = false
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Asset.Colors.background.swiftUIColor.ignoresSafeArea()
-                GeometryReader { geometry in
-                    VStack {
-                        NavBar(safeAreaInsets: geometry.safeAreaInsets, showNavBar: $showAllViews) {
-                            onSettingsButtonPressed()
-                        }
-                        if selectedTabOption == .clock {
+        Group {
+            #if os(iOS)
+                if UIDevice.current.userInterfaceIdiom == .phone {
+                    StackView(showAllViews: $showAllViews, selectedViewOption: $selectedViewOption) {
+                        if selectedViewOption == .clock {
                             ClockView(showAllViews: $showAllViews)
                                 .environmentObject(clockManager)
-                        } else if selectedTabOption == .stopwatch {
+                        } else if selectedViewOption == .stopwatch {
                             StopWatchView(showAllViews: $showAllViews)
                                 .environmentObject(stopWatchManager)
                         } else {
                             TimerView(showAllViews: $showAllViews)
                                 .environmentObject(timerManager)
                         }
-                        TabBar(selectedTabOption: $selectedTabOption)
-                            .offset(y: showAllViews ? 0 : geometry.safeAreaInsets.bottom + 200)
-                            .frame(height: showAllViews ? nil : 0)
                     }
+                } else {
+                    splitView()
                 }
-            }
-            .navigationDestination(isPresented: $showSettingsView) {
-                ConfigurationView()
-            }
-            .onAppear {
-                clockManager.onAppear(settingsManager: settingsManager)
-            }
+            #else
+                splitView()
+            #endif
+        }
+        .onAppear {
+            clockManager.onAppear(settingsManager: settingsManager)
         }
         .tint(settingsManager.appColor)
         .environmentObject(settingsManager)
     }
     
-    func onSettingsButtonPressed() {
-        showSettingsView = true
+    @ViewBuilder
+    func splitView() -> some View {
+        SplitView(showSplitView: $showAllViews, selectedViewOption: $selectedViewOption) {
+            if selectedViewOption == .clock {
+                ClockView(showAllViews: $showAllViews)
+                    .environmentObject(clockManager)
+            } else if selectedViewOption == .stopwatch {
+                StopWatchView(showAllViews: $showAllViews)
+                    .environmentObject(stopWatchManager)
+            } else if selectedViewOption == .timer {
+                TimerView(showAllViews: $showAllViews)
+                    .environmentObject(timerManager)
+            } else {
+                ConfigurationView()
+            }
+        }
     }
 }
 

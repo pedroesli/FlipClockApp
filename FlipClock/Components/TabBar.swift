@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBar: View {
     
-    @Binding var selectedTabOption: TabOption
+    @Binding var selectedTabOption: ViewOption
     
     var body: some View {
         ZStack {
@@ -26,8 +26,8 @@ struct TabBar: View {
     
     struct BarItem: View {
         
-        @Binding var selectedTabOption: TabOption
-        let tabOption: TabOption
+        @Binding var selectedTabOption: ViewOption
+        let tabOption: ViewOption
         
         @EnvironmentObject private var settingsManager: SettingsManager
         var isSelected: Bool {

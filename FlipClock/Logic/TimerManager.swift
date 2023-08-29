@@ -23,12 +23,14 @@ class TimerManager: ObservableObject {
     private let exitDateKey = "EXITDATEKEY"
     
     init() {
+        #if os(iOS)
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
             self.didBecomeActive()
         }
         NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { _ in
             self.didEnterBackground()
         }
+        #endif
     }
     
     func initiateTimePublisher() {

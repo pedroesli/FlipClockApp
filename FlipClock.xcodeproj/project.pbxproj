@@ -46,7 +46,7 @@
 		3795BB4A2A7B26F80067BBFD /* CircleColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */; };
 		3795BB4C2A7B2C5B0067BBFD /* ColorInfoSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4B2A7B2C5B0067BBFD /* ColorInfoSelector.swift */; };
 		3795BB4E2A7B3C140067BBFD /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4D2A7B3C140067BBFD /* TabBar.swift */; };
-		379D968B2A7BF27000376455 /* TabOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D968A2A7BF27000376455 /* TabOption.swift */; };
+		379D968B2A7BF27000376455 /* ViewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D968A2A7BF27000376455 /* ViewOption.swift */; };
 		379D96932A7C3C9A00376455 /* NeoRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D96922A7C3C9A00376455 /* NeoRoundedRectangle.swift */; };
 		37A0B5082A8A5F5A001878EE /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A0B5072A8A5F5A001878EE /* TimePicker.swift */; };
 		37ADE38C2A72FE0B00FA4139 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38B2A72FE0B00FA4139 /* Settings.swift */; };
@@ -54,6 +54,10 @@
 		37ADE3902A7308F100FA4139 /* PaletteColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38F2A7308F100FA4139 /* PaletteColor.swift */; };
 		37ADE3922A73110B00FA4139 /* HourFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE3912A73110B00FA4139 /* HourFormat.swift */; };
 		37ADE3942A73303B00FA4139 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE3932A73303B00FA4139 /* SettingsManager.swift */; };
+		37C5D96A2A9E420000E10EE5 /* NavigateCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D9692A9E420000E10EE5 /* NavigateCommands.swift */; };
+		37C5D96C2A9E77FD00E10EE5 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D96B2A9E77FD00E10EE5 /* SplitView.swift */; };
+		37C5D96E2A9E7AB600E10EE5 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D96D2A9E7AB600E10EE5 /* MenuItem.swift */; };
+		37C5D9702A9E841600E10EE5 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D96F2A9E841600E10EE5 /* StackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,7 +102,7 @@
 		3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPicker.swift; sourceTree = "<group>"; };
 		3795BB4B2A7B2C5B0067BBFD /* ColorInfoSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfoSelector.swift; sourceTree = "<group>"; };
 		3795BB4D2A7B3C140067BBFD /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		379D968A2A7BF27000376455 /* TabOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabOption.swift; sourceTree = "<group>"; };
+		379D968A2A7BF27000376455 /* ViewOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOption.swift; sourceTree = "<group>"; };
 		379D96922A7C3C9A00376455 /* NeoRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoRoundedRectangle.swift; sourceTree = "<group>"; };
 		37A0B5072A8A5F5A001878EE /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		37ADE38B2A72FE0B00FA4139 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -106,6 +110,10 @@
 		37ADE38F2A7308F100FA4139 /* PaletteColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteColor.swift; sourceTree = "<group>"; };
 		37ADE3912A73110B00FA4139 /* HourFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourFormat.swift; sourceTree = "<group>"; };
 		37ADE3932A73303B00FA4139 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		37C5D9692A9E420000E10EE5 /* NavigateCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateCommands.swift; sourceTree = "<group>"; };
+		37C5D96B2A9E77FD00E10EE5 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
+		37C5D96D2A9E7AB600E10EE5 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		37C5D96F2A9E841600E10EE5 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +148,7 @@
 		37313E4B2A6B6B5900D3C058 /* FlipClock */ = {
 			isa = PBXGroup;
 			children = (
+				37C5D9682A9E418700E10EE5 /* Commands */,
 				378CE9A92A8C2E9800DE0931 /* Constants */,
 				379D96892A7BF22C00376455 /* Enums */,
 				3795BB462A7AEE400067BBFD /* Components */,
@@ -198,7 +207,7 @@
 			children = (
 				37ADE38F2A7308F100FA4139 /* PaletteColor.swift */,
 				37ADE3912A73110B00FA4139 /* HourFormat.swift */,
-				379D968A2A7BF27000376455 /* TabOption.swift */,
+				379D968A2A7BF27000376455 /* ViewOption.swift */,
 				378CD3042A80557B000B324F /* FlipTextHalfPlacement.swift */,
 				377F536D2A817DAA00A9FF3C /* FlipTextPlacement.swift */,
 				3794DCDC2A85B9E40063D9BE /* StopWatchState.swift */,
@@ -215,6 +224,8 @@
 				378CD2FC2A7D55D3000B324F /* ClockView.swift */,
 				37934D972A857BD90043A851 /* StopWatchView.swift */,
 				3794DCE42A86FFFF0063D9BE /* TimerView.swift */,
+				37C5D96B2A9E77FD00E10EE5 /* SplitView.swift */,
+				37C5D96F2A9E841600E10EE5 /* StackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +250,7 @@
 				378CD3082A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift */,
 				377F53792A831BD000A9FF3C /* FlipTextInfo.swift */,
 				3794DCEA2A8712540063D9BE /* TimerInfo.swift */,
+				37C5D96D2A9E7AB600E10EE5 /* MenuItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,6 +264,14 @@
 				3794DCE22A85C8C60063D9BE /* Int+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		37C5D9682A9E418700E10EE5 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				37C5D9692A9E420000E10EE5 /* NavigateCommands.swift */,
+			);
+			path = Commands;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,7 +381,8 @@
 				3794DCE92A8701680063D9BE /* TimerState.swift in Sources */,
 				3794DCD92A85B83B0063D9BE /* OverlayTap.swift in Sources */,
 				3794DCDB2A85B8EB0063D9BE /* View+Extensions.swift in Sources */,
-				379D968B2A7BF27000376455 /* TabOption.swift in Sources */,
+				379D968B2A7BF27000376455 /* ViewOption.swift in Sources */,
+				37C5D96A2A9E420000E10EE5 /* NavigateCommands.swift in Sources */,
 				3727739A2A8C38460079EF35 /* Assets+Constants.swift in Sources */,
 				3794DCE32A85C8C60063D9BE /* Int+Extensions.swift in Sources */,
 				378CD3092A808AFD000B324F /* NeoRoundedRectangleConfiguration.swift in Sources */,
@@ -369,6 +390,7 @@
 				377F53702A8184F700A9FF3C /* FlipDial.swift in Sources */,
 				377F53722A82C14600A9FF3C /* ClockManager.swift in Sources */,
 				3794DCE12A85C7C30063D9BE /* TimeInterval+Extensions.swift in Sources */,
+				37C5D9702A9E841600E10EE5 /* StackView.swift in Sources */,
 				37ADE3902A7308F100FA4139 /* PaletteColor.swift in Sources */,
 				3795BB452A7ACFFF0067BBFD /* ConfigurationView.swift in Sources */,
 				3794DCE72A87002D0063D9BE /* TimerManager.swift in Sources */,
@@ -388,6 +410,7 @@
 				378CE9A22A8AF78800DE0931 /* LocalNotification.swift in Sources */,
 				37313E4D2A6B6B5900D3C058 /* FlipClockApp.swift in Sources */,
 				3794DCD72A85B4C90063D9BE /* CapsuleButton.swift in Sources */,
+				37C5D96C2A9E77FD00E10EE5 /* SplitView.swift in Sources */,
 				3795BB4E2A7B3C140067BBFD /* TabBar.swift in Sources */,
 				377F53782A82EAAF00A9FF3C /* Date+Extensions.swift in Sources */,
 				378CD3052A80557B000B324F /* FlipTextHalfPlacement.swift in Sources */,
@@ -395,6 +418,7 @@
 				3795BB482A7AEE4B0067BBFD /* ColorCircle.swift in Sources */,
 				378CD3032A805562000B324F /* FlipText.swift in Sources */,
 				377F537A2A831BD000A9FF3C /* FlipTextInfo.swift in Sources */,
+				37C5D96E2A9E7AB600E10EE5 /* MenuItem.swift in Sources */,
 				3795BB4A2A7B26F80067BBFD /* CircleColorPicker.swift in Sources */,
 				3795BB4C2A7B2C5B0067BBFD /* ColorInfoSelector.swift in Sources */,
 			);
@@ -558,7 +582,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pedroesli.FlipClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -601,7 +625,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pedroesli.FlipClock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -35,7 +35,11 @@ struct TimerView: View {
                         .onOverlayTap {
                             showAllViews.toggle()
                         }
-                    platformTimePicker()
+                    TimePicker(
+                        hour: $timerManager.hourPicker,
+                        minute: $timerManager.minutePicker,
+                        second: $timerManager.secondPicker
+                    )
                 }
                 .opacity(timerManager.state != .start ? 0 : 1)
             }
@@ -56,33 +60,6 @@ struct TimerView: View {
         .onChange(of: timerManager.hourPicker, perform: timerManager.updateHourInfo(_:))
         .onChange(of: timerManager.minutePicker, perform: timerManager.updateMinuteInfo(_:))
         .onChange(of: timerManager.secondPicker, perform: timerManager.updateSecondInfo(_:))
-    }
-    
-    @ViewBuilder
-    func platformTimePicker() -> some View {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            ZStack {
-                NeoRoundedRectangle(configuration: .dial)
-                    .aspectRatio(1, contentMode: .fit)
-                    .padding(-70)
-                TimePicker(
-                    hour: $timerManager.hourPicker,
-                    minute: $timerManager.minutePicker,
-                    second: $timerManager.secondPicker
-                )
-            }
-            .fixedSize()
-        } else {
-            NeoRoundedRectangle(configuration: .dial)
-                .aspectRatio(1, contentMode: .fit)
-                .overlay {
-                    TimePicker(
-                        hour: $timerManager.hourPicker,
-                        minute: $timerManager.minutePicker,
-                        second: $timerManager.secondPicker
-                    )
-                }
-        }
     }
 }
 

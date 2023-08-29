@@ -14,27 +14,32 @@ struct TimePicker: View {
     @Binding var second: Int
     
     var body: some View {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            ZStack {
-                NeoRoundedRectangle(configuration: .dial)
-                    .aspectRatio(1, contentMode: .fit)
-                    .padding(-70)
-                UITimePickerRepresentable(hour: $hour, minute: $minute, second: $second)
-                    .overlay {
-                        TimePickerOverlay()
-                    }
-            }
-            .fixedSize()
-        } else {
-            NeoRoundedRectangle(configuration: .dial)
-                .aspectRatio(1, contentMode: .fit)
-                .overlay {
+        #if os(iOS)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                ZStack {
+                    NeoRoundedRectangle(configuration: .dial)
+                        .aspectRatio(1, contentMode: .fit)
+                        .padding(-70)
                     UITimePickerRepresentable(hour: $hour, minute: $minute, second: $second)
                         .overlay {
                             TimePickerOverlay()
                         }
                 }
-        }
+                .fixedSize()
+            } else {
+                NeoRoundedRectangle(configuration: .dial)
+                    .aspectRatio(1, contentMode: .fit)
+                    .overlay {
+                        UITimePickerRepresentable(hour: $hour, minute: $minute, second: $second)
+                            .overlay {
+                                TimePickerOverlay()
+                            }
+                    }
+            }
+        #else
+            // TODO: Make a TimePicker for Mac
+            Text("Hey")
+        #endif
     }
     
     #if os(iOS)

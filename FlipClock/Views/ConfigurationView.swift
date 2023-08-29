@@ -88,9 +88,13 @@ struct ConfigurationView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationStack {
+            #if os(iOS)
             ConfigurationView()
                 .navigationBarTitleDisplayMode(.inline)
-                .environmentObject(settingsManager)
+            #else
+            ConfigurationView()
+            #endif
         }
+        .environmentObject(settingsManager)
     }
 }
