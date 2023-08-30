@@ -14,11 +14,13 @@ struct CircleColorPicker: View {
         gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .pink]),
         center: .center
     )
-    @State private var pickedColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
+    @StateObject private var manager = CircleColorPickerManager()
     
     var body: some View {
         ZStack {
-            ColorPicker("", selection: $pickedColor, supportsOpacity: false).labelsHidden()
+            #if os(iOS)
+            ColorPicker("", selection: $manager.pickedColor, supportsOpacity: false).labelsHidden()
+            #endif
             Circle()
                 .fill(fillGradient)
                 .overlay {
@@ -26,15 +28,27 @@ struct CircleColorPicker: View {
                         .foregroundColor(.white)
                 }
                 .padding(5)
-                .allowsHitTesting(false)
+                .allowsHitTesting(manager.allowHitTesting)
             if isSelected {
                 Circle()
                     .stroke(lineWidth: 3)
                     .fill(fillGradient)
+                    .allowsHitTesting(manager.allowHitTesting)
             }
         }
         .frame(width: 50, height: 50)
-        .onChange(of: pickedColor) { newValue in
+        #if os(macOS)
+        .onTapGesture {
+            manager.showColorPanel()
+        }
+        .onAppear {
+            manager.createNotification()
+        }
+        .onDisappear {
+            manager.removeNotification()
+        }
+        #endif
+        .onChange(of: manager.pickedColor) { newValue in
             guard let components = newValue.components, !components.isEmpty else { return }
             let red = components[0]
             let green = components[1]
@@ -43,6 +57,7 @@ struct CircleColorPicker: View {
             action(red, green, blue)
         }
     }
+    
 }
 
 struct CircleColorPicker_Previews: PreviewProvider {
@@ -50,5 +65,6 @@ struct CircleColorPicker_Previews: PreviewProvider {
         CircleColorPicker(isSelected: .constant(true)) { _, _, _ in
             
         }
+        .frame(width: 500, height: 500)
     }
 }

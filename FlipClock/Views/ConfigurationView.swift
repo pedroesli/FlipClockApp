@@ -43,20 +43,20 @@ struct ConfigurationView: View {
                     selectedColorInfo: $settingsManager.settings.appColorInfo
                 )
             }
-            Section(Localization.Configuration.Section.Support.title) {
-                Button {
-                    requestReview()
-                } label: {
-                    Label {
-                        Text(Localization.Configuration.Button.Review.text)
-                            .foregroundColor(.primary)
-                    } icon: {
-                        Image(systemName: "rectangle.and.pencil.and.ellipsis")
-                            .foregroundColor(.indigo)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                }
-            }
+//            Section(Localization.Configuration.Section.Support.title) {
+//                Button {
+//                    requestReview()
+//                } label: {
+//                    Label {
+//                        Text(Localization.Configuration.Button.Review.text)
+//                            .foregroundColor(.primary)
+//                    } icon: {
+//                        Image(systemName: "rectangle.and.pencil.and.ellipsis")
+//                            .foregroundColor(.indigo)
+//                    }
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+//                }
+//            }
             Section(Localization.Configuration.Section.General.title) {
                 Button(Localization.Configuration.Button.DefaultSettings.text) {
                     showSettingsResetAlert = true
@@ -79,6 +79,7 @@ struct ConfigurationView: View {
         } message: {
             Text(Localization.Configuration.Text.reset)
         }
+        .formStyle(.grouped)
     }
 }
 

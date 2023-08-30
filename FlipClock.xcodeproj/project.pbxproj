@@ -49,6 +49,7 @@
 		379D968B2A7BF27000376455 /* ViewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D968A2A7BF27000376455 /* ViewOption.swift */; };
 		379D96932A7C3C9A00376455 /* NeoRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D96922A7C3C9A00376455 /* NeoRoundedRectangle.swift */; };
 		37A0B5082A8A5F5A001878EE /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A0B5072A8A5F5A001878EE /* TimePicker.swift */; };
+		37A5C01C2A9FE48F0072E303 /* CircleColorPickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5C01B2A9FE48F0072E303 /* CircleColorPickerManager.swift */; };
 		37ADE38C2A72FE0B00FA4139 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38B2A72FE0B00FA4139 /* Settings.swift */; };
 		37ADE38E2A73040400FA4139 /* ColorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38D2A73040400FA4139 /* ColorInfo.swift */; };
 		37ADE3902A7308F100FA4139 /* PaletteColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38F2A7308F100FA4139 /* PaletteColor.swift */; };
@@ -106,6 +107,7 @@
 		379D968A2A7BF27000376455 /* ViewOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOption.swift; sourceTree = "<group>"; };
 		379D96922A7C3C9A00376455 /* NeoRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoRoundedRectangle.swift; sourceTree = "<group>"; };
 		37A0B5072A8A5F5A001878EE /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		37A5C01B2A9FE48F0072E303 /* CircleColorPickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPickerManager.swift; sourceTree = "<group>"; };
 		37ADE38B2A72FE0B00FA4139 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		37ADE38D2A73040400FA4139 /* ColorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfo.swift; sourceTree = "<group>"; };
 		37ADE38F2A7308F100FA4139 /* PaletteColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteColor.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				3794DCD42A8587B60063D9BE /* StopWatchManager.swift */,
 				3794DCE62A87002D0063D9BE /* TimerManager.swift */,
 				378CE9A12A8AF78800DE0931 /* LocalNotification.swift */,
+				37A5C01B2A9FE48F0072E303 /* CircleColorPickerManager.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				3795BB4E2A7B3C140067BBFD /* TabBar.swift in Sources */,
 				377F53782A82EAAF00A9FF3C /* Date+Extensions.swift in Sources */,
 				378CD3052A80557B000B324F /* FlipTextHalfPlacement.swift in Sources */,
+				37A5C01C2A9FE48F0072E303 /* CircleColorPickerManager.swift in Sources */,
 				379D96932A7C3C9A00376455 /* NeoRoundedRectangle.swift in Sources */,
 				3795BB482A7AEE4B0067BBFD /* ColorCircle.swift in Sources */,
 				378CD3032A805562000B324F /* FlipText.swift in Sources */,
