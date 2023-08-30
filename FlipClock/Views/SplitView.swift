@@ -13,12 +13,12 @@ struct SplitView<Content>: View where Content: View {
     @Binding var selectedViewOption: ViewOption
     let detail: Content
     @State private var visibility: NavigationSplitViewVisibility = .doubleColumn
-    @State private var selectedMenuItem: Int? = 0
+    @State private var selectedMenuItem: ViewOption? = .clock
     private let menuItems = [
-        MenuItem(id: 0, title: "Clock", iconName: ViewOption.clock.imageName),
-        MenuItem(id: 1, title: "Stopwatch", iconName: ViewOption.stopwatch.imageName),
-        MenuItem(id: 2, title: "Timer", iconName: ViewOption.timer.imageName),
-        MenuItem(id: 3, title: "Settings", iconName: ViewOption.settings.imageName)
+        MenuItem(id: .clock, title: "Clock", iconName: ViewOption.clock.imageName),
+        MenuItem(id: .stopwatch, title: "Stopwatch", iconName: ViewOption.stopwatch.imageName),
+        MenuItem(id: .timer, title: "Timer", iconName: ViewOption.timer.imageName),
+        MenuItem(id: .settings, title: "Settings", iconName: ViewOption.settings.imageName)
     ]
     
     init(showSplitView: Binding<Bool>, selectedViewOption: Binding<ViewOption>, @ViewBuilder detail: () -> Content) {
@@ -52,17 +52,12 @@ struct SplitView<Content>: View where Content: View {
             visibility = newValue ? .doubleColumn : .detailOnly
         }
         .onChange(of: selectedMenuItem) { newValue in
-            switch newValue {
-            case 0:
-                selectedViewOption = .clock
-            case 1:
-                selectedViewOption = .stopwatch
-            case 2:
-                selectedViewOption = .timer
-            case 3:
-                selectedViewOption = .settings
-            default: break
-            }
+            guard let newValue, newValue != selectedViewOption else { return }
+            selectedViewOption = newValue
+        }
+        .onChange(of: selectedViewOption) { newValue in
+            guard newValue != selectedMenuItem else { return }
+            selectedMenuItem = newValue
         }
     }
 }

@@ -58,6 +58,7 @@
 		37C5D96C2A9E77FD00E10EE5 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D96B2A9E77FD00E10EE5 /* SplitView.swift */; };
 		37C5D96E2A9E7AB600E10EE5 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D96D2A9E7AB600E10EE5 /* MenuItem.swift */; };
 		37C5D9702A9E841600E10EE5 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D96F2A9E841600E10EE5 /* StackView.swift */; };
+		37C5D9722A9ED4DA00E10EE5 /* FocusedValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D9712A9ED4DA00E10EE5 /* FocusedValues+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		37C5D96B2A9E77FD00E10EE5 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		37C5D96D2A9E7AB600E10EE5 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		37C5D96F2A9E841600E10EE5 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		37C5D9712A9ED4DA00E10EE5 /* FocusedValues+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusedValues+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +264,7 @@
 				3794DCDA2A85B8EB0063D9BE /* View+Extensions.swift */,
 				3794DCE02A85C7C30063D9BE /* TimeInterval+Extensions.swift */,
 				3794DCE22A85C8C60063D9BE /* Int+Extensions.swift */,
+				37C5D9712A9ED4DA00E10EE5 /* FocusedValues+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				37ADE3942A73303B00FA4139 /* SettingsManager.swift in Sources */,
 				37934D982A857BD90043A851 /* StopWatchView.swift in Sources */,
 				37ADE38E2A73040400FA4139 /* ColorInfo.swift in Sources */,
+				37C5D9722A9ED4DA00E10EE5 /* FocusedValues+Extensions.swift in Sources */,
 				37313E4F2A6B6B5900D3C058 /* ContentView.swift in Sources */,
 				37A0B5082A8A5F5A001878EE /* TimePicker.swift in Sources */,
 				377F536E2A817DAA00A9FF3C /* FlipTextPlacement.swift in Sources */,

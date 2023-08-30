@@ -44,6 +44,7 @@ struct ContentView: View {
         }
         .tint(settingsManager.appColor)
         .environmentObject(settingsManager)
+        .focusedSceneValue(\.viewOption, $selectedViewOption)
     }
     
     @ViewBuilder

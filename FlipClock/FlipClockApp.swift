@@ -13,5 +13,8 @@ struct FlipClockApp: App {
         WindowGroup {
             ContentView()
         }
+        .commands {
+            NavigateCommands()
+        }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct MenuItem: Identifiable {
-    let id: Int
+    let id: ViewOption
     let title: String
     let iconName: String
 }

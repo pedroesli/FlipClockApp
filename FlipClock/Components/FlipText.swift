@@ -59,9 +59,6 @@ struct FlipText: View {
                     )
             }
         }
-        .overlay {
-            Asset.Colors.background.swiftUIColor.frame(height: 3)
-        }
         .onAppear {
             currentValue = info.value
             previousValue = info.value

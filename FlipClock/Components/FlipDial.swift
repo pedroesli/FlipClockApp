@@ -25,6 +25,9 @@ struct FlipDial: View {
                 }
             }
         }
+        .overlay {
+            Asset.Colors.background.swiftUIColor.frame(height: 3)
+        }
         .onAppear {
             updateValues(from: info)
         }
