@@ -39,6 +39,10 @@ struct SplitView<Content>: View where Content: View {
             ZStack {
                 Asset.Colors.background.swiftUIColor.ignoresSafeArea()
                 detail
+                #if os(macOS)
+                    .padding(.top, 20)
+                    .padding(.bottom, 6)
+                #endif
             }
             #if os(iOS)
                 .toolbar(.hidden, for: .navigationBar)

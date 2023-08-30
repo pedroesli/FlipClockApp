@@ -47,6 +47,7 @@ struct ColorInfoSelector: View {
         .padding(.vertical, 6)
         .onAppear {
             selectedAssetColor = selectedColorInfo.assetColor
+            isColorPickerSelected = !selectedColorInfo.isAssetColor
         }
         .onChange(of: selectedColorInfo) { newValue in
             guard newValue.assetColor != selectedAssetColor else { return }

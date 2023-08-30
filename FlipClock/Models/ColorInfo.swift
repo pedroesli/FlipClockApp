@@ -38,6 +38,10 @@ struct ColorInfo: Codable, Equatable {
         preconditionFailure("No information given to make a color, assetName or rgb is nil")
     }
     
+    var isAssetColor: Bool {
+        assetColor != nil
+    }
+    
     static var baseColorInfo: ColorInfo {
         ColorInfo(assetColor: .base)
     }
