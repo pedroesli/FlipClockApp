@@ -139,7 +139,6 @@ struct TextFieldTimePicker: View {
         case none
         
         mutating func next() {
-            print("Next")
             let next = self.rawValue + 1
             if next < Self.none.rawValue {
                 self = DialOption(rawValue: next)!
@@ -155,25 +154,57 @@ struct TextFieldTimePicker: View {
     @State private var hourText = "00"
     @State private var minuteText = "00"
     @State private var secondText = "00"
+    @EnvironmentObject private var settingsManager: SettingsManager
+    
+    var barPositionMultiplier: CGFloat {
+        switch selectedDial {
+        case .hour: return 0
+        case .minute: return 1
+        case .second: return 2
+        default: return 0
+        }
+    }
     
     var body: some View {
         ZStack {
             NeoRoundedRectangle(configuration: .dial)
             HStack(spacing: 0) {
-                TimePickerDial(text: hourText, dial: .hour, selectedDial: $selectedDial)
-                    .onTapGesture {
-                        selectedDial = .hour
+                VStack(spacing: 0) {
+                    TimePickerDial(text: hourText)
+                        .onTapGesture {
+                            withAnimation {
+                                selectedDial = .hour
+                            }
+                        }
+                    GeometryReader { geometry in
+                        RoundedRectangle(cornerRadius: 16)
+                            .offset(x: (geometry.size.width + 14) * barPositionMultiplier)
+                            .fill(settingsManager.appColor)
+                            .opacity(selectedDial == .none ? 0 : 1)
                     }
+                }
                 Colon()
-                TimePickerDial(text: minuteText, dial: .minute, selectedDial: $selectedDial)
-                    .onTapGesture {
-                        selectedDial = .minute
-                    }
+                VStack(spacing: 0) {
+                    TimePickerDial(text: minuteText)
+                        .onTapGesture {
+                            withAnimation {
+                                selectedDial = .minute
+                            }
+                        }
+                    RoundedRectangle(cornerRadius: 16)
+                        .opacity(0)
+                }
                 Colon()
-                TimePickerDial(text: secondText, dial: .second, selectedDial: $selectedDial)
-                    .onTapGesture {
-                        selectedDial = .second
-                    }
+                VStack(spacing: 0) {
+                    TimePickerDial(text: secondText)
+                        .onTapGesture {
+                            withAnimation {
+                                selectedDial = .second
+                            }
+                        }
+                    RoundedRectangle(cornerRadius: 16)
+                        .opacity(0)
+                }
             }
             .padding()
             .background {
@@ -188,11 +219,6 @@ struct TextFieldTimePicker: View {
                         }
                         .keyboardShortcut(keyboardShortcut)
                     }
-                    Button("") {
-                        print("Tab")
-                        selectedDial.next()
-                    }
-                    .keyboardShortcut(.tab)
                 }
                 .opacity(0)
             }
@@ -234,19 +260,12 @@ struct TextFieldTimePicker: View {
     
     struct TimePickerDial: View {
         let text: String
-        let dial: DialOption
-        @Binding var selectedDial: DialOption
         @EnvironmentObject private var settingsManager: SettingsManager
         
         var body: some View {
             Text(text)
                 .font(.system(size: 110).width(.compressed).monospacedDigit())
-                .background {
-                    if selectedDial == dial {
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(settingsManager.appColor)
-                    }
-                }
+                .foregroundColor(settingsManager.displayColor)
         }
     }
     
@@ -255,7 +274,7 @@ struct TextFieldTimePicker: View {
             Text(":")
                 .font(.system(size: 80).width(.compressed))
                 .multilineTextAlignment(.center)
-                .offset(y: -8)
+                .offset(y: -10)
         }
     }
 }
