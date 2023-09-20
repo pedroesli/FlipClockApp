@@ -52,7 +52,6 @@ struct ConfigurationView: View {
                         Image(systemName: "rectangle.and.pencil.and.ellipsis")
                             .foregroundColor(settingsManager.appColor)
                     }
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 }
             }
             Section(Localization.Configuration.Section.General.title) {
