@@ -6,3 +6,9 @@ Link to the appstore: [https://apps.apple.com/br/app/neoflip-clock/id6459699583]
 
 ![Preview Clock.png](Previews/Preview_Clock.png)
 ![Preview StopWatch.png](Previews/Preview_StopWatch.png)
+
+## Future plans
+
+- [ ]  Add a donation option
+- [ ]  Create widgets
+- [ ]  Make horizontal option
