@@ -11,7 +11,6 @@ import StoreKit
 struct ConfigurationView: View {
     
     @EnvironmentObject var settingsManager: SettingsManager
-    @Environment(\.requestReview) private var requestReview
     @State private var showSettingsResetAlert = false
     
     var toggleTint: Color {
@@ -43,20 +42,19 @@ struct ConfigurationView: View {
                     selectedColorInfo: $settingsManager.settings.appColorInfo
                 )
             }
-//            Section(Localization.Configuration.Section.Support.title) {
-//                Button {
-//                    requestReview()
-//                } label: {
-//                    Label {
-//                        Text(Localization.Configuration.Button.Review.text)
-//                            .foregroundColor(.primary)
-//                    } icon: {
-//                        Image(systemName: "rectangle.and.pencil.and.ellipsis")
-//                            .foregroundColor(.indigo)
-//                    }
+            Section(Localization.Configuration.Section.Support.title) {
+                Button {
+                    settingsManager.requestReviewManually()
+                } label: {
+                    Label {
+                        Text(Localization.Configuration.Button.Review.text)
+                    } icon: {
+                        Image(systemName: "rectangle.and.pencil.and.ellipsis")
+                            .foregroundColor(settingsManager.appColor)
+                    }
 //                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-//                }
-//            }
+                }
+            }
             Section(Localization.Configuration.Section.General.title) {
                 Button(Localization.Configuration.Button.DefaultSettings.text) {
                     showSettingsResetAlert = true
@@ -70,6 +68,7 @@ struct ConfigurationView: View {
                     .listRowBackground(EmptyView())
             }
         }
+        .formStyle(.grouped)
         .foregroundColor(.primary)
         .navigationTitle(Localization.Configuration.title)
         .confirmationDialog(Localization.Configuration.ConfirmationDialog.text, isPresented: $showSettingsResetAlert) {
@@ -79,7 +78,9 @@ struct ConfigurationView: View {
         } message: {
             Text(Localization.Configuration.Text.reset)
         }
-        .formStyle(.grouped)
+        #if os(macOS)
+        .scrollContentBackground(.hidden)
+        #endif
     }
 }
 

@@ -25,6 +25,16 @@ class SettingsManager: ObservableObject {
         settings = Settings()
     }
     
+    func requestReviewManually() {
+        guard let writeReviewURL = URL(string: "https://apps.apple.com/app/id6459699583?action=write-review")
+            else { fatalError("Expected a valid URL") }
+        #if os(iOS)
+            UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+        #else
+            NSWorkspace.shared.open(writeReviewURL)
+        #endif
+    }
+    
     private func save() {
         guard let data = try? JSONEncoder().encode(settings) else { return }
         UserDefaults.standard.set(data, forKey: Self.settingsKey)
