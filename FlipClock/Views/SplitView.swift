@@ -15,10 +15,10 @@ struct SplitView<Content>: View where Content: View {
     @State private var visibility: NavigationSplitViewVisibility = .doubleColumn
     @State private var selectedMenuItem: ViewOption? = .clock
     private let menuItems = [
-        MenuItem(id: .clock, title: "Clock", iconName: ViewOption.clock.imageName),
-        MenuItem(id: .stopwatch, title: "Stopwatch", iconName: ViewOption.stopwatch.imageName),
-        MenuItem(id: .timer, title: "Timer", iconName: ViewOption.timer.imageName),
-        MenuItem(id: .settings, title: "Settings", iconName: ViewOption.settings.imageName)
+        MenuItem(id: .clock, title: Localization.SplitView.clock, iconName: ViewOption.clock.imageName),
+        MenuItem(id: .stopwatch, title: Localization.SplitView.stopwatch, iconName: ViewOption.stopwatch.imageName),
+        MenuItem(id: .timer, title: Localization.SplitView.timer, iconName: ViewOption.timer.imageName),
+        MenuItem(id: .settings, title: Localization.SplitView.settings, iconName: ViewOption.settings.imageName)
     ]
     
     init(showSplitView: Binding<Bool>, selectedViewOption: Binding<ViewOption>, @ViewBuilder detail: () -> Content) {

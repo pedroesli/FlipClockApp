@@ -99,6 +99,16 @@ internal enum Localization {
     /// Timer
     internal static let title = Localization.tr("Localizable", "Notification.Title", fallback: "Timer")
   }
+  internal enum SplitView {
+    /// Clock
+    internal static let clock = Localization.tr("Localizable", "SplitView.Clock", fallback: "Clock")
+    /// Settings
+    internal static let settings = Localization.tr("Localizable", "SplitView.Settings", fallback: "Settings")
+    /// Stopwatch
+    internal static let stopwatch = Localization.tr("Localizable", "SplitView.Stopwatch", fallback: "Stopwatch")
+    /// Timer
+    internal static let timer = Localization.tr("Localizable", "SplitView.Timer", fallback: "Timer")
+  }
   internal enum StopWatch {
     /// Reset
     internal static let reset = Localization.tr("Localizable", "StopWatch.Reset", fallback: "Reset")

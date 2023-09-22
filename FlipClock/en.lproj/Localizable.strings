@@ -46,3 +46,9 @@
 // Notification
 "Notification.Title" = "Timer";
 "Notification.Subtitle" = "The time has finished";
+
+// Split View
+"SplitView.Clock" = "Clock";
+"SplitView.Stopwatch" = "Stopwatch";
+"SplitView.Timer" = "Timer";
+"SplitView.Settings" = "Settings";

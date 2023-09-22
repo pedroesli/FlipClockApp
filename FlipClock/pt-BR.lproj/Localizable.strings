@@ -7,7 +7,7 @@
 */
 
 // Configuration View
-"Configuration.Title" = "Configuração";
+"Configuration.Title" = "Configurações";
 "Configuration.Section.TimeDisplay.Title" = "Exibição de tempo";
 "Configuration.Section.App.Title" = "App";
 "Configuration.Section.Support.Title" = "Apoiar";
@@ -46,3 +46,9 @@
 // Notification
 "Notification.Title" = "Timer";
 "Notification.Subtitle" = "O tempo acabou";
+
+// Split View
+"SplitView.Clock" = "Relógio";
+"SplitView.Stopwatch" = "Cronômetro";
+"SplitView.Timer" = "Timer";
+"SplitView.Settings" = "Configurações";
