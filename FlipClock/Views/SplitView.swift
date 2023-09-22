@@ -32,6 +32,7 @@ struct SplitView<Content>: View where Content: View {
             List(menuItems, selection: $selectedMenuItem) { item in
                 Label(item.title, systemImage: item.iconName)
             }
+            .navigationSplitViewColumnWidth(150)
             #if os(iOS)
                 .toolbar(.hidden, for: .navigationBar)
             #endif
