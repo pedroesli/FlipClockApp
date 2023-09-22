@@ -43,3 +43,6 @@
 "TimePicker.Minute" = "min";
 "TimePicker.Second" = "s";
 
+// Notification
+"Notification.Title" = "Timer";
+"Notification.Subtitle" = "O tempo acabou";

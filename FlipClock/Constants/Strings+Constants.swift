@@ -93,6 +93,12 @@ internal enum Localization {
       }
     }
   }
+  internal enum Notification {
+    /// The time has finished
+    internal static let subtitle = Localization.tr("Localizable", "Notification.Subtitle", fallback: "The time has finished")
+    /// Timer
+    internal static let title = Localization.tr("Localizable", "Notification.Title", fallback: "Timer")
+  }
   internal enum StopWatch {
     /// Reset
     internal static let reset = Localization.tr("Localizable", "StopWatch.Reset", fallback: "Reset")

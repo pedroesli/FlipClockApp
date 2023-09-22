@@ -24,8 +24,8 @@ class LocalNotification {
     
     func timerNotification(timeInterval: Int) {
         let content = UNMutableNotificationContent()
-        content.title = "Timer"
-        content.subtitle = "The time has finished"
+        content.title = Localization.Notification.title
+        content.subtitle = Localization.Notification.subtitle
         content.sound = UNNotificationSound.defaultCritical
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(timeInterval), repeats: false)
