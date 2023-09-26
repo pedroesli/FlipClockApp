@@ -1,0 +1,120 @@
+{
+  "identifier" : "28A42D7B",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6467522778",
+      "localizations" : [
+        {
+          "description" : "Uma gorjeta para me ajudar com atualizações",
+          "displayName" : "Gorjeta Generosa",
+          "locale" : "pt_BR"
+        },
+        {
+          "description" : "A generous tip to help me buy more coffee",
+          "displayName" : "Generous Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.consumable.tip01",
+      "referenceName" : "Tip01",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "6467522834",
+      "localizations" : [
+        {
+          "description" : "A cool tip to buy me more coffee",
+          "displayName" : "Cool Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Uma gorjeta legal",
+          "displayName" : "Gorjeta Legal",
+          "locale" : "pt_BR"
+        }
+      ],
+      "productID" : "com.consumable.tip02",
+      "referenceName" : "Tip02",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6467522924",
+      "localizations" : [
+        {
+          "description" : "An Incredible Tip",
+          "displayName" : "Incredible Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Uma gorjeta Incrível",
+          "displayName" : "Gorjeta Incrível",
+          "locale" : "pt_BR"
+        }
+      ],
+      "productID" : "com.consumable.tip03",
+      "referenceName" : "Tip03",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "6467522956",
+      "localizations" : [
+        {
+          "description" : "Vou poder comprar muitos cafés!",
+          "displayName" : "Gorjeta Excepcional",
+          "locale" : "pt_BR"
+        },
+        {
+          "description" : "This will buy me a lot of coffee! ",
+          "displayName" : "Awesome Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.consumable.tip04",
+      "referenceName" : "Tip04",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "40.0",
+      "familyShareable" : false,
+      "internalID" : "6467522984",
+      "localizations" : [
+        {
+          "description" : "I'll have coffee for a whole month!",
+          "displayName" : "Magnificent Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Vou ter café por muito tempo!",
+          "displayName" : "Gorjeta Magnifica",
+          "locale" : "pt_BR"
+        }
+      ],
+      "productID" : "com.consumable.tip05",
+      "referenceName" : "Tip05",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6459699583",
+    "_developerTeamID" : "L6B3W3NNQ3",
+    "_lastSynchronizedDate" : 717382733.86270595
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

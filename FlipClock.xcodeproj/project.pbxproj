@@ -79,6 +79,7 @@
 		377F53712A82C14600A9FF3C /* ClockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockManager.swift; sourceTree = "<group>"; };
 		377F53772A82EAAF00A9FF3C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		377F53792A831BD000A9FF3C /* FlipTextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextInfo.swift; sourceTree = "<group>"; };
+		3783149A2ABF8E730091275F /* NeoFlip Clock Store.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "NeoFlip Clock Store.storekit"; sourceTree = "<group>"; };
 		378CD2FC2A7D55D3000B324F /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		378CD2FE2A803722000B324F /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		378CD3002A8053F1000B324F /* FlipTextHalf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextHalf.swift; sourceTree = "<group>"; };
@@ -170,6 +171,7 @@
 				37313E522A6B6B5B00D3C058 /* FlipClock.entitlements */,
 				37313E532A6B6B5B00D3C058 /* Preview Content */,
 				378CE9A72A8BB2D200DE0931 /* Localizable.strings */,
+				3783149A2ABF8E730091275F /* NeoFlip Clock Store.storekit */,
 			);
 			path = FlipClock;
 			sourceTree = "<group>";
