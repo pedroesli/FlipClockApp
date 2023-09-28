@@ -58,7 +58,7 @@ struct ConfigurationView: View {
                     showTipView = true
                 } label: {
                     Label {
-                        Text("Gorjeta pro Café")
+                        Text(Localization.Configuration.Button.Tip.text)
                     } icon: {
                         Image(systemName: "cup.and.saucer.fill")
                             .foregroundColor(.brown)

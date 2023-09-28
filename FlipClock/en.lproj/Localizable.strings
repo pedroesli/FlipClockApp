@@ -22,6 +22,7 @@
 "Configuration.Button.Review.Text" = "Review FlipNeo Clock";
 "Configuration.Button.DefaultSettings.Text" = "Default settings";
 "Configuration.Button.Reset.Text" = "Reset";
+"Configuration.Button.Tip.Text" = "Buy me a coffee";
 "Configuration.Text.MadeBy" = "Made with ❤️☕️ by Pedro Ésli";
 "Configuration.Text.Reset" = "Reset to default settings";
 "Configuration.ConfirmationDialog.Text" = "Are you sure you want to reset to the default settings?";

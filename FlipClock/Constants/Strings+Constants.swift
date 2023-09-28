@@ -29,6 +29,10 @@ internal enum Localization {
         /// Review FlipNeo Clock
         internal static let text = Localization.tr("Localizable", "Configuration.Button.Review.Text", fallback: "Review FlipNeo Clock")
       }
+      internal enum Tip {
+        /// Buy me a coffee
+        internal static let text = Localization.tr("Localizable", "Configuration.Button.Tip.Text", fallback: "Buy me a coffee")
+      }
     }
     internal enum ColorInfoSelector {
       internal enum DialTextColor {
@@ -144,11 +148,11 @@ internal enum Localization {
     internal static let subtitle = Localization.tr("Localizable", "TipView.Subtitle", fallback: "Consider Supporting NeoFlip Clock")
     /// Help NeoFlip Clock
     internal static let title = Localization.tr("Localizable", "TipView.Title", fallback: "Help NeoFlip Clock")
-    /// Your help means a lot! 🫶
-    internal static let yourHelpMeansAlot = Localization.tr("Localizable", "TipView.YourHelpMeansAlot", fallback: "Your help means a lot! 🫶")
+    /// Your help means a lot!
+    internal static let yourHelpMeansAlot = Localization.tr("Localizable", "TipView.YourHelpMeansAlot", fallback: "Your help means a lot!")
     internal enum MoreUpdates {
-      /// With your help I will be able to maintain the app with more updates and most importantly **make it free** 🙌, because my intention is not to profit from premium features but to distribute an app that everyone can **enjoy* *👍.
-      internal static let text = Localization.tr("Localizable", "TipView.MoreUpdates.Text", fallback: "With your help I will be able to maintain the app with more updates and most importantly **make it free** 🙌, because my intention is not to profit from premium features but to distribute an app that everyone can **enjoy* *👍.")
+      /// With your help I will be able to maintain the app with more updates and most importantly **make it free** 🙌, because my intention is not to profit from premium features but to distribute an app that everyone can **enjoy**.
+      internal static let text = Localization.tr("Localizable", "TipView.MoreUpdates.Text", fallback: "With your help I will be able to maintain the app with more updates and most importantly **make it free** 🙌, because my intention is not to profit from premium features but to distribute an app that everyone can **enjoy**.")
       /// More updates!
       internal static let title = Localization.tr("Localizable", "TipView.MoreUpdates.Title", fallback: "More updates!")
     }

@@ -110,8 +110,8 @@
     "_developerTeamID" : "L6B3W3NNQ3",
     "_failTransactionsEnabled" : false,
     "_lastSynchronizedDate" : 717382733.86270595,
-    "_locale" : "pt_BR",
-    "_storefront" : "BRA",
+    "_locale" : "en_US",
+    "_storefront" : "USA",
     "_storeKitErrors" : [
       {
         "current" : {
