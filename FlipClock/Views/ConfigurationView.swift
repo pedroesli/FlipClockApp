@@ -12,6 +12,7 @@ struct ConfigurationView: View {
     
     @EnvironmentObject var settingsManager: SettingsManager
     @State private var showSettingsResetAlert = false
+    @State private var showTipView = false
     
     var toggleTint: Color {
         guard let paletteColor = settingsManager.settings.appColorInfo.assetColor,
@@ -50,7 +51,17 @@ struct ConfigurationView: View {
                         Text(Localization.Configuration.Button.Review.text)
                     } icon: {
                         Image(systemName: "rectangle.and.pencil.and.ellipsis")
-                            .foregroundColor(settingsManager.appColor)
+                            .foregroundColor(.green)
+                    }
+                }
+                Button {
+                    showTipView = true
+                } label: {
+                    Label {
+                        Text("Gorjeta pro Café")
+                    } icon: {
+                        Image(systemName: "cup.and.saucer.fill")
+                            .foregroundColor(.brown)
                     }
                 }
             }
@@ -76,6 +87,9 @@ struct ConfigurationView: View {
             }
         } message: {
             Text(Localization.Configuration.Text.reset)
+        }
+        .navigationDestination(isPresented: $showTipView) {
+            TipView()
         }
         #if os(macOS)
         .scrollContentBackground(.hidden)

@@ -46,6 +46,10 @@
 		3795BB4A2A7B26F80067BBFD /* CircleColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */; };
 		3795BB4C2A7B2C5B0067BBFD /* ColorInfoSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4B2A7B2C5B0067BBFD /* ColorInfoSelector.swift */; };
 		3795BB4E2A7B3C140067BBFD /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3795BB4D2A7B3C140067BBFD /* TabBar.swift */; };
+		3799EF5A2AC5BE490018AB87 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799EF592AC5BE490018AB87 /* StoreManager.swift */; };
+		3799EF5C2AC5C7530018AB87 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799EF5B2AC5C7530018AB87 /* TipView.swift */; };
+		3799EF5E2AC600D20018AB87 /* AttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799EF5D2AC600D20018AB87 /* AttributedString+Extensions.swift */; };
+		3799EF602AC6182C0018AB87 /* ThankYouTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3799EF5F2AC6182C0018AB87 /* ThankYouTipView.swift */; };
 		379D968B2A7BF27000376455 /* ViewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D968A2A7BF27000376455 /* ViewOption.swift */; };
 		379D96932A7C3C9A00376455 /* NeoRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D96922A7C3C9A00376455 /* NeoRoundedRectangle.swift */; };
 		37A0B5082A8A5F5A001878EE /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A0B5072A8A5F5A001878EE /* TimePicker.swift */; };
@@ -79,7 +83,7 @@
 		377F53712A82C14600A9FF3C /* ClockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockManager.swift; sourceTree = "<group>"; };
 		377F53772A82EAAF00A9FF3C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		377F53792A831BD000A9FF3C /* FlipTextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextInfo.swift; sourceTree = "<group>"; };
-		3783149A2ABF8E730091275F /* NeoFlip Clock Store.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "NeoFlip Clock Store.storekit"; sourceTree = "<group>"; };
+		3783149A2ABF8E730091275F /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		378CD2FC2A7D55D3000B324F /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		378CD2FE2A803722000B324F /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		378CD3002A8053F1000B324F /* FlipTextHalf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextHalf.swift; sourceTree = "<group>"; };
@@ -107,6 +111,10 @@
 		3795BB492A7B26F80067BBFD /* CircleColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorPicker.swift; sourceTree = "<group>"; };
 		3795BB4B2A7B2C5B0067BBFD /* ColorInfoSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfoSelector.swift; sourceTree = "<group>"; };
 		3795BB4D2A7B3C140067BBFD /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		3799EF592AC5BE490018AB87 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		3799EF5B2AC5C7530018AB87 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
+		3799EF5D2AC600D20018AB87 /* AttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+Extensions.swift"; sourceTree = "<group>"; };
+		3799EF5F2AC6182C0018AB87 /* ThankYouTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouTipView.swift; sourceTree = "<group>"; };
 		379D968A2A7BF27000376455 /* ViewOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOption.swift; sourceTree = "<group>"; };
 		379D96922A7C3C9A00376455 /* NeoRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoRoundedRectangle.swift; sourceTree = "<group>"; };
 		37A0B5072A8A5F5A001878EE /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
@@ -157,6 +165,7 @@
 		37313E4B2A6B6B5900D3C058 /* FlipClock */ = {
 			isa = PBXGroup;
 			children = (
+				3799EF582AC5BE0F0018AB87 /* Store */,
 				37C5D9682A9E418700E10EE5 /* Commands */,
 				378CE9A92A8C2E9800DE0931 /* Constants */,
 				379D96892A7BF22C00376455 /* Enums */,
@@ -171,7 +180,6 @@
 				37313E522A6B6B5B00D3C058 /* FlipClock.entitlements */,
 				37313E532A6B6B5B00D3C058 /* Preview Content */,
 				378CE9A72A8BB2D200DE0931 /* Localizable.strings */,
-				3783149A2ABF8E730091275F /* NeoFlip Clock Store.storekit */,
 			);
 			path = FlipClock;
 			sourceTree = "<group>";
@@ -212,6 +220,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		3799EF582AC5BE0F0018AB87 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				3783149A2ABF8E730091275F /* Products.storekit */,
+				3799EF592AC5BE490018AB87 /* StoreManager.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		379D96892A7BF22C00376455 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +253,8 @@
 				3794DCE42A86FFFF0063D9BE /* TimerView.swift */,
 				37C5D96B2A9E77FD00E10EE5 /* SplitView.swift */,
 				37C5D96F2A9E841600E10EE5 /* StackView.swift */,
+				3799EF5B2AC5C7530018AB87 /* TipView.swift */,
+				3799EF5F2AC6182C0018AB87 /* ThankYouTipView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +295,7 @@
 				3794DCE22A85C8C60063D9BE /* Int+Extensions.swift */,
 				37C5D9712A9ED4DA00E10EE5 /* FocusedValues+Extensions.swift */,
 				37A5C01F2AA24BF90072E303 /* FormatStyle+Extensions.swift */,
+				3799EF5D2AC600D20018AB87 /* AttributedString+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,7 +340,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					37313E482A6B6B5900D3C058 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -394,6 +414,7 @@
 				3794DCEB2A8712540063D9BE /* TimerInfo.swift in Sources */,
 				3794DCE92A8701680063D9BE /* TimerState.swift in Sources */,
 				3794DCD92A85B83B0063D9BE /* OverlayTap.swift in Sources */,
+				3799EF602AC6182C0018AB87 /* ThankYouTipView.swift in Sources */,
 				3794DCDB2A85B8EB0063D9BE /* View+Extensions.swift in Sources */,
 				379D968B2A7BF27000376455 /* ViewOption.swift in Sources */,
 				37C5D96A2A9E420000E10EE5 /* NavigateCommands.swift in Sources */,
@@ -416,7 +437,9 @@
 				3794DCDD2A85B9E40063D9BE /* StopWatchState.swift in Sources */,
 				37ADE3942A73303B00FA4139 /* SettingsManager.swift in Sources */,
 				37934D982A857BD90043A851 /* StopWatchView.swift in Sources */,
+				3799EF5E2AC600D20018AB87 /* AttributedString+Extensions.swift in Sources */,
 				37ADE38E2A73040400FA4139 /* ColorInfo.swift in Sources */,
+				3799EF5A2AC5BE490018AB87 /* StoreManager.swift in Sources */,
 				37C5D9722A9ED4DA00E10EE5 /* FocusedValues+Extensions.swift in Sources */,
 				37313E4F2A6B6B5900D3C058 /* ContentView.swift in Sources */,
 				37A0B5082A8A5F5A001878EE /* TimePicker.swift in Sources */,
@@ -433,6 +456,7 @@
 				37A5C01C2A9FE48F0072E303 /* CircleColorPickerManager.swift in Sources */,
 				379D96932A7C3C9A00376455 /* NeoRoundedRectangle.swift in Sources */,
 				3795BB482A7AEE4B0067BBFD /* ColorCircle.swift in Sources */,
+				3799EF5C2AC5C7530018AB87 /* TipView.swift in Sources */,
 				378CD3032A805562000B324F /* FlipText.swift in Sources */,
 				377F537A2A831BD000A9FF3C /* FlipTextInfo.swift in Sources */,
 				37C5D96E2A9E7AB600E10EE5 /* MenuItem.swift in Sources */,
@@ -461,6 +485,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -490,9 +515,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -519,6 +546,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -548,9 +576,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -574,10 +604,12 @@
 				CODE_SIGN_ENTITLEMENTS = FlipClock/FlipClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FlipClock/Preview Content\"";
 				DEVELOPMENT_TEAM = L6B3W3NNQ3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "NeoFlip Clock";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
@@ -617,10 +649,12 @@
 				CODE_SIGN_ENTITLEMENTS = FlipClock/FlipClock.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FlipClock/Preview Content\"";
 				DEVELOPMENT_TEAM = L6B3W3NNQ3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "NeoFlip Clock";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";

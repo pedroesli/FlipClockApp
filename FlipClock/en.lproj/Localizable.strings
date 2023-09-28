@@ -52,3 +52,13 @@
 "SplitView.Stopwatch" = "Stopwatch";
 "SplitView.Timer" = "Timer";
 "SplitView.Settings" = "Settings";
+
+// Tip View
+"TipView.Title" = "Help NeoFlip Clock";
+"TipView.Subtitle" = "Consider Supporting NeoFlip Clock";
+"TipView.WhyTip.Title" = "Why support me?";
+"TipView.WhyTip.Text" = "Hello user! **NeoFlip Clock** was developed solely by me with a lot of **dedication** 👨‍💻, **time** ⌛️ and **coffee** ☕️. I'm an individual developer with the intention of creating several applications to make many people like you happy. **Thank you for considering!** 😁";
+"TipView.MoreUpdates.Title" = "More updates!";
+"TipView.MoreUpdates.Text" = "With your help I will be able to maintain the app with more updates and most importantly **make it free** 🙌, because my intention is not to profit from premium features but to distribute an app that everyone can **enjoy**.";
+"TipView.YourHelpMeansAlot" = "Your help means a lot!";
+"TipView.Disclosure" = "Tipping will not unlock new features.";

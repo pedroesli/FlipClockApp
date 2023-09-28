@@ -137,6 +137,28 @@ internal enum Localization {
     /// Start
     internal static let start = Localization.tr("Localizable", "Timer.Start", fallback: "Start")
   }
+  internal enum TipView {
+    /// Tipping will not unlock new features.
+    internal static let disclosure = Localization.tr("Localizable", "TipView.Disclosure", fallback: "Tipping will not unlock new features.")
+    /// Consider Supporting NeoFlip Clock
+    internal static let subtitle = Localization.tr("Localizable", "TipView.Subtitle", fallback: "Consider Supporting NeoFlip Clock")
+    /// Help NeoFlip Clock
+    internal static let title = Localization.tr("Localizable", "TipView.Title", fallback: "Help NeoFlip Clock")
+    /// Your help means a lot! 🫶
+    internal static let yourHelpMeansAlot = Localization.tr("Localizable", "TipView.YourHelpMeansAlot", fallback: "Your help means a lot! 🫶")
+    internal enum MoreUpdates {
+      /// With your help I will be able to maintain the app with more updates and most importantly **make it free** 🙌, because my intention is not to profit from premium features but to distribute an app that everyone can **enjoy* *👍.
+      internal static let text = Localization.tr("Localizable", "TipView.MoreUpdates.Text", fallback: "With your help I will be able to maintain the app with more updates and most importantly **make it free** 🙌, because my intention is not to profit from premium features but to distribute an app that everyone can **enjoy* *👍.")
+      /// More updates!
+      internal static let title = Localization.tr("Localizable", "TipView.MoreUpdates.Title", fallback: "More updates!")
+    }
+    internal enum WhyTip {
+      /// Hello user! **NeoFlip Clock** was developed solely by me with a lot of **dedication** 👨‍💻, **time** ⌛️ and **coffee** ☕️. I'm an individual developer with the intention of creating several applications to make many people like you happy. **Thank you for considering!** 😁
+      internal static let text = Localization.tr("Localizable", "TipView.WhyTip.Text", fallback: "Hello user! **NeoFlip Clock** was developed solely by me with a lot of **dedication** 👨‍💻, **time** ⌛️ and **coffee** ☕️. I'm an individual developer with the intention of creating several applications to make many people like you happy. **Thank you for considering!** 😁")
+      /// Why support me?
+      internal static let title = Localization.tr("Localizable", "TipView.WhyTip.Title", fallback: "Why support me?")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

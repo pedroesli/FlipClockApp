@@ -13,6 +13,7 @@ struct ContentView: View {
     @StateObject private var clockManager = ClockManager()
     @StateObject private var stopWatchManager = StopWatchManager()
     @StateObject private var timerManager = TimerManager()
+    @StateObject private var storeManager = StoreManager()
     @State private var selectedViewOption: ViewOption = .clock
     @State private var showAllViews = false
     
@@ -44,7 +45,11 @@ struct ContentView: View {
         }
         .tint(settingsManager.appColor)
         .environmentObject(settingsManager)
+        .environmentObject(storeManager)
         .focusedSceneValue(\.viewOption, $selectedViewOption)
+        .sheet(isPresented: $storeManager.showThankYouTipView) {
+            ThankYouTipView()
+        }
     }
     
     @ViewBuilder
