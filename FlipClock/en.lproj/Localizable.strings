@@ -63,3 +63,9 @@
 "TipView.MoreUpdates.Text" = "With your help I will be able to maintain the app with more updates and most importantly **make it free** 🙌, because my intention is not to profit from premium features but to distribute an app that everyone can **enjoy**.";
 "TipView.YourHelpMeansAlot" = "Your help means a lot!";
 "TipView.Disclosure" = "Tipping will not unlock new features.";
+
+// ThankYouTip View
+"ThankYouTip.Title" = "Thank you very much!";
+"ThankYouTip.Text" = "With your help I will continue to buy coffee to fuel my ambitions and dreams. If you want to contact me, here is my email:";
+"ThankYouTip.Email" = "pedroesli.vn@gmail.com";
+"ThankYouTip.Button" = "Close";

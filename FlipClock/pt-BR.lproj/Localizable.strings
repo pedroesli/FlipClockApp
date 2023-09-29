@@ -63,3 +63,9 @@
 "TipView.MoreUpdates.Text" = "Com a sua ajuda eu vou poder manter o app com mais atualizações e o mais importante **deixar ele gratuito** 🙌, porque a minha intenção não é lucrar com funcionalidades premiums e sim distribuir um app que todo mundo possa **curtir**.";
 "TipView.YourHelpMeansAlot" = "Sua ajuda significa muito!";
 "TipView.Disclosure" = "Dar uma gorjeta não irá desbloquear novas funcionalidades.";
+
+// ThankYouTip View
+"ThankYouTip.Title" = "Muito Obrigado!";
+"ThankYouTip.Text" = "Com a sua ajuda continuarei a comprar café para alimentar as minhas ambições e sonhos. Se quiser entrar em contato comigo, aqui está meu email:";
+"ThankYouTip.Email" = "pedroesli.vn@gmail.com";
+"ThankYouTip.Button" = "Fechar";

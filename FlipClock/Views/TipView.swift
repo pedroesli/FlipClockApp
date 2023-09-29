@@ -60,7 +60,7 @@ struct TipView: View {
                         }
                         .buttonStyle(.bordered)
                         .foregroundStyle(.blue)
-                        .cornerRadius(22)
+                        .buttonBorderShape(.capsule)
                         .frame(height: 44)
                     }
                     .padding(.bottom, 6)

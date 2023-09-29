@@ -123,6 +123,16 @@ internal enum Localization {
     /// Stop
     internal static let stop = Localization.tr("Localizable", "StopWatch.Stop", fallback: "Stop")
   }
+  internal enum ThankYouTip {
+    /// Close
+    internal static let button = Localization.tr("Localizable", "ThankYouTip.Button", fallback: "Close")
+    /// pedroesli.vn@gmail.com
+    internal static let email = Localization.tr("Localizable", "ThankYouTip.Email", fallback: "pedroesli.vn@gmail.com")
+    /// With your help I will continue to buy coffee to fuel my ambitions and dreams. If you want to contact me, here is my email:
+    internal static let text = Localization.tr("Localizable", "ThankYouTip.Text", fallback: "With your help I will continue to buy coffee to fuel my ambitions and dreams. If you want to contact me, here is my email:")
+    /// Thank you very much!
+    internal static let title = Localization.tr("Localizable", "ThankYouTip.Title", fallback: "Thank you very much!")
+  }
   internal enum TimePicker {
     /// hour
     internal static let hour = Localization.tr("Localizable", "TimePicker.Hour", fallback: "hour")
