@@ -57,9 +57,9 @@ struct TipView: View {
                         Button(product.displayPrice) {
                             manager.purchase(product)
                         }
-                        .buttonStyle(.bordered)
+                        .buttonStyle(.borderedProminent)
                         .foregroundStyle(.blue)
-                        .buttonBorderShape(.capsule)
+                        .capsuleButtonShape()
                         .frame(height: 44)
                     }
                     .padding(.bottom, 6)
@@ -70,10 +70,12 @@ struct TipView: View {
             .padding(.top)
         }
         .navigationTitle(Localization.TipView.title)
-        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             manager.getProducts()
         }
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
     
     struct SubTitle: View {

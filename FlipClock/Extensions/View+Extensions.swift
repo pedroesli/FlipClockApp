@@ -11,4 +11,8 @@ extension View {
     func onOverlayTap(action: @escaping () -> Void) -> some View {
         modifier(OverlayTap(action: action))
     }
+    
+    func capsuleButtonShape() -> some View {
+        modifier(CapsuleButtonShapeModifier())
+    }
 }

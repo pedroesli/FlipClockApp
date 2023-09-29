@@ -27,10 +27,12 @@ struct ThankYouTipView: View {
             Button(Localization.ThankYouTip.button) {
                 dismiss()
             }
+            #if os(iOS)
             .font(.title)
-            .buttonStyle(.bordered)
+            #endif
+            .buttonStyle(.borderedProminent)
             .tint(.blue)
-            .buttonBorderShape(.capsule)
+            .capsuleButtonShape()
             
         }
         .frame(maxHeight: .infinity, alignment: .top)

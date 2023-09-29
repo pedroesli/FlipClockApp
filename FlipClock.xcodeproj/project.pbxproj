@@ -61,6 +61,7 @@
 		37ADE3902A7308F100FA4139 /* PaletteColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE38F2A7308F100FA4139 /* PaletteColor.swift */; };
 		37ADE3922A73110B00FA4139 /* HourFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE3912A73110B00FA4139 /* HourFormat.swift */; };
 		37ADE3942A73303B00FA4139 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ADE3932A73303B00FA4139 /* SettingsManager.swift */; };
+		37B895812AC78C2600325C69 /* CapsuleButtonShapeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B895802AC78C2600325C69 /* CapsuleButtonShapeModifier.swift */; };
 		37C5D96A2A9E420000E10EE5 /* NavigateCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D9692A9E420000E10EE5 /* NavigateCommands.swift */; };
 		37C5D96C2A9E77FD00E10EE5 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D96B2A9E77FD00E10EE5 /* SplitView.swift */; };
 		37C5D96E2A9E7AB600E10EE5 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5D96D2A9E7AB600E10EE5 /* MenuItem.swift */; };
@@ -126,6 +127,7 @@
 		37ADE38F2A7308F100FA4139 /* PaletteColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteColor.swift; sourceTree = "<group>"; };
 		37ADE3912A73110B00FA4139 /* HourFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourFormat.swift; sourceTree = "<group>"; };
 		37ADE3932A73303B00FA4139 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		37B895802AC78C2600325C69 /* CapsuleButtonShapeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonShapeModifier.swift; sourceTree = "<group>"; };
 		37C5D9692A9E420000E10EE5 /* NavigateCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateCommands.swift; sourceTree = "<group>"; };
 		37C5D96B2A9E77FD00E10EE5 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		37C5D96D2A9E7AB600E10EE5 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				377F536F2A8184F700A9FF3C /* FlipDial.swift */,
 				3794DCD62A85B4C90063D9BE /* CapsuleButton.swift */,
 				3794DCD82A85B83B0063D9BE /* OverlayTap.swift */,
+				37B895802AC78C2600325C69 /* CapsuleButtonShapeModifier.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				3795BB452A7ACFFF0067BBFD /* ConfigurationView.swift in Sources */,
 				3794DCE72A87002D0063D9BE /* TimerManager.swift in Sources */,
 				37ADE38C2A72FE0B00FA4139 /* Settings.swift in Sources */,
+				37B895812AC78C2600325C69 /* CapsuleButtonShapeModifier.swift in Sources */,
 				372773992A8C38460079EF35 /* Strings+Constants.swift in Sources */,
 				378CD2FF2A803722000B324F /* NavBar.swift in Sources */,
 				378CD3012A8053F1000B324F /* FlipTextHalf.swift in Sources */,
