@@ -10,7 +10,7 @@ import StoreKit
 
 struct ConfigurationView: View {
     
-    @EnvironmentObject var settingsManager: SettingsManager
+    @EnvironmentObject private var settingsManager: SettingsManager
     @State private var showSettingsResetAlert = false
     @State private var showTipView = false
     
@@ -23,6 +23,23 @@ struct ConfigurationView: View {
     }
     
     var body: some View {
+        #if os(iOS)
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                content()
+            } else {
+                NavigationStack {
+                    content()
+                }
+            }
+        #else
+            NavigationStack {
+                content()
+            }
+        #endif
+    }
+    
+    // swiftlint:disable function_body_length
+    @ViewBuilder func content() -> some View {
         Form {
             Section(Localization.Configuration.Section.TimeDisplay.title) {
                 Picker(Localization.Configuration.Picker.HourFormat.title, selection: $settingsManager.settings.hourFormat) {
@@ -70,6 +87,13 @@ struct ConfigurationView: View {
                     showSettingsResetAlert = true
                 }
             }
+            .confirmationDialog(Localization.Configuration.ConfirmationDialog.text, isPresented: $showSettingsResetAlert) {
+                Button(Localization.Configuration.Button.Reset.text, role: .destructive) {
+                    settingsManager.resetSettings()
+                }
+            } message: {
+                Text(Localization.Configuration.Text.reset)
+            }
             Section {
                 Text(Localization.Configuration.Text.madeBy)
                     .font(.subheadline)
@@ -81,13 +105,6 @@ struct ConfigurationView: View {
         .formStyle(.grouped)
         .foregroundColor(.primary)
         .navigationTitle(Localization.Configuration.title)
-        .confirmationDialog(Localization.Configuration.ConfirmationDialog.text, isPresented: $showSettingsResetAlert) {
-            Button(Localization.Configuration.Button.Reset.text, role: .destructive) {
-                settingsManager.resetSettings()
-            }
-        } message: {
-            Text(Localization.Configuration.Text.reset)
-        }
         .navigationDestination(isPresented: $showTipView) {
             TipView()
         }
@@ -95,6 +112,7 @@ struct ConfigurationView: View {
         .scrollContentBackground(.hidden)
         #endif
     }
+    // swiftlint:enable function_body_length
 }
 
 struct ConfigurationView_Previews: PreviewProvider {
@@ -104,10 +122,10 @@ struct ConfigurationView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             #if os(iOS)
-            ConfigurationView()
-                .navigationBarTitleDisplayMode(.inline)
+                ConfigurationView()
+                    .navigationBarTitleDisplayMode(.inline)
             #else
-            ConfigurationView()
+                ConfigurationView()
             #endif
         }
         .environmentObject(settingsManager)

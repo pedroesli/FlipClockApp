@@ -15,8 +15,7 @@ struct TipView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text(Localization.TipView.subtitle)
-                    .font(.title2.bold())
+                SubTitle()
                 VStack(alignment: .leading, spacing: 6) {
                     HStack {
                         Text(Localization.TipView.WhyTip.title)
@@ -71,8 +70,29 @@ struct TipView: View {
             .padding(.top)
         }
         .navigationTitle(Localization.TipView.title)
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             manager.getProducts()
+        }
+    }
+    
+    struct SubTitle: View {
+        
+        @Environment(\.dismiss) var dismiss
+        
+        var body: some View {
+            #if os(iOS)
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Text(Localization.TipView.subtitle)
+                    .font(.title2.bold())
+            } else {
+                Text(Localization.TipView.subtitle)
+                    .font(.largeTitle.bold())
+            }
+            #else
+                Text(Localization.TipView.subtitle)
+                    .font(.largeTitle.bold())
+            #endif
         }
     }
 }
