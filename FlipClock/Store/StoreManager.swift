@@ -12,6 +12,7 @@ class StoreManager: ObservableObject {
     
     @Published var products: [Product] = []
     @Published var showThankYouTipView = false
+    @Published var productInProcess: Product?
     
     private let productIDs = [
         "com.consumable.tip01",
@@ -42,6 +43,7 @@ class StoreManager: ObservableObject {
     }
     
     func purchase(_ product: Product) {
+        productInProcess = product
         Task {
             do {
                 let result = try await product.purchase()
@@ -52,14 +54,14 @@ class StoreManager: ObservableObject {
                     showThankYouTipView = true
                 case let .success(.unverified(_, error)):
                     print(error)
-                case .userCancelled:
-                    break
-                case .pending:
-                    break
+                case .userCancelled: break
+                case .pending: break
                 @unknown default:
                     print("Unknown purchase error")
                 }
+                productInProcess = nil
             } catch {
+                productInProcess = nil
                 print("Purchase error: \(error)")
             }
         }

@@ -54,13 +54,9 @@ struct TipView: View {
                     HStack {
                         Text(product.displayName)
                         Spacer()
-                        Button(product.displayPrice) {
+                        ProductButton(product: product, productInProcess: $manager.productInProcess) {
                             manager.purchase(product)
                         }
-                        .buttonStyle(.borderedProminent)
-                        .foregroundStyle(.blue)
-                        .capsuleButtonShape()
-                        .frame(height: 44)
                     }
                     .padding(.bottom, 6)
                 }
@@ -95,6 +91,27 @@ struct TipView: View {
                 Text(Localization.TipView.subtitle)
                     .font(.largeTitle.bold())
             #endif
+        }
+    }
+    
+    struct ProductButton: View {
+        
+        let product: Product
+        @Binding var productInProcess: Product?
+        let action: () -> Void
+        
+        var body: some View {
+            Button(action: action, label: {
+                if let productInProcess, productInProcess == product {
+                    ProgressView()
+                } else {
+                    Text(product.displayPrice)
+                }
+            })
+            .buttonStyle(.bordered)
+            .foregroundStyle(.blue)
+            .capsuleButtonShape()
+            .frame(height: 44)
         }
     }
 }
